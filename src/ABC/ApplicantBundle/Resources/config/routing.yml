@@ -1,0 +1,3 @@
+abc_applicant_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: ABCApplicantBundle:Default:index }
