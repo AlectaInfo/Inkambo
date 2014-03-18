@@ -1,4 +1,9 @@
+
 abc_applicant:
     resource: "@ABCApplicantBundle/Resources/config/routing.yml"
+    prefix:   /
+
+abc_rsp:
+    resource: "@ABCRspBundle/Resources/config/routing.yml"
     prefix:   /
 
