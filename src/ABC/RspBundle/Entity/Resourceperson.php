@@ -321,4 +321,32 @@ class Resourceperson
     {
         return $this->session;
     }
+    /**
+     * @var string
+     */
+    private $gender;
+
+
+    /**
+     * Set gender
+     *
+     * @param string $gender
+     * @return Resourceperson
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return string 
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
 }

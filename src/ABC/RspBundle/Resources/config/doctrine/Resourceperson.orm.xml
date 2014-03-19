@@ -7,8 +7,9 @@
     <field name="firstname" type="string" column="firstname" length="30" nullable="true"/>
     <field name="lastname" type="string" column="lastname" length="30" nullable="true"/>
     <field name="address" type="string" column="address" length="100" nullable="true"/>
-    <field name="phone" type="string" column="phone" length="10" nullable="false"/>
     <field name="email" type="string" column="email" length="50" nullable="true"/>
+    <field name="phone" type="string" column="phone" length="10" nullable="true"/>
+    <field name="gender" type="string" column="gender" length="8" nullable="true"/>
     <field name="photo" type="blob" column="photo" nullable="true"/>
     <field name="post" type="string" column="post" length="30" nullable="true"/>
     <field name="deptName" type="string" column="dept_name" length="30" nullable="true"/>

@@ -14,17 +14,31 @@ class ResourcepersonType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('firstname')
-            ->add('lastname')
-            ->add('address')
-            ->add('phone')
-            ->add('email')
-            ->add('photo')
-            ->add('post')
+       $builder
+            ->add('firstname','text')
+            ->add('lastname','text')
+            ->add('address','text',array(
+                'attr'=>array(
+                    'placeholder'=>'type your address here'
+                   
+                )
+            ))
+             ->add('gender','choice',array(
+                'choices'=>array('Male'=>'Male',"Female"=>'Female'),
+                  'empty_value'=> 'Select your gender'
+            ))
+            ->add('phone','text')    
+            ->add('email','email')
+//            ->add('photo','file',array(
+//                
+//            ))
+            ->add('post','choice',array(
+                'choices'=> array('Lecturer'=>'Lecturer','Lab Assistant'=>'Lab Assistant'),
+                'empty_value'=> 'Select a post'
+            ))
             ->add('deptName')
             ->add('qualification')
-            ->add('session')
+         //   ->add('session')
         ;
     }
     

@@ -304,4 +304,116 @@ class Applicant
     {
         return $this->course;
     }
+    /**
+     * @var \DateTime
+     */
+    private $submitdate;
+
+    /**
+     * @var string
+     */
+    private $gender;
+
+    /**
+     * @var integer
+     */
+    private $rating;
+
+    /**
+     * @var string
+     */
+    private $status;
+
+
+    /**
+     * Set submitdate
+     *
+     * @param \DateTime $submitdate
+     * @return Applicant
+     */
+    public function setSubmitdate($submitdate)
+    {
+        $this->submitdate = $submitdate;
+    
+        return $this;
+    }
+
+    /**
+     * Get submitdate
+     *
+     * @return \DateTime 
+     */
+    public function getSubmitdate()
+    {
+        return $this->submitdate;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param string $gender
+     * @return Applicant
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return string 
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
+     * Set rating
+     *
+     * @param integer $rating
+     * @return Applicant
+     */
+    public function setRating($rating)
+    {
+        $this->rating = $rating;
+    
+        return $this;
+    }
+
+    /**
+     * Get rating
+     *
+     * @return integer 
+     */
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    /**
+     * Set status
+     *
+     * @param string $status
+     * @return Applicant
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return string 
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
 }

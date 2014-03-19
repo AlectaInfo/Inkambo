@@ -192,4 +192,32 @@ class Student
     {
         return $this->studentId;
     }
+    /**
+     * @var string
+     */
+    private $gender;
+
+
+    /**
+     * Set gender
+     *
+     * @param string $gender
+     * @return Student
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return string 
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
 }
