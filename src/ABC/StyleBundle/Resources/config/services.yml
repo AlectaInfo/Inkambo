@@ -1,0 +1,7 @@
+parameters:
+#    abc_style.example.class: ABC\StyleBundle\Example
+
+services:
+#    abc_style.example:
+#        class: %abc_style.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

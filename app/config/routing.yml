@@ -7,3 +7,16 @@ abc_rsp:
     resource: "@ABCRspBundle/Resources/config/routing.yml"
     prefix:   /
 
+abc_style:
+    resource: "@ABCStyleBundle/Resources/config/routing.yml"
+    prefix:   /
+
+abc_admin_resource_admin:
+    resource: "@ABCAdminResourceAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+abc_admin_course_admin:
+    resource: "@ABCAdminCourseAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+

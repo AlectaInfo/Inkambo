@@ -1,0 +1,7 @@
+parameters:
+#    abc_admin_resource_admin.example.class: ABC\Admin\ResourceAdminBundle\Example
+
+services:
+#    abc_admin_resource_admin.example:
+#        class: %abc_admin_resource_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
