@@ -7,6 +7,7 @@
     <field name="nic" type="string" column="nic" length="10" nullable="false"/>
     <field name="firstname" type="string" column="firstname" length="50" nullable="true"/>
     <field name="lastname" type="string" column="lastname" length="50" nullable="true"/>
+    <field name="gender" type="string" column="gender" length="8" nullable="true"/>
     <field name="email" type="string" column="email" length="50" nullable="true"/>
     <field name="phone" type="string" column="phone" length="10" nullable="true"/>
     <field name="address" type="string" column="address" length="100" nullable="true"/>
