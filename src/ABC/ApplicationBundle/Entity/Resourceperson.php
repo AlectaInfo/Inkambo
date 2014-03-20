@@ -32,6 +32,11 @@ class Resourceperson
     /**
      * @var string
      */
+    private $gender;
+
+    /**
+     * @var string
+     */
     private $photo;
 
     /**
@@ -157,6 +162,29 @@ class Resourceperson
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param string $gender
+     * @return Resourceperson
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return string 
+     */
+    public function getGender()
+    {
+        return $this->gender;
     }
 
     /**

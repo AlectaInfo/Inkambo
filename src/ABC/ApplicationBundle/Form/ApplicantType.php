@@ -13,37 +13,37 @@ class ApplicantType extends AbstractType
      * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
-    {    
+    {
         $builder
-            ->add('nic', 'text')
-            ->add('firstname', 'text')
-            ->add('lastname', 'text')
-            ->add('phone', 'text')
-            ->add('address', 'text')
+            ->add('nic')
+            ->add('firstname')
+            ->add('lastname')
+            ->add('phone')
+            ->add('address')
+            ->add('gender', 'choice',
+                    array(
+                        'choices'=> array('Male'=>'Male','Female'=>'Female'),
+                        'empty_value'=> '[Select]'
+                    ))
             ->add('email', 'email')
-            ->add('certificates')
+//            ->add('certificates', 'file')
             ->add('course', 'entity',
                     array(
                         'class'=>'ABC\ApplicationBundle\Entity\Course',
                         'property'=>'title'
-                        ))
+                    ))    
             ->add('timeslot1', 'entity',
                     array(
                         'class'=>'ABC\ApplicationBundle\Entity\Timeslot',
                         'property'=>'day'
                     ))
-            
             ->add('timeslot2', 'entity',
                     array(
                         'class'=>'ABC\ApplicationBundle\Entity\Timeslot',
                         'property'=>'day'
                     ))
-            ->add('submit','submit', array(
-                'label' => 'Register',
-                'attr' => array(
-                    'class' => 'button'
-                )))
         ;
+                    
     }
     
     /**

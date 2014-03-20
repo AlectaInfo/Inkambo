@@ -9,13 +9,17 @@
     <id name="appId" type="integer" column="app_id">
       <generator strategy="IDENTITY"/>
     </id>
+    <field name="submitdate" type="datetime" column="submitDate" nullable="false"/>
     <field name="nic" type="string" column="nic" length="10" nullable="false"/>
     <field name="firstname" type="string" column="firstname" length="30" nullable="true"/>
     <field name="lastname" type="string" column="lastname" length="30" nullable="true"/>
     <field name="phone" type="string" column="phone" length="10" nullable="true"/>
     <field name="address" type="string" column="address" length="100" nullable="true"/>
+    <field name="gender" type="string" column="gender" length="8" nullable="true"/>
     <field name="email" type="string" column="email" length="50" nullable="true"/>
     <field name="certificates" type="blob" column="certificates" nullable="true"/>
+    <field name="rating" type="integer" column="rating" nullable="true"/>
+    <field name="status" type="string" column="status" length="15" nullable="true"/>
     <many-to-one field="timeslot2" target-entity="Timeslot">
       <join-columns>
         <join-column name="timeslot2" referenced-column-name="timeslot_id"/>

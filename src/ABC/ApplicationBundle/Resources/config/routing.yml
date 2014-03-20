@@ -4,5 +4,35 @@ abc_application_homepage:
     
 application:
     pattern:  /
-    defaults: { _controller: ABCApplicationBundle:Apply:index }
-  
+    defaults: { _controller: ABCApplicationBundle:Application:index }
+    
+application_new:
+    pattern:  /new
+    defaults: { _controller: ABCApplicationBundle:Application:new }
+
+application_newC:
+    pattern:  /newC
+    defaults: { _controller: ABCApplicationBundle:Application:newGivenCourse }
+    
+application_create:
+    pattern: /new/create
+    defaults: { _controller: ABCApplicationBundle:Application:create }
+    requirements: { _method: POST }
+
+application_show:
+    pattern: /show/{id}
+    defaults: { _controller: ABCApplicationBundle:Application:show } 
+    
+application_edit:
+    pattern: /edit/{id}
+    defaults: { _controller: ABCApplicationBundle:Application:edit}
+    
+application_update:
+    pattern: /update/{id}
+    defaults: { _controller: ABCApplicationBundle:Application:update}
+    requirements: { _method: post|put }
+    
+application_delete:
+    pattern: /delete/{id}
+    defaults: { _controller: ABCApplicationBundle:Application:delete}
+    requirements: { _method: post|delete }

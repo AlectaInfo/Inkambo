@@ -27,6 +27,11 @@ class Student
     /**
      * @var string
      */
+    private $gender;
+
+    /**
+     * @var string
+     */
     private $email;
 
     /**
@@ -112,6 +117,29 @@ class Student
     public function getLastname()
     {
         return $this->lastname;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param string $gender
+     * @return Student
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return string 
+     */
+    public function getGender()
+    {
+        return $this->gender;
     }
 
     /**
