@@ -12,11 +12,11 @@ rsp_create:
     requirements: { _method: POST }
     
 rsp_show:
-    pattern: /show/{id}
+    pattern: /adminShow/{id}
     defaults: { _controller: ABCRspBundle:Rsp:show}
     
 rsp_showAll:
-    pattern: /showAll
+    pattern: /adminShowAll
     defaults: { _controller: ABCRspBundle:Rsp:showAll}
     
 
@@ -33,4 +33,13 @@ rsp_delete:
     pattern: /delete/{id}
     defaults: { _controller: ABCRspBundle:Rsp:delete}
     requirements: { _method: post|delete }
+    
+#routing for normal user
+rsp_showUser:
+    pattern: /show/{id}
+    defaults: { _controller: ABCRspBundle:Default:show}
+    
+rsp_showAllUser:
+    pattern: /showAll
+    defaults: { _controller: ABCRspBundle:Default:showAll}
     

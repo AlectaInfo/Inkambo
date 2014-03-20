@@ -27,10 +27,8 @@
              <h1> RPID : {{entity.rpid}}</h1>
              <h2> Name :{{entity.firstname}} {{entity.lastname}}</h2>
              <h2> Email :{{entity.email}}</h2>
-             
-             <a href="{{ path('rsp_show', { 'id': entity.rpid }) }}">show</a>
-             <a href="{{ path('rsp_edit', { 'id': entity.rpid }) }}">edit</a>
-             <form action="{{path('rsp_show',{ 'id':entity.rpid })}}" method="POST" style="padding-bottom:15px">
+
+             <form action="{{path('rsp_showUser',{ 'id':entity.rpid })}}" method="POST" style="padding-bottom:15px">
                     <input type="submit" value="View Profile" style="float:right; margin-right:50px;margin-bottom:25px">
              </form>
            </div>
