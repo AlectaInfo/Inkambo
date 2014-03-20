@@ -1,0 +1,36 @@
+courseadmin_home:
+    pattern:  /
+    defaults: { _controller: ABCCourseBundle:Default:index }
+
+course_homepage:
+    pattern:  /course_homepage
+    defaults: { _controller: ABCCourseBundle:CourseHome:ShowCourses }
+ 
+updatecourse_new:
+    pattern: /new
+    defaults: { _controller: ABCCourseBundle:CourseUpdate:new}
+
+updatecourse_create:
+    pattern: /new/create
+    defaults: { _controller: ABCCourseBundle:CourseUpdate:create}
+    requirements: { _method: POST }
+    
+updatecourse_show:
+    pattern: /show/{id}
+    defaults: { _controller: ABCCourseBundle:CourseUpdate:show}
+
+updatecourse_edit:
+    pattern: /edit/{id}
+    defaults: { _controller: ABCCourseBundle:CourseUpdate:edit}
+    
+updatecourse_update:
+    pattern: /update/{id}
+    defaults: { _controller: ABCCourseBundle:CourseUpdate:update}
+    requirements: { _method: post|put }
+    
+updatecourse_delete:
+    pattern: /delete/{id}
+    defaults: { _controller: ABCCourseBundle:CourseUpdate:delete}
+    requirements: { _method: post|delete }
+    
+    
