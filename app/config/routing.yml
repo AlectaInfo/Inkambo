@@ -1,3 +1,7 @@
+abc_course:
+    resource: "@ABCCourseBundle/Resources/config/routing.yml"
+    prefix:   /
+
 
 abc_applicant:
     resource: "@ABCApplicantBundle/Resources/config/routing.yml"
