@@ -1,3 +1,5 @@
+#app/config/routing.yml
+
 rsp:
     pattern:  /
     defaults: { _controller: ABCRspBundle:Default:index }
@@ -43,7 +45,8 @@ rsp_showAllUser:
     pattern: /showAll
     defaults: { _controller: ABCRspBundle:Default:showAll}
     
-#app/config/routing.yml
-#acme_hello:
-#    resource: "@AcmeHelloBundle/Resources/config/routing.yml"
-#    prefix:   /admin#    
+
+abc_admin_resource_admin:
+    resource: "@ABCAdminResourceAdminBundle/Resources/config/routing.yml"
+    prefix:   /resourceAdmin   
+
