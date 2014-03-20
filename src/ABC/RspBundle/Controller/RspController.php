@@ -14,7 +14,7 @@ class RspController extends Controller
        
         $form = $this->createForm(new ResourcepersonType(),$entity,array(
            'action' => $this->generateUrl('rsp_create'),
-           'method'=> 'POST'
+            'method'=> 'POST'
         ));
         
        

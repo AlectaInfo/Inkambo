@@ -1,0 +1,19 @@
+{# empty Twig template #}
+
+
+<h3>{{ entity.firstname}}</h3>
+<h3>Resource ID : {{entity.rpId}}</h3>
+<h3>Post : {{entity.post}}</h3>
+<h3>Address : {{entity.address}}</h3>
+
+<img src="data:image/jpeg;base64,base64_encode({{entity.photo}})" style="float:right; margin-right:100px" alt="photo" height="200px" width="200px">
+
+<br>
+  <ul class="record_actions">
+    <li>
+        {# add the path to the staff page here#}
+        <a href="{{ path('rsp_showAllUser') }}">
+            Back to Resource Persons
+        </a>
+    </li>
+</ul>
