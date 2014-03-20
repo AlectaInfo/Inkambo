@@ -23,12 +23,13 @@
     <body>
          
         {%for entity in entities%}
-           <div class="list">
+           <div class="list" id="">
              <h1> RPID : {{entity.rpid}}</h1>
              <h2> Name :{{entity.firstname}} {{entity.lastname}}</h2>
              <h2> Email :{{entity.email}}</h2>
 
-             <form action="{{path('rsp_showUser',{ 'id':entity.rpid })}}" method="POST" style="padding-bottom:15px">
+             <form action="{{path('rsp_showUser',{ 'id':entity.rpid })}}" method="GET" style="padding-bottom:15px">
+                      <input name="id" type="hidden" value="{{ entity.rpid}}">
                     <input type="submit" value="View Profile" style="float:right; margin-right:50px;margin-bottom:25px">
              </form>
            </div>

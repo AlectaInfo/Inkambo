@@ -13,10 +13,10 @@ abc_style:
 
 abc_admin_resource_admin:
     resource: "@ABCAdminResourceAdminBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /resourceAdmin
 
 abc_admin_course_admin:
     resource: "@ABCAdminCourseAdminBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /courseAdmin
 
 
