@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ABC\ApplicationBundle\Entity\Classroom" table="classroom">
+    <id name="classId" type="string" column="class_id" length="4">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="capacity" type="integer" column="capacity" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,8 @@
+abc_application_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: ABCApplicationBundle:Default:index }
+    
+application:
+    pattern:  /
+    defaults: { _controller: ABCApplicationBundle:Apply:index }
+  

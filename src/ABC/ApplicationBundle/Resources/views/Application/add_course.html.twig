@@ -1,0 +1,36 @@
+{% extends "ABCApplicationBundle:Default:formtemplate.html.twig"%}
+
+{% block container%}
+          
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        {{form_row(form.nic)}}        
+        <br>
+        {{form_row(form.firstname)}}        
+        <br>
+        {{form_row(form.lastname)}}  
+        <br>
+        {{form_row(form.email)}}  
+        <br>
+        {{form_row(form.address)}}  
+        <br>
+        {{form_row(form.phone)}}  
+        <br>
+        {{form_row(form.certificates)}}  
+        <br>
+        {{ applicant.course }}  
+        <br>
+        {{form_row(form.timeslot1)}}  
+        <br>
+        {{form_row(form.timeslot2)}}  
+        <br>                
+        {{form_widget(form.submit)}}
+         
+        <ul class="record_actions">
+         <li>
+         <a href="{{ path('application') }}">
+            Back to the list
+        </a>       
+             </li>  
+         </ul>
+{% endblock %}  

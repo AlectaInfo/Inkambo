@@ -1,0 +1,16 @@
+<h3>{{ applicant.nic }}</h3>
+
+<br>
+  <ul class="record_actions">
+    <li>
+        <a href="{{ path('application') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('application_edit', { 'id': applicant.appId }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
