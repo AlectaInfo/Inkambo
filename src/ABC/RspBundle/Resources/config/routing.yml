@@ -12,11 +12,11 @@ rsp_create:
     requirements: { _method: POST }
     
 rsp_show:
-    pattern: /showRsp/{id}
+    pattern: /adminShow/{id}
     defaults: { _controller: ABCRspBundle:Rsp:show}
     
 rsp_showAll:
-    pattern: /showRspAll
+    pattern: /adminShowAll
     defaults: { _controller: ABCRspBundle:Rsp:showAll}
     
 
