@@ -1,0 +1,33 @@
+{# empty Twig template #}
+
+
+<h3>{{ entity.title}}</h3>
+<h3>Course ID : {{entity.courseId}}</h3>
+<h3>Course Fee : {{entity.fee}}</h3>
+<h3>Department : {{entity.deptName}}</h3>
+<h3>Duration : {{entity.duration}}</h3>
+<img src="data:image/jpeg;base64,base64_encode({{entity.leaflet}})" style="float:right; margin-right:100px" alt="leaflet" height="200px" width="200px">
+<h3>Description : {{entity.description}}</h3>
+<body>
+    {% if app.session.flashBag.has('failure') %}
+        <div class="alert-message failure">
+            {% for msg in app.session.flashBag.get('failure') %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+<br>
+  <ul class="record_actions">
+    <li>
+        <a href="{{ path('courseadmin_home') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('updatecourse_edit', { 'id': entity.courseId }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
