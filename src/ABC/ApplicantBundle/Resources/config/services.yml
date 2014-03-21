@@ -1,7 +1,0 @@
-parameters:
-#    abc_applicant.example.class: ABC\ApplicantBundle\Example
-
-services:
-#    abc_applicant.example:
-#        class: %abc_applicant.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
