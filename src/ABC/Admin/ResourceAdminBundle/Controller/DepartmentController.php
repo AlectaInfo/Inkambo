@@ -17,7 +17,7 @@ class DepartmentController extends Controller
 
     /**
      * Lists all Department entities.
-     *
+     
      */
     public function indexAction()
     {
