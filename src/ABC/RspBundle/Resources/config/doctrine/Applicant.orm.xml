@@ -6,6 +6,9 @@
       <index name="timeslot1" columns="timeslot1"/>
       <index name="timeslot2" columns="timeslot2"/>
     </indexes>
+    <unique-constraints>
+      <unique-constraint name="nic" columns="nic,course_id"/>
+    </unique-constraints>
     <id name="appId" type="integer" column="app_id">
       <generator strategy="IDENTITY"/>
     </id>
@@ -17,6 +20,7 @@
     <field name="address" type="string" column="address" length="100" nullable="true"/>
     <field name="gender" type="string" column="gender" length="8" nullable="true"/>
     <field name="email" type="string" column="email" length="50" nullable="true"/>
+    <field name="qualification" type="string" column="qualification" length="300" nullable="true"/>
     <field name="certificates" type="blob" column="certificates" nullable="true"/>
     <field name="rating" type="integer" column="rating" nullable="true"/>
     <field name="status" type="string" column="status" length="15" nullable="true"/>
