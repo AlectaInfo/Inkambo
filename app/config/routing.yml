@@ -1,12 +1,11 @@
 abc_course:
     resource: "@ABCCourseBundle/Resources/config/routing.yml"
-    prefix:   /
-
+    prefix:   /course
 
 abc_applicant:
     resource: "@ABCApplicantBundle/Resources/config/routing.yml"
     prefix:   /
-
+    
 abc_rsp:
     resource: "@ABCRspBundle/Resources/config/routing.yml"
     prefix:   /rsp
@@ -17,10 +16,13 @@ abc_style:
 
 abc_admin_resource_admin:
     resource: "@ABCAdminResourceAdminBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /resourceAdmin
 
 abc_admin_course_admin:
     resource: "@ABCAdminCourseAdminBundle/Resources/config/routing.yml"
-    prefix:   /
-
+    prefix:   /courseAdmin
+    
+abc_admin_resource_admin_department:
+        resource: "@ABCAdminResourceAdminBundle/Resources/config/routing/department.yml"
+        prefix:   /resourceAdmin/department
 

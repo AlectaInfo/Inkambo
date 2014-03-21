@@ -222,4 +222,32 @@ class Session
     {
         return $this->rp;
     }
+    /**
+     * @var integer
+     */
+    private $maxStudents;
+
+
+    /**
+     * Set maxStudents
+     *
+     * @param integer $maxStudents
+     * @return Session
+     */
+    public function setMaxStudents($maxStudents)
+    {
+        $this->maxStudents = $maxStudents;
+    
+        return $this;
+    }
+
+    /**
+     * Get maxStudents
+     *
+     * @return integer 
+     */
+    public function getMaxStudents()
+    {
+        return $this->maxStudents;
+    }
 }
