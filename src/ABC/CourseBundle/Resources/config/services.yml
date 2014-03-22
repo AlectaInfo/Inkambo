@@ -1,0 +1,7 @@
+parameters:
+#    abc_course.example.class: ABC\CourseBundle\Example
+
+services:
+#    abc_course.example:
+#        class: %abc_course.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

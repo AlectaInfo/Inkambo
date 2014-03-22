@@ -1,0 +1,17 @@
+<h1>You have successfully registerered.</h1>
+
+<p>Registered course: {{ applicant.course.title }}</p>
+<p>We have sent a confirmation mail to you at {{ applicant.email }}. Please check mail.</p>
+<br>
+  <ul class="record_actions">
+    <li>
+        <a href="{{ path('application') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('application_edit', { 'id': applicant.appId }) }}">
+            Edit
+        </a>
+    </li>
+</ul>

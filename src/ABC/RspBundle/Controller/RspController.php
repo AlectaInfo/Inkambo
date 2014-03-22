@@ -18,7 +18,9 @@ class RspController extends Controller
         ));
         
        
-        $form->add('Add','submit');
+        $form->add('Add','submit',array(
+            //'attr'=>array('onClick'=>'return checksubmit(this)')
+        ));
         return $form;
     }
     
@@ -45,9 +47,13 @@ class RspController extends Controller
             $em->persist($entity);
             $em->flush();
             
-            
+            $request->getSession()
+                     ->getFlashBag()
+                    ->add('success', 'Registration went super smooth!')
+                            ;
             // modify here to display the list of courses in the given department to be assigned into takes
-            return $this->redirect($this->generateUrl('rsp',array('id'=>$entity->getRpId())));
+            return $this->redirect($this->generateUrl('rsp_show',array('id'=>$entity->getRpId())));
+            
         }
         
         return $this->render('ABCRspBundle:rsp:add.html.twig',array(

@@ -1,0 +1,14 @@
+{% extends "ABCStyleBundle:Templates:TwitterFormTemplate.html.twig"%}
+
+{% block container%}
+          
+        {{ form(form)}}
+        
+        <ul class="record_actions">
+         <li>
+         <a href="{{ path('courseadmin_home') }}">
+            Back to the list
+        </a>       
+             </li>  
+         </ul>
+{% endblock %}        

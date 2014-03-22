@@ -15,11 +15,19 @@ class ResourcepersonType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
        $builder
-            ->add('firstname','text')
-            ->add('lastname','text')
+            ->add('firstname','text', array(
+                'attr'=>array(
+                    'placeholder'=>'First name'  
+                )
+            ))
+            ->add('lastname','text',array(
+                'attr'=>array(
+                    'placeholder'=>'Last name '  
+                )
+            ))
             ->add('address','text',array(
                 'attr'=>array(
-                    'placeholder'=>'type your address here'
+                    'placeholder'=>'Address'
                    
                 )
             ))
@@ -27,17 +35,39 @@ class ResourcepersonType extends AbstractType
                 'choices'=>array('Male'=>'Male',"Female"=>'Female'),
                   'empty_value'=> 'Select your gender'
             ))
-            ->add('phone','text')    
-            ->add('email','email')
+            ->add('phone','text',array(
+                'max_length'=>10,
+                'pattern' => '[0-9]+',
+                'attr'=>array(
+                    'placeholder'=>'xxxxxxxxxx'  
+                )
+            ))    
+            ->add('email','email',array(
+                'pattern' => '[A-Za-z]+',
+                'attr'=>array(
+                    'placeholder'=>'Enter email here'  
+                )
+            ))
 //            ->add('photo','file',array(
 //                
 //            ))
             ->add('post','choice',array(
-                'choices'=> array('Lecturer'=>'Lecturer','Lab Assistant'=>'Lab Assistant'),
+                'choices'=> array('Lecturer'=>'Lecturer','Lab Assistant'=>'Lab Assistant','Asst. Lecturer'=>'Asst. Lecturer'),
                 'empty_value'=> 'Select a post'
             ))
-            ->add('deptName')
-            ->add('qualification')
+            ->add('deptName','entity',array(
+                'class'=>'ABCRspBundle:Department',
+                'property'=>'name',
+                'label'=>'Department',
+                'empty_value'=> 'Select a Department'
+            ))
+            ->add('qualification',"textarea",array(
+                'required'=>'false',
+                'max_length'=>300,
+                'attr'=>array(
+                    'placeholder'=>'Enter your qualification here'  
+                )
+            ))
          //   ->add('session')
         ;
     }

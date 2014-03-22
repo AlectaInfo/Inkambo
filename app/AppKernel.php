@@ -16,12 +16,16 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new ABC\ApplicantBundle\ABCApplicantBundle(),
+            new ABC\ApplicationBundle\ABCApplicationBundle(),
             new ABC\RspBundle\ABCRspBundle(),
             new ABC\StyleBundle\ABCStyleBundle(),
             new ABC\Admin\CourseAdminBundle\ABCAdminCourseAdminBundle(),
             new ABC\Admin\ResourceAdminBundle\ABCAdminResourceAdminBundle(),
+<<<<<<< HEAD
             new ABC\HomeBundle\ABCHomeBundle(),
+=======
+            new ABC\CourseBundle\ABCCourseBundle(),
+>>>>>>> branch 'master' of https://github.com/AlectaInfo/Inkambo.git
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -416,4 +416,32 @@ class Applicant
     {
         return $this->status;
     }
+    /**
+     * @var string
+     */
+    private $qualification;
+
+
+    /**
+     * Set qualification
+     *
+     * @param string $qualification
+     * @return Applicant
+     */
+    public function setQualification($qualification)
+    {
+        $this->qualification = $qualification;
+    
+        return $this;
+    }
+
+    /**
+     * Get qualification
+     *
+     * @return string 
+     */
+    public function getQualification()
+    {
+        return $this->qualification;
+    }
 }
