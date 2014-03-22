@@ -39,32 +39,6 @@
       }
 
     </style>
-    <script type="text/javascript">
-
-/*
-Block multiple form submission script- By JavaScriptKit.com
-Visit http://www.javascriptkit.com for this script and more
-This notice must stay intact for use
-*/
-
-//Enter error message to display if submit button has been pressed multiple times below.
-//Delete below line if you don't want a message displayed:
-
-var formerrormsg="You\'ve attempted to submit the form multiple times.\n Please reload page if you need to resubmit form.";
-
-function checksubmit(submitbtn){
-submitbtn.form.submit();
-checksubmit=blocksubmit;
-return false;
-}
-
-function blocksubmit(){
-if (typeof formerrormsg!== "undefined")
-alert(formerrormsg);
-return false;
-}
-
-</script>
 {% endblock%}    
 </head>
 
@@ -73,7 +47,7 @@ return false;
         {% block container %}    
         {{ form(form)}}
         
-         <a href="{{ path('rsp') }}" style="float: right;text-decoration: none">
+         <a href="{{ path('application') }}" style="float: right;text-decoration: none">
             Back to the list
         </a> 
         {% endblock %}        
