@@ -11,7 +11,7 @@ application_new:
     defaults: { _controller: ABCApplicationBundle:Application:new }
 
 application_newC:
-    pattern:  /newC
+    pattern:  /newC/{courseId}
     defaults: { _controller: ABCApplicationBundle:Application:newGivenCourse }
     
 application_create:
@@ -36,3 +36,4 @@ application_delete:
     pattern: /delete/{id}
     defaults: { _controller: ABCApplicationBundle:Application:delete}
     requirements: { _method: post|delete }
+
