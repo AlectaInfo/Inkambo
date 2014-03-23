@@ -22,9 +22,8 @@ class AppKernel extends Kernel
             new ABC\Admin\CourseAdminBundle\ABCAdminCourseAdminBundle(),
             new ABC\Admin\ResourceAdminBundle\ABCAdminResourceAdminBundle(),
             new ABC\HomeBundle\ABCHomeBundle(),
-            new ABC\CourseBundle\ABCCourseBundle(),       
             new ABC\RatingBundle\ABCRatingBundle(),
-
+            new ABC\CourseBundle\ABCCourseBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
