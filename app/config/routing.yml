@@ -2,10 +2,6 @@ abc_home:
     resource: "@ABCHomeBundle/Resources/config/routing.yml"
     prefix:   /
 
-
-
-
-
 abc_course:
     resource: "@ABCCourseBundle/Resources/config/routing.yml"
     prefix:   /course
@@ -37,4 +33,8 @@ abc_admin_resource_admin_department:
 abc_rating:
     resource: "@ABCRatingBundle/Resources/config/routing.yml"
     prefix:   /rating
+    
+abc_admin_resource_admin_class:
+        resource: "@ABCAdminResourceAdminBundle/Resources/config/routing/class.yml"
+        prefix:   /resourceAdmin/class    
 

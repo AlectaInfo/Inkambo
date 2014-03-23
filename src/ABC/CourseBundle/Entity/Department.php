@@ -1,6 +1,6 @@
 <?php
 
-namespace ABC\Admin\ResourceAdminBundle\Entity;
+namespace ABC\CourseBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 

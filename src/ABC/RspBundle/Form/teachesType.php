@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class ResourcepersonType extends AbstractType
+class teachesType extends AbstractType
 {
         /**
      * @param FormBuilderInterface $builder
@@ -87,6 +87,6 @@ class ResourcepersonType extends AbstractType
      */
     public function getName()
     {
-        return 'abc_rspbundle_resourceperson';
+        return 'abc_rspbundle_teaches';
     }
 }

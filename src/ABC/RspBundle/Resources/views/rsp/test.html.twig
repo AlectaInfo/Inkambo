@@ -1,0 +1,15 @@
+{# empty Twig template #}
+
+Hello test page
+<br>
+
+SIZE: {{size}}
+<br>
+name1 : {{name1}}<br>
+name2 : {{name2}}
+{%if courses is defined%}
+<h3>Courses :</h3> 
+    {%for course in courses%}
+        {{course.title}}<br>
+    {%endfor%}    
+{%endif%}
