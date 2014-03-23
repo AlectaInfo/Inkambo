@@ -1,0 +1,7 @@
+parameters:
+#    abc_rating.example.class: ABC\RatingBundle\Example
+
+services:
+#    abc_rating.example:
+#        class: %abc_rating.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
