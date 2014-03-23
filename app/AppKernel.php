@@ -21,11 +21,8 @@ class AppKernel extends Kernel
             new ABC\StyleBundle\ABCStyleBundle(),
             new ABC\Admin\CourseAdminBundle\ABCAdminCourseAdminBundle(),
             new ABC\Admin\ResourceAdminBundle\ABCAdminResourceAdminBundle(),
-<<<<<<< HEAD
-            new ABC\HomeBundle\ABCHomeBundle(),
-=======
             new ABC\CourseBundle\ABCCourseBundle(),
->>>>>>> branch 'master' of https://github.com/AlectaInfo/Inkambo.git
+            new ABC\HomeBundle\ABCHomeBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
