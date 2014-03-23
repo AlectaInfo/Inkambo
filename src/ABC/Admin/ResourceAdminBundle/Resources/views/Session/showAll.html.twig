@@ -48,23 +48,31 @@
     <body style="margin-top:100px">
         <div style="float:left;margin:auto auto 50px 50px;border:2px solid; border-color:#000000;border-radius:10%;width:300px ">
             <ul>
-                <li><a href="{{path('class_new')}}">Add Classroom</a></li> 
+                <li><a href="{{path('session_new')}}">Add Session</a></li> 
             </ul>    
         </div>
             
          <div style="float:right;margin:auto 50px 50px auto;border:2px solid; border-color: #0e90d2;border-radius:10%;width:auto">
-                Total Classrooms : {{ total }}
+                Total Sessions Assigned : {{ total }}
          </div>    
         {%for entity in entities%}
            <div class="list">
              <p style="font-size:12px"> 
-                 <strong>{{entity.classId}} </strong>  <span class="linespace">|</span> 
-             <strong> Capacity: {{entity.capacity}} </strong>   <br>
+                 <strong>{{entity.sessionId}} </strong>  <span class="linespace">|</span> 
+             <strong> Year: {{entity.year}} </strong>  <span class="linespace">|</span>
+             <strong> </strong>
+            
+             <br>
               </p>
              
 
-           <form action="{{path('class_delete',{ 'id':entity.classId })}}" method="POST" style="">
-                    <input name="name" type="hidden" value="{{entity.classId}}">    
+           <form action="{{path('session_delete',{ 'id':entity.sessionId })}}" method="POST" style="">
+                    <input name="sessionId" type="hidden" value="{{entity.sessionId}}"> 
+                    <input name="year" type="hidden" value="{{entity.year}}"> 
+                    <input name="startmonth" type="hidden" value="{{entity.startMonth}}"> 
+                    <input name="classId" type="hidden" value="{{entity.class}}"> 
+                    <input name="timeslot" type="hidden" value="{{entity.timeslot}}">
+                    <input name="course" type="hidden" value="{{entity.course}}"> 
                     <input type="submit" value="Delete" class="deleteButton">
              </form>
             

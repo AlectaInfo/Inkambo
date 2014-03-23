@@ -2,7 +2,6 @@
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
   <entity name="ABC\Admin\ResourceAdminBundle\Entity\Timeslot" table="timeslot">
     <id name="timeslotId" type="string" column="timeslot_id" length="3">
-      <generator strategy="IDENTITY"/>
     </id>
     <field name="day" type="string" column="day" length="8" nullable="true"/>
     <field name="start" type="time" column="start" nullable="true"/>

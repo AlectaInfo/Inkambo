@@ -3,13 +3,13 @@
 {% block container%}
          
         {{form_start(form)}} 
-         <h3 style="color: #0088cc; text-align: center">Add Classroom</h3><br>
+         <h3 style="color: #0088cc; text-align: center">Add Session</h3><br>
         {{form_errors(form)}}
         {{ form(form)}}
         {{form_rest(form)}}
         <ul class="record_actions">
          <li>
-         <a href="{{ path('class_showAll') }}">
+         <a href="{{ path('session_showAll') }}">
             Back to the list
         </a>       
              </li>  
