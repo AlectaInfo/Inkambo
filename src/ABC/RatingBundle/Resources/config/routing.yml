@@ -5,3 +5,8 @@ abc_rating_homepage:
 rating_rate:
     pattern:  /{appId}
     defaults: { _controller: ABCRatingBundle:Rating:rate }
+
+rating_update:
+    pattern: /update/{appId}
+    defaults: { _controller: ABCRatingBundle:Rating:update}
+    requirements: { _method: post|put }

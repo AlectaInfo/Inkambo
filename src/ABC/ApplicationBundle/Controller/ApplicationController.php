@@ -115,6 +115,7 @@ class ApplicationController extends Controller
     }
     
     public function deleteAction(Request $request,$id){
+        
         $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
         
@@ -171,7 +172,7 @@ class ApplicationController extends Controller
             return $this->redirect($this->generateUrl('application_show', array('id' => $id)));
         }
 
-        return $this->render('ABCApplicationBundle:Course:edit.html.twig', array(
+        return $this->render('ABCApplicationBundle:Application:edit.html.twig', array(
             'applicant'      => $applicant,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

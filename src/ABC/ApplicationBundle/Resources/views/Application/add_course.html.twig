@@ -5,8 +5,10 @@
 <h1>Application Form</h1>
 <br>
         Course: {{ applicant.course }}
+        
         {{ form_start(form) }}
         {{ form_errors(form) }}
+        <br>
         {{ form_row(form.course) }}
         {{ form_row(form.nic) }}
         {{ form_row(form.firstname) }}
@@ -15,6 +17,16 @@
         {{ form_row(form.email) }}
         {{ form_row(form.address) }}
         {{ form_row(form.phone) }}
+        Please add your preferences on the date of the classes.
+        <br>
+        {{ form_row(form.timeslot1, {
+            'label': 'Preference 1'
+            })
+        }} 
+        {{ form_row(form.timeslot2, {
+            'label': 'Preference 2'
+            })
+        }}        
         
         {{ form_rest(form) }}
 

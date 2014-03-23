@@ -9,6 +9,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Applicant
 {
+    private $c1, $c2, $c3, $c4, $c5;
+
+
     /**
      * @var \DateTime
      */
@@ -500,4 +503,46 @@ class Applicant
     {
         return $this->course;
     }
+    
+    public function getC1() {
+        return $this->c1;
+    }
+
+    public function getC2() {
+        return $this->c2;
+    }
+
+    public function getC3() {
+        return $this->c3;
+    }
+
+    public function getC4() {
+        return $this->c4;
+    }
+
+    public function getC5() {
+        return $this->c5;
+    }
+
+    public function setC1($c1) {
+        $this->c1 = $c1;
+    }
+
+    public function setC2($c2) {
+        $this->c2 = $c2;
+    }
+
+    public function setC3($c3) {
+        $this->c3 = $c3;
+    }
+
+    public function setC4($c4) {
+        $this->c4 = $c4;
+    }
+
+    public function setC5($c5) {
+        $this->c5 = $c5;
+    }
+
+
 }
