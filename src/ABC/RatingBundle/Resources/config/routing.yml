@@ -1,0 +1,7 @@
+abc_rating_homepage:
+    pattern:  /
+    defaults: { _controller: ABCRatingBundle:Rating:index }
+    
+rating_rate:
+    pattern:  /{appId}
+    defaults: { _controller: ABCRatingBundle:Rating:rate }

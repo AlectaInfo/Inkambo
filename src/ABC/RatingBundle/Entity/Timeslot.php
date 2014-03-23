@@ -1,6 +1,6 @@
 <?php
 
-namespace ABC\ApplicationBundle\Entity;
+namespace ABC\RatingBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -107,11 +107,5 @@ class Timeslot
     public function getTimeslotId()
     {
         return $this->timeslotId;
-    }
-    
-    public function getDetail() {
-        $d1 = $this->getStart()->format('H:i');
-        $d2 = $this->getFinish()->format('H:i');
-        return $this->getDay()."- ".$d1." - ".$d2;
     }
 }

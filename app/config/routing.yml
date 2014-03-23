@@ -34,3 +34,7 @@ abc_admin_resource_admin_department:
         resource: "@ABCAdminResourceAdminBundle/Resources/config/routing/department.yml"
         prefix:   /resourceAdmin/department
 
+abc_rating:
+    resource: "@ABCRatingBundle/Resources/config/routing.yml"
+    prefix:   /rating
+

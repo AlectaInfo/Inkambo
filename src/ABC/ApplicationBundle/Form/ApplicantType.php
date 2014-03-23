@@ -35,12 +35,12 @@ class ApplicantType extends AbstractType
             ->add('timeslot1', 'entity',
                     array(
                         'class'=>'ABC\ApplicationBundle\Entity\Timeslot',
-                        'property'=>'day'
+                        'property'=>'detail'
                     ))
             ->add('timeslot2', 'entity',
                     array(
                         'class'=>'ABC\ApplicationBundle\Entity\Timeslot',
-                        'property'=>'day'
+                        'property'=>'detail'
                     ))
         ;
                     
