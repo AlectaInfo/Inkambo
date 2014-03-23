@@ -15,7 +15,15 @@ class ClassroomType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('capacity')
+            ->add('classID','text',array(
+                'pattern'=>'[A-Z0-9]+{3}',
+                'max_length'=>4,
+                'label'=>'Class ID'
+            ))    
+            ->add('capacity','text',array(
+                'pattern'=>'[0-9]+{3}',
+                'max_length'=>3
+            ))
         ;
     }
     

@@ -1,26 +1,26 @@
 class_showAll:
     pattern:  /
-    defaults: { _controller: "ABCAdminResourceAdminBundle:Class:index" }
+    defaults: { _controller: "ABCAdminResourceAdminBundle:Classroom:index" }
 
 class_new:
     pattern:  /new
-    defaults: { _controller: "ABCAdminResourceAdminBundle:Class:new" }
+    defaults: { _controller: "ABCAdminResourceAdminBundle:Classroom:new" }
 
 class_create:
     pattern:  /create
-    defaults: { _controller: "ABCAdminResourceAdminBundle:Class:create" }
+    defaults: { _controller: "ABCAdminResourceAdminBundle:Classroom:create" }
     requirements: { _method: post }
 
 #class_edit:
 #    pattern:  /{id}/edit
-#    defaults: { _controller: "ABCAdminResourceAdminBundle:Class:edit" }
+#    defaults: { _controller: "ABCAdminResourceAdminBundle:Classroom:edit" }
 #
 #class_update:
 #    pattern:  /{id}/update
-#    defaults: { _controller: "ABCAdminResourceAdminBundle:Class:update" }
+#    defaults: { _controller: "ABCAdminResourceAdminBundle:Classroom:update" }
 #    requirements: { _method: post|put }
 
 class_delete:
     pattern:  /{id}/delete
-    defaults: { _controller: "ABCAdminResourceAdminBundle:Class:delete" }
+    defaults: { _controller: "ABCAdminResourceAdminBundle:Classroom:delete" }
     requirements: { _method: post|delete }

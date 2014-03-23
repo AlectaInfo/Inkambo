@@ -48,23 +48,26 @@
     <body style="margin-top:100px">
         <div style="float:left;margin:auto auto 50px 50px;border:2px solid; border-color:#000000;border-radius:10%;width:300px ">
             <ul>
-                <li><a href="{{path('class_new')}}">Add Classroom</a></li> 
+                <li><a href="{{path('timeslot_new')}}">Add Timeslot</a></li> 
             </ul>    
         </div>
             
          <div style="float:right;margin:auto 50px 50px auto;border:2px solid; border-color: #0e90d2;border-radius:10%;width:auto">
-                Total Classrooms : {{ total }}
+                Total Timeslots Assigned : {{ total }}
          </div>    
         {%for entity in entities%}
            <div class="list">
              <p style="font-size:12px"> 
-                 <strong>{{entity.classId}} </strong>  <span class="linespace">|</span> 
-             <strong> Capacity: {{entity.capacity}} </strong>   <br>
+                 <strong>{{entity.timeslotId}} </strong>  <span class="linespace">|</span> 
+             <strong> Day: {{entity.day}} </strong>  <span class="linespace">|</span>
+             <strong> Time: {{entity.classTime}}</strong>
+            
+             <br>
               </p>
              
 
-           <form action="{{path('class_delete',{ 'id':entity.classId })}}" method="POST" style="">
-                    <input name="name" type="hidden" value="{{entity.classId}}">    
+           <form action="{{path('timeslot_delete',{ 'id':entity.timeslotId })}}" method="POST" style="">
+                    <input name="name" type="hidden" value="{{entity.timeslotId}}">    
                     <input type="submit" value="Delete" class="deleteButton">
              </form>
             
