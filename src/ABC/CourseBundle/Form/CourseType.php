@@ -15,19 +15,10 @@ class CourseType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
                 ->add('Title', 'text')
-                ->add('CourseId', 'text',array(
-                    'max_length'=>6,
-                    'pattern'=>'[A-Z0-9]{6}'
-                ))
+                ->add('CourseId', 'text')
                 ->add('Duration', 'number')
                 ->add('Fee', 'number')
-                ->add('deptName', 'entity',array(
-                    'label'=>"Department",
-                    'class'=> 'ABCCourseBundle:Department',
-                    'property'=>'name',
-                    'empty_value'=>'select department'
-
-                ))
+                ->add('deptName', 'text')
                 ->add('description', 'text')
                // ->add('leaflet', 'file')
            
