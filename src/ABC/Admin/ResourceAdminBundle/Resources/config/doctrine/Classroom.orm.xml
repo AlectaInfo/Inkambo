@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="ABC\RspBundle\Entity\Login" table="login">
-    <id name="username" type="string" column="username" length="30">
+  <entity name="ABC\Admin\ResourceAdminBundle\Entity\Classroom" table="classroom">
+    <id name="classId" type="string" column="class_id" length="4">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="password" type="string" column="password" length="60" nullable="false"/>
-    <field name="salt" type="string" column="salt" length="60" nullable="false"/>
-    <field name="type" type="string" column="type" length="20" nullable="true"/>
+    <field name="capacity" type="integer" column="capacity" nullable="true"/>
   </entity>
 </doctrine-mapping>

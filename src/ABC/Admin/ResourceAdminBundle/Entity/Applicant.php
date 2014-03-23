@@ -1,6 +1,6 @@
 <?php
 
-namespace ABC\RspBundle\Entity;
+namespace ABC\Admin\ResourceAdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -9,6 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Applicant
 {
+    /**
+     * @var \DateTime
+     */
+    private $submitdate;
+
     /**
      * @var string
      */
@@ -37,7 +42,17 @@ class Applicant
     /**
      * @var string
      */
+    private $gender;
+
+    /**
+     * @var string
+     */
     private $email;
+
+    /**
+     * @var string
+     */
+    private $qualification;
 
     /**
      * @var string
@@ -47,23 +62,56 @@ class Applicant
     /**
      * @var integer
      */
+    private $rating;
+
+    /**
+     * @var string
+     */
+    private $status;
+
+    /**
+     * @var integer
+     */
     private $appId;
 
     /**
-     * @var \ABC\RspBundle\Entity\Timeslot
+     * @var \ABC\Admin\ResourceAdminBundle\Entity\Timeslot
      */
     private $timeslot2;
 
     /**
-     * @var \ABC\RspBundle\Entity\Timeslot
+     * @var \ABC\Admin\ResourceAdminBundle\Entity\Timeslot
      */
     private $timeslot1;
 
     /**
-     * @var \ABC\RspBundle\Entity\Course
+     * @var \ABC\Admin\ResourceAdminBundle\Entity\Course
      */
     private $course;
 
+
+    /**
+     * Set submitdate
+     *
+     * @param \DateTime $submitdate
+     * @return Applicant
+     */
+    public function setSubmitdate($submitdate)
+    {
+        $this->submitdate = $submitdate;
+    
+        return $this;
+    }
+
+    /**
+     * Get submitdate
+     *
+     * @return \DateTime 
+     */
+    public function getSubmitdate()
+    {
+        return $this->submitdate;
+    }
 
     /**
      * Set nic
@@ -181,6 +229,29 @@ class Applicant
     }
 
     /**
+     * Set gender
+     *
+     * @param string $gender
+     * @return Applicant
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return string 
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
      * Set email
      *
      * @param string $email
@@ -204,6 +275,29 @@ class Applicant
     }
 
     /**
+     * Set qualification
+     *
+     * @param string $qualification
+     * @return Applicant
+     */
+    public function setQualification($qualification)
+    {
+        $this->qualification = $qualification;
+    
+        return $this;
+    }
+
+    /**
+     * Get qualification
+     *
+     * @return string 
+     */
+    public function getQualification()
+    {
+        return $this->qualification;
+    }
+
+    /**
      * Set certificates
      *
      * @param string $certificates
@@ -224,151 +318,6 @@ class Applicant
     public function getCertificates()
     {
         return $this->certificates;
-    }
-
-    /**
-     * Get appId
-     *
-     * @return integer 
-     */
-    public function getAppId()
-    {
-        return $this->appId;
-    }
-
-    /**
-     * Set timeslot2
-     *
-     * @param \ABC\RspBundle\Entity\Timeslot $timeslot2
-     * @return Applicant
-     */
-    public function setTimeslot2(\ABC\RspBundle\Entity\Timeslot $timeslot2 = null)
-    {
-        $this->timeslot2 = $timeslot2;
-    
-        return $this;
-    }
-
-    /**
-     * Get timeslot2
-     *
-     * @return \ABC\RspBundle\Entity\Timeslot 
-     */
-    public function getTimeslot2()
-    {
-        return $this->timeslot2;
-    }
-
-    /**
-     * Set timeslot1
-     *
-     * @param \ABC\RspBundle\Entity\Timeslot $timeslot1
-     * @return Applicant
-     */
-    public function setTimeslot1(\ABC\RspBundle\Entity\Timeslot $timeslot1 = null)
-    {
-        $this->timeslot1 = $timeslot1;
-    
-        return $this;
-    }
-
-    /**
-     * Get timeslot1
-     *
-     * @return \ABC\RspBundle\Entity\Timeslot 
-     */
-    public function getTimeslot1()
-    {
-        return $this->timeslot1;
-    }
-
-    /**
-     * Set course
-     *
-     * @param \ABC\RspBundle\Entity\Course $course
-     * @return Applicant
-     */
-    public function setCourse(\ABC\RspBundle\Entity\Course $course = null)
-    {
-        $this->course = $course;
-    
-        return $this;
-    }
-
-    /**
-     * Get course
-     *
-     * @return \ABC\RspBundle\Entity\Course 
-     */
-    public function getCourse()
-    {
-        return $this->course;
-    }
-    /**
-     * @var \DateTime
-     */
-    private $submitdate;
-
-    /**
-     * @var string
-     */
-    private $gender;
-
-    /**
-     * @var integer
-     */
-    private $rating;
-
-    /**
-     * @var string
-     */
-    private $status;
-
-
-    /**
-     * Set submitdate
-     *
-     * @param \DateTime $submitdate
-     * @return Applicant
-     */
-    public function setSubmitdate($submitdate)
-    {
-        $this->submitdate = $submitdate;
-    
-        return $this;
-    }
-
-    /**
-     * Get submitdate
-     *
-     * @return \DateTime 
-     */
-    public function getSubmitdate()
-    {
-        return $this->submitdate;
-    }
-
-    /**
-     * Set gender
-     *
-     * @param string $gender
-     * @return Applicant
-     */
-    public function setGender($gender)
-    {
-        $this->gender = $gender;
-    
-        return $this;
-    }
-
-    /**
-     * Get gender
-     *
-     * @return string 
-     */
-    public function getGender()
-    {
-        return $this->gender;
     }
 
     /**
@@ -416,33 +365,84 @@ class Applicant
     {
         return $this->status;
     }
-    /**
-     * @var string
-     */
-    private $qualification;
-
 
     /**
-     * Set qualification
+     * Get appId
      *
-     * @param string $qualification
+     * @return integer 
+     */
+    public function getAppId()
+    {
+        return $this->appId;
+    }
+
+    /**
+     * Set timeslot2
+     *
+     * @param \ABC\Admin\ResourceAdminBundle\Entity\Timeslot $timeslot2
      * @return Applicant
      */
-    public function setQualification($qualification)
+    public function setTimeslot2(\ABC\Admin\ResourceAdminBundle\Entity\Timeslot $timeslot2 = null)
     {
-        $this->qualification = $qualification;
+        $this->timeslot2 = $timeslot2;
     
         return $this;
     }
 
     /**
-     * Get qualification
+     * Get timeslot2
      *
-     * @return string 
+     * @return \ABC\Admin\ResourceAdminBundle\Entity\Timeslot 
      */
-    public function getQualification()
+    public function getTimeslot2()
     {
-        return $this->qualification;
+        return $this->timeslot2;
+    }
+
+    /**
+     * Set timeslot1
+     *
+     * @param \ABC\Admin\ResourceAdminBundle\Entity\Timeslot $timeslot1
+     * @return Applicant
+     */
+    public function setTimeslot1(\ABC\Admin\ResourceAdminBundle\Entity\Timeslot $timeslot1 = null)
+    {
+        $this->timeslot1 = $timeslot1;
+    
+        return $this;
+    }
+
+    /**
+     * Get timeslot1
+     *
+     * @return \ABC\Admin\ResourceAdminBundle\Entity\Timeslot 
+     */
+    public function getTimeslot1()
+    {
+        return $this->timeslot1;
+    }
+
+    /**
+     * Set course
+     *
+     * @param \ABC\Admin\ResourceAdminBundle\Entity\Course $course
+     * @return Applicant
+     */
+    public function setCourse(\ABC\Admin\ResourceAdminBundle\Entity\Course $course = null)
+    {
+        $this->course = $course;
+    
+        return $this;
+    }
+
+    /**
+     * Get course
+     *
+     * @return \ABC\Admin\ResourceAdminBundle\Entity\Course 
+     */
+    public function getCourse()
+    {
+        return $this->course;
     }
     /**
      * @var \DateTime

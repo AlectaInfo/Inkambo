@@ -1,6 +1,6 @@
 <?php
 
-namespace ABC\RspBundle\Entity;
+namespace ABC\Admin\ResourceAdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
