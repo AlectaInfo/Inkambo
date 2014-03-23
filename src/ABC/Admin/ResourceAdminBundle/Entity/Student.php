@@ -1,6 +1,6 @@
 <?php
 
-namespace ABC\RspBundle\Entity;
+namespace ABC\Admin\ResourceAdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -23,6 +23,11 @@ class Student
      * @var string
      */
     private $lastname;
+
+    /**
+     * @var string
+     */
+    private $gender;
 
     /**
      * @var string
@@ -115,6 +120,29 @@ class Student
     }
 
     /**
+     * Set gender
+     *
+     * @param string $gender
+     * @return Student
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return string 
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
      * Set email
      *
      * @param string $email
@@ -191,34 +219,6 @@ class Student
     public function getStudentId()
     {
         return $this->studentId;
-    }
-    /**
-     * @var string
-     */
-    private $gender;
-
-
-    /**
-     * Set gender
-     *
-     * @param string $gender
-     * @return Student
-     */
-    public function setGender($gender)
-    {
-        $this->gender = $gender;
-    
-        return $this;
-    }
-
-    /**
-     * Get gender
-     *
-     * @return string 
-     */
-    public function getGender()
-    {
-        return $this->gender;
     }
     /**
      * @var string

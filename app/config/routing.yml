@@ -2,10 +2,6 @@ abc_home:
     resource: "@ABCHomeBundle/Resources/config/routing.yml"
     prefix:   /
 
-
-
-
-
 abc_course:
     resource: "@ABCCourseBundle/Resources/config/routing.yml"
     prefix:   /course
