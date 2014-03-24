@@ -95,8 +95,9 @@ class Timeslot
      * @return \DateTime 
      */
     public function getFinish()
-    {
-        return $this->finish;
+    {   
+         return $this->finish;
+        
     }
 
     /**
@@ -106,6 +107,30 @@ class Timeslot
      */
     public function getTimeslotId()
     {
+        
         return $this->timeslotId;
+    }
+
+    /**
+     * Set timeslotId
+     *
+     * @param string $timeslotId
+     * @return Timeslot
+     */
+    public function setTimeslotId($timeslotId)
+    {
+        $this->timeslotId = $timeslotId;
+        
+        return $this;
+    }
+    
+    public function __toString() {
+        return $this->getTimeslotId();
+    }
+
+    public function getClassTime(){
+         $d1 = $this->getStart()->format('H:i');
+         $d2 = $this->getFinish()->format('H:i');
+         return $d1."-".$d2;
     }
 }

@@ -1,0 +1,26 @@
+session_showAll:
+    pattern:  /
+    defaults: { _controller: "ABCAdminResourceAdminBundle:Session:index" }
+
+session_new:
+    pattern:  /new
+    defaults: { _controller: "ABCAdminResourceAdminBundle:Session:new" }
+
+session_create:
+    pattern:  /create
+    defaults: { _controller: "ABCAdminResourceAdminBundle:Session:create" }
+    requirements: { _method: post }
+
+#session_edit:
+#    pattern:  /{id}/edit
+#    defaults: { _controller: "ABCAdminResourceAdminBundle:Session:edit" }
+#
+#session_update:
+#    pattern:  /{id}/update
+#    defaults: { _controller: "ABCAdminResourceAdminBundle:Session:update" }
+#    requirements: { _method: post|put }
+
+session_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ABCAdminResourceAdminBundle:Session:delete" }
+    requirements: { _method: post|delete }
