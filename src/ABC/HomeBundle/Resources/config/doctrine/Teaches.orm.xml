@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ABC\HomeBundle\Entity\Teaches" table="teaches">
+    <indexes>
+      <index name="course_id" columns="course_id"/>
+      <index name="session_id" columns="session_id"/>
+      <index name="IDX_C7F19643B70FF80C" columns="rp_id"/>
+    </indexes>
+    <id name="rp" association-key="true"/>
+    <id name="session" association-key="true"/>
+    <one-to-one field="rp" target-entity="Resourceperson">
+      <join-columns>
+        <join-column name="rp_id" referenced-column-name="rp_id"/>
+      </join-columns>
+    </one-to-one>
+    <one-to-one field="session" target-entity="Session">
+      <join-columns>
+        <join-column name="session_id" referenced-column-name="session_id"/>
+      </join-columns>
+    </one-to-one>
+    <many-to-one field="course" target-entity="Course">
+      <join-columns>
+        <join-column name="course_id" referenced-column-name="course_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

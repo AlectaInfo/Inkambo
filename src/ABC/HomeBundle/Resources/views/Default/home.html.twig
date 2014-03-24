@@ -21,10 +21,10 @@
     <body>
         <div class="container">
             <header class="clearfix">
-                        <section>
-                            <h2>ABC School</h2>
-                            <button id="trigger-overlay" type="button">Login</button>
-                        </section>
+                <section>
+                    <h2>ABC School</h2>
+                    <button id="trigger-overlay" type="button">Login</button>
+                </section>
                 <h1>Inkambo</h1>
 
             </header>	
@@ -33,25 +33,16 @@
                     <div class="cbp-hsinner">
                         <ul class="cbp-hsmenu">
                             <li>
-                                <a href="#">Lovely Spirits</a>
-                                <ul class="cbp-hssubmenu">
-
-                                </ul>
+                                <a href="#">Home</a>
                             </li>
                             <li>
-                                <a href="#">Delicious Beverages</a>
-                                <ul class="cbp-hssubmenu cbp-hssub-rows">
-
-                                </ul>
+                                <a href="#">Courses</a>
                             </li>
                             <li>
-                                <a href="#">Fine Liquors</a>
-                                <ul class="cbp-hssubmenu">
-
-                                </ul>
+                                <a href="#">Instructors</a>
                             </li>
-                            <li><a href="#">Our Mission</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Register for Course</a></li>
+                            <li><a href="#">Contact Us</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -64,9 +55,19 @@
             <button type="button" class="overlay-close">Close</button>
             <nav>
                 <ul>
-                    <div class="abc">
-                        <li><a href="#">Username</a></li>
-                        <li><a href="#">Password</a></li>
+                    <div class="container">
+
+                        <form class="form-signin" method="POST" action="{{path('abc_home_homepage')}}">
+                            <br><br><br><br>
+                            <h2 class="form-signin-heading">Please sign in</h2>
+                            <input type="text" class="input-block-level" name="Username" placeholder="Username">
+                            <input type="password" class="input-block-level" name="Password" placeholder="Password">
+                            <label class="checkbox">
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                            <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+                        </form>
+
                     </div>
                 </ul>
             </nav>
