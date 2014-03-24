@@ -38,3 +38,7 @@ abc_admin_resource_admin_class:
         resource: "@ABCAdminResourceAdminBundle/Resources/config/routing/class.yml"
         prefix:   /resourceAdmin/class    
 
+abc_contact_us:
+    resource: "@ABCContactUsBundle/Resources/config/routing.yml"
+    prefix:   /contact
+

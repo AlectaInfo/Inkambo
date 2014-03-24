@@ -4,8 +4,6 @@ namespace ABC\RatingBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use ABC\RatingBundle\Entity\Applicant;
-use ABC\RatingBundle\Form\ApplicantType;
 
 class RatingController extends Controller
 {
