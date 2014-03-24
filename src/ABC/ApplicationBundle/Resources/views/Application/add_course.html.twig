@@ -2,7 +2,7 @@
 
 {% block container%}
         
-<h1>Application Form</h1>
+<h2>Step 1: Application Form</h2>
 <br>
         Course: {{ applicant.course }}
         
@@ -17,18 +17,8 @@
         {{ form_row(form.email) }}
         {{ form_row(form.address) }}
         {{ form_row(form.phone) }}
-        Please add your preferences on the date of the classes.
-        <br>
-        {{ form_row(form.timeslot1, {
-            'label': 'Preference 1'
-            })
-        }} 
-        {{ form_row(form.timeslot2, {
-            'label': 'Preference 2'
-            })
-        }}        
         
-        {{ form_rest(form) }}
+        {{ form_widget(form.submit) }}
 
         <ul class="record_actions">
          <li>

@@ -47,9 +47,12 @@ abc_admin_resource_admin_timeslot:
 #resource admin - Session   
 abc_admin_resource_admin_session:
         resource: "@ABCAdminResourceAdminBundle/Resources/config/routing/session.yml"
-        prefix:   /resourceAdmin/session         
+        prefix:   /resourceAdmin/session
 
-abc_contact_us:
-    resource: "@ABCContactUsBundle/Resources/config/routing.yml"
+abc_home_contact:
+    resource: "@ABCHomeBundle/Resources/config/Contact/routing.yml"
     prefix:   /contact
-
+    
+abc_admin_course_admin_selection:
+        resource: "@ABCAdminCourseAdminBundle/Resources/config/routing.yml"
+        prefix:   /courseAdmin/selection

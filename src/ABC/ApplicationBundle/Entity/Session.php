@@ -25,11 +25,6 @@ class Session
     private $startMonth;
 
     /**
-     * @var \ABC\ApplicationBundle\Entity\Course
-     */
-    private $course;
-
-    /**
      * @var \ABC\ApplicationBundle\Entity\Classroom
      */
     private $class;
@@ -40,17 +35,10 @@ class Session
     private $timeslot;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var \ABC\ApplicationBundle\Entity\Course
      */
-    private $rp;
+    private $course;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->rp = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Set sessionId
@@ -122,35 +110,12 @@ class Session
     }
 
     /**
-     * Set course
-     *
-     * @param \ABC\ApplicationBundle\Entity\Course $course
-     * @return Session
-     */
-    public function setCourse(\ABC\ApplicationBundle\Entity\Course $course)
-    {
-        $this->course = $course;
-
-        return $this;
-    }
-
-    /**
-     * Get course
-     *
-     * @return \ABC\ApplicationBundle\Entity\Course 
-     */
-    public function getCourse()
-    {
-        return $this->course;
-    }
-
-    /**
      * Set class
      *
      * @param \ABC\ApplicationBundle\Entity\Classroom $class
      * @return Session
      */
-    public function setClass(\ABC\ApplicationBundle\Entity\Classroom $class = null)
+    public function setClass(\ABC\ApplicationBundle\Entity\Classroom $class)
     {
         $this->class = $class;
 
@@ -173,7 +138,7 @@ class Session
      * @param \ABC\ApplicationBundle\Entity\Timeslot $timeslot
      * @return Session
      */
-    public function setTimeslot(\ABC\ApplicationBundle\Entity\Timeslot $timeslot = null)
+    public function setTimeslot(\ABC\ApplicationBundle\Entity\Timeslot $timeslot)
     {
         $this->timeslot = $timeslot;
 
@@ -191,35 +156,25 @@ class Session
     }
 
     /**
-     * Add rp
+     * Set course
      *
-     * @param \ABC\ApplicationBundle\Entity\Resourceperson $rp
+     * @param \ABC\ApplicationBundle\Entity\Course $course
      * @return Session
      */
-    public function addRp(\ABC\ApplicationBundle\Entity\Resourceperson $rp)
+    public function setCourse(\ABC\ApplicationBundle\Entity\Course $course)
     {
-        $this->rp[] = $rp;
+        $this->course = $course;
 
         return $this;
     }
 
     /**
-     * Remove rp
+     * Get course
      *
-     * @param \ABC\ApplicationBundle\Entity\Resourceperson $rp
+     * @return \ABC\ApplicationBundle\Entity\Course 
      */
-    public function removeRp(\ABC\ApplicationBundle\Entity\Resourceperson $rp)
+    public function getCourse()
     {
-        $this->rp->removeElement($rp);
-    }
-
-    /**
-     * Get rp
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getRp()
-    {
-        return $this->rp;
+        return $this->course;
     }
 }

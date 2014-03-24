@@ -11,5 +11,6 @@
     <field name="email" type="string" column="email" length="50" nullable="true"/>
     <field name="phone" type="string" column="phone" length="10" nullable="true"/>
     <field name="address" type="string" column="address" length="100" nullable="true"/>
+    <field name="currentoccuption" type="string" column="currentOccuption" length="100" nullable="true"/>
   </entity>
 </doctrine-mapping>

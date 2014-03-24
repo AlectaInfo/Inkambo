@@ -1,0 +1,32 @@
+{% extends "ABCStyleBundle:Templates:TwitterFormTemplate.html.twig"%}
+
+{% block container%}
+    
+<h2>Step 2: Application Form</h2>
+<br>    
+<form action="{{path('application_pref_update')}}" method="POST">
+    
+    <input type="hidden" name="appId" value="{{applicant.appId}}">
+        Please add your preferences on the date of the classes.
+        <br><br>
+        Preference 1:
+        <br>
+        <select name="p1">
+        {% for t in timeslots %}
+            <option value="{{t.timeslotId}}">{{ t.detail }}</option>
+            <br>
+        {% endfor %}
+        </select>
+        <br>
+        Preference 2:
+        <br>
+        <select name="p2">
+        {% for t in timeslots %}
+            <option value="{{t.timeslotId}}">{{ t.detail }}</option>
+            <br>
+        {% endfor %}
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+</form>    
+{% endblock %}      

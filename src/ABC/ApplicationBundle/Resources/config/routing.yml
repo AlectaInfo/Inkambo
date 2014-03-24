@@ -7,11 +7,11 @@ application:
     defaults: { _controller: ABCApplicationBundle:Application:index }
     
 application_new:
-    pattern:  /new
+    pattern:  /step1
     defaults: { _controller: ABCApplicationBundle:Application:new }
 
 application_newC:
-    pattern:  /newC/{courseId}
+    pattern:  /step1/{courseId}
     defaults: { _controller: ABCApplicationBundle:Application:newGivenCourse }
     
 application_create:
@@ -36,4 +36,12 @@ application_delete:
     pattern: /delete/{id}
     defaults: { _controller: ABCApplicationBundle:Application:delete}
     requirements: { _method: post|delete }
+    
+application_pref:
+    pattern: /pref/{id}
+    defaults: { _controller: ABCApplicationBundle:Application:pref } 
 
+application_pref_update:
+    pattern: /pref_update
+    defaults: { _controller: ABCApplicationBundle:Application:updatePref }
+    requirements: { _method: POST}

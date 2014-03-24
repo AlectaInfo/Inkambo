@@ -32,6 +32,11 @@ class Resourceperson
     /**
      * @var string
      */
+    private $phone;
+
+    /**
+     * @var string
+     */
     private $gender;
 
     /**
@@ -47,11 +52,6 @@ class Resourceperson
     /**
      * @var string
      */
-    private $deptName;
-
-    /**
-     * @var string
-     */
     private $qualification;
 
     /**
@@ -60,17 +60,10 @@ class Resourceperson
     private $rpId;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var \ABC\ApplicationBundle\Entity\Department
      */
-    private $session;
+    private $deptName;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->session = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Set firstname
@@ -165,6 +158,29 @@ class Resourceperson
     }
 
     /**
+     * Set phone
+     *
+     * @param string $phone
+     * @return Resourceperson
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return string 
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
      * Set gender
      *
      * @param string $gender
@@ -234,29 +250,6 @@ class Resourceperson
     }
 
     /**
-     * Set deptName
-     *
-     * @param string $deptName
-     * @return Resourceperson
-     */
-    public function setDeptName($deptName)
-    {
-        $this->deptName = $deptName;
-
-        return $this;
-    }
-
-    /**
-     * Get deptName
-     *
-     * @return string 
-     */
-    public function getDeptName()
-    {
-        return $this->deptName;
-    }
-
-    /**
      * Set qualification
      *
      * @param string $qualification
@@ -290,35 +283,25 @@ class Resourceperson
     }
 
     /**
-     * Add session
+     * Set deptName
      *
-     * @param \ABC\ApplicationBundle\Entity\Session $session
+     * @param \ABC\ApplicationBundle\Entity\Department $deptName
      * @return Resourceperson
      */
-    public function addSession(\ABC\ApplicationBundle\Entity\Session $session)
+    public function setDeptName(\ABC\ApplicationBundle\Entity\Department $deptName = null)
     {
-        $this->session[] = $session;
+        $this->deptName = $deptName;
 
         return $this;
     }
 
     /**
-     * Remove session
+     * Get deptName
      *
-     * @param \ABC\ApplicationBundle\Entity\Session $session
+     * @return \ABC\ApplicationBundle\Entity\Department 
      */
-    public function removeSession(\ABC\ApplicationBundle\Entity\Session $session)
+    public function getDeptName()
     {
-        $this->session->removeElement($session);
-    }
-
-    /**
-     * Get session
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getSession()
-    {
-        return $this->session;
+        return $this->deptName;
     }
 }

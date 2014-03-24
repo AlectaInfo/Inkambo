@@ -32,16 +32,16 @@ class ApplicantType extends AbstractType
                         'class'=>'ABC\ApplicationBundle\Entity\Course',
                         'property'=>'title'
                     ))    
-            ->add('timeslot1', 'entity',
-                    array(
-                        'class'=>'ABC\ApplicationBundle\Entity\Timeslot',
-                        'property'=>'detail'
-                    ))
-            ->add('timeslot2', 'entity',
-                    array(
-                        'class'=>'ABC\ApplicationBundle\Entity\Timeslot',
-                        'property'=>'detail'
-                    ))
+//            ->add('timeslot1', 'entity',
+//                    array(
+//                        'class'=>'ABC\ApplicationBundle\Entity\Timeslot',
+//                        'property'=>'detail'
+//                    ))
+//            ->add('timeslot2', 'entity',
+//                    array(
+//                        'class'=>'ABC\ApplicationBundle\Entity\Timeslot',
+//                        'property'=>'detail'
+//                    ))
         ;
                     
     }
