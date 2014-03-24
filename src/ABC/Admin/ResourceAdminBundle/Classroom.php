@@ -44,19 +44,6 @@ class Classroom
     }
 
     /**
-     * Set classId
-     *
-     * @param string $classId
-     * @return Classroom
-     */
-    public function setClassId($classId)
-    {
-        $this->classId = $classId;
-    
-        return $this;
-    }
-
-    /**
      * Get classId
      *
      * @return string 
@@ -64,9 +51,5 @@ class Classroom
     public function getClassId()
     {
         return $this->classId;
-    }
-    
-    public function __toString(){
-        return $this->getClassId();
     }
 }
