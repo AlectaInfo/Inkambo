@@ -3,10 +3,13 @@
 namespace ABC\Admin\ResourceAdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * Session
- */
+* @ORM\Entity
+* @UniqueEntity(fields="sessionId", message="The given Session id already exists")
+ * 
+*/
 class Session
 {
     /**

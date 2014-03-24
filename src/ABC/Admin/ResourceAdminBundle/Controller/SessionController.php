@@ -2,10 +2,12 @@
 
 namespace ABC\Admin\ResourceAdminBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 use ABC\Admin\ResourceAdminBundle\Entity\Session;
 use ABC\Admin\ResourceAdminBundle\Form\SessionType;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Form;
+use Symfony\Component\HttpFoundation\Request;
+
 
 class SessionController extends Controller
 {
@@ -35,18 +37,18 @@ class SessionController extends Controller
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
         
-       // if ($form->isValid()) {
+        if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
 
             return $this->redirect($this->generateUrl('session_showAll'));
-       // }
+        }
 
-//        return $this->render('ABCAdminResourceAdminBundle:Session:add.html.twig', array(
-//            'entity' => $entity,
-//            'form'   => $form->createView(),
-//        ));
+        return $this->render('ABCAdminResourceAdminBundle:Session:add.html.twig', array(
+            'entity' => $entity,
+            'form'   => $form->createView(),
+        ));
     }
 
     /**
@@ -54,7 +56,7 @@ class SessionController extends Controller
     *
     * @param Session $entity The entity
     *
-    * @return \Symfony\Component\Form\Form The form
+    * @return Form The form
     */
     private function createCreateForm(Session $entity)
     {
@@ -133,7 +135,7 @@ class SessionController extends Controller
     *
     * @param Session $entity The entity
     *
-    * @return \Symfony\Component\Form\Form The form
+    * @return Form The form
     */
     private function createEditForm(Session $entity)
     {
@@ -183,27 +185,19 @@ class SessionController extends Controller
     public function deleteAction(Request $request, $id)
     {
         if($request->getMethod()== 'POST'){
-            $emt = $this->getDoctrine()->getManager();
-            $name = $request->get('sessionId');
-            $year = $request->get('year');
-            $stm = $request->get('startmonth');
-            $class = $emt->getRepository('ABCAdminResourceAdminBundle:Classroom')->find($request->get('classId'));
-            $ts = $emt->getRepository('ABCAdminResourceAdminBundle:Timeslot')->find($request->get('timeslot'));
-            $course = $emt->getRepository('ABCAdminResourceAdminBundle:Classroom')->find($request->get('course'));
+            $sessionId = $request->get('sessionId');
             
-            $criteria= array('sessionId'=>$name,'startMonth'=>$stm,'class'=>$class,'course'=>$course,'timeslot'=>$ts,'year'=>$year);
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('ABCAdminResourceAdminBundle:Session')->findBy($criteria);
-            
-            if (!$entity) {
-               throw $this->createNotFoundException('Unable to find Session entity.');
-               echo print_r($criteria);
-            }
-
-            $em->remove($entity);
-            $em->flush();              
-            
-        }
+              $em = $this->getDoctrine()->getEntityManager();
+              $repo = $em->getRepository('ABCAdminResourceAdminBundle:Session');
+              $entityArr = $repo->findBy(array('sessionId'=>$sessionId));
+              
+              if(count($entityArr)==0){
+                  return $this->createNotFoundException("NO Session as such");
+              }
+              $entity = $entityArr[0];
+              $em->remove($entity);
+              $em->flush();
+         }
         return $this->redirect($this->generateUrl('session_showAll'));
     }
 
@@ -212,7 +206,7 @@ class SessionController extends Controller
      *
      * @param mixed $id The entity id
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return Form The form
      */
     private function createDeleteForm($id)
     {

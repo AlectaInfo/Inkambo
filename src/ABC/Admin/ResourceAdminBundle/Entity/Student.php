@@ -248,4 +248,17 @@ class Student
     {
         return $this->currentoccuption;
     }
+
+    /**
+     * Set studentId
+     *
+     * @param string $studentId
+     * @return Student
+     */
+    public function setStudentId($studentId)
+    {
+        $this->studentId = $studentId;
+    
+        return $this;
+    }
 }
