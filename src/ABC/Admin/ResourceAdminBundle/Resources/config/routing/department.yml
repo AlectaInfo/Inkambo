@@ -1,0 +1,26 @@
+department_showAll:
+    pattern:  /
+    defaults: { _controller: "ABCAdminResourceAdminBundle:Department:index" }
+
+department_new:
+    pattern:  /new
+    defaults: { _controller: "ABCAdminResourceAdminBundle:Department:new" }
+
+department_create:
+    pattern:  /create
+    defaults: { _controller: "ABCAdminResourceAdminBundle:Department:create" }
+    requirements: { _method: post }
+
+#department_edit:
+#    pattern:  /{id}/edit
+#    defaults: { _controller: "ABCAdminResourceAdminBundle:Department:edit" }
+#
+#department_update:
+#    pattern:  /{id}/update
+#    defaults: { _controller: "ABCAdminResourceAdminBundle:Department:update" }
+#    requirements: { _method: post|put }
+
+department_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ABCAdminResourceAdminBundle:Department:delete" }
+    requirements: { _method: post|delete }

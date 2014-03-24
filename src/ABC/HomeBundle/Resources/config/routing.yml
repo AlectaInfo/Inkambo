@@ -1,0 +1,3 @@
+abc_home_homepage:
+    pattern:  /
+    defaults: { _controller: ABCHomeBundle:Default:index }

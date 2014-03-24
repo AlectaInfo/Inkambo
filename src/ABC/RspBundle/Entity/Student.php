@@ -220,4 +220,32 @@ class Student
     {
         return $this->gender;
     }
+    /**
+     * @var string
+     */
+    private $currentoccuption;
+
+
+    /**
+     * Set currentoccuption
+     *
+     * @param string $currentoccuption
+     * @return Student
+     */
+    public function setCurrentoccuption($currentoccuption)
+    {
+        $this->currentoccuption = $currentoccuption;
+    
+        return $this;
+    }
+
+    /**
+     * Get currentoccuption
+     *
+     * @return string 
+     */
+    public function getCurrentoccuption()
+    {
+        return $this->currentoccuption;
+    }
 }

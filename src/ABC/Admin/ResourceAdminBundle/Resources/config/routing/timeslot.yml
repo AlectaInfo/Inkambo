@@ -1,0 +1,26 @@
+timeslot_showAll:
+    pattern:  /
+    defaults: { _controller: "ABCAdminResourceAdminBundle:Timeslot:index" }
+
+timeslot_new:
+    pattern:  /new
+    defaults: { _controller: "ABCAdminResourceAdminBundle:Timeslot:new" }
+
+timeslot_create:
+    pattern:  /create
+    defaults: { _controller: "ABCAdminResourceAdminBundle:Timeslot:create" }
+    requirements: { _method: post }
+
+#timeslot_edit:
+#    pattern:  /{id}/edit
+#    defaults: { _controller: "ABCAdminResourceAdminBundle:Timeslot:edit" }
+#
+#timeslot_update:
+#    pattern:  /{id}/update
+#    defaults: { _controller: "ABCAdminResourceAdminBundle:Timeslot:update" }
+#    requirements: { _method: post|put }
+
+timeslot_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ABCAdminResourceAdminBundle:Timeslot:delete" }
+    requirements: { _method: post|delete }

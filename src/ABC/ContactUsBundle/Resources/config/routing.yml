@@ -1,0 +1,8 @@
+abc_contact_us_homepage:
+    pattern:  /
+    defaults: { _controller: ABCContactUsBundle:Contact:index }
+    
+contact_send:
+    pattern: /send
+    defaults: { _controller: ABCContactUsBundle:Contact:send }
+    

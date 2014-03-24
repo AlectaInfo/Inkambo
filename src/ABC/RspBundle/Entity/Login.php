@@ -80,4 +80,32 @@ class Login
     {
         return $this->username;
     }
+    /**
+     * @var string
+     */
+    private $salt;
+
+
+    /**
+     * Set salt
+     *
+     * @param string $salt
+     * @return Login
+     */
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+    
+        return $this;
+    }
+
+    /**
+     * Get salt
+     *
+     * @return string 
+     */
+    public function getSalt()
+    {
+        return $this->salt;
+    }
 }

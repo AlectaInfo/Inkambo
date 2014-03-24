@@ -1,8 +1,14 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace ABC\CourseBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+//use Symfony\Component\HttpFoundation\Request;
+
+class CourseDescriptionController extends Controller {
+    public function ViewCourseAction(){
+        $em = $this->getDoctrine()->getEntityManager();
+        $repository = $em->getRepository('ABCCourseBundle:Course');
+    }
+}
 

@@ -1,0 +1,41 @@
+{# empty Twig template #}
+<html>
+
+    <head>
+      
+  <style>
+      div.list{
+    
+        padding: 19px 25px 0px 20px;
+        margin: 0 auto 20px;
+        display: block;
+       background-color: #F7F7F7;
+        padding: 20px 25px 30px;
+        margin: 0px auto 25px;
+        max-width: 500px;
+        border-radius: 2px;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+               
+  </style>        
+        
+    </head>
+
+    <body>
+         
+        {%for entity in entities%}
+           <div class="list" id="">
+             RPID : {{entity.rpid}}<br>
+             Name : {{entity.firstname}} {{entity.lastname}}<br>
+             Email : {{entity.email}}</h2>
+              
+
+             <form action="{{path('rsp_showUser',{ 'id':entity.rpid })}}" method="GET" style="padding-bottom:15px">
+                      <input name="id" type="hidden" value="{{ entity.rpid}}">
+                    <input type="submit" value="View Profile" style="float:right; margin-right:50px;margin-bottom:25px">
+             </form>
+           </div>
+        {% endfor%}
+                
+    </body>
+
+</html>

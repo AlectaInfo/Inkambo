@@ -6,9 +6,13 @@ course_home:
     pattern:  /course_home
     defaults: { _controller: ABCCourseBundle:CourseHome:ShowCourses }
     
+course_description:
+    pattern:  /view_course
+    defaults: { _controller: ABCCourseBundle:CourseDescription:ViewCourse }    
+    
 course_search:
     pattern:  /course_search
-    defaults: { _controller: ABCCourseBundle:CourseHome:ShowCourses }
+    defaults: { _controller: ABCCourseBundle:CourseHome:SearchCourses }
    
 updatecourse_new:
     pattern: /new

@@ -1,12 +1,15 @@
+abc_home:
+    resource: "@ABCHomeBundle/Resources/config/routing.yml"
+    prefix:   /
+
 abc_course:
     resource: "@ABCCourseBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /course
 
-
-abc_applicant:
-    resource: "@ABCApplicantBundle/Resources/config/routing.yml"
-    prefix:   /
-
+abc_application:
+    resource: "@ABCApplicationBundle/Resources/config/routing.yml"
+    prefix:   /application
+    
 abc_rsp:
     resource: "@ABCRspBundle/Resources/config/routing.yml"
     prefix:   /rsp
@@ -17,10 +20,36 @@ abc_style:
 
 abc_admin_resource_admin:
     resource: "@ABCAdminResourceAdminBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /resourceAdmin
 
 abc_admin_course_admin:
     resource: "@ABCAdminCourseAdminBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /courseAdmin
+#resource admin - Department    
+abc_admin_resource_admin_department: 
+        resource: "@ABCAdminResourceAdminBundle/Resources/config/routing/department.yml"
+        prefix:   /resourceAdmin/department
 
+abc_rating:
+    resource: "@ABCRatingBundle/Resources/config/routing.yml"
+    prefix:   /rating
+    
+#resource admin - Class    
+abc_admin_resource_admin_class:
+        resource: "@ABCAdminResourceAdminBundle/Resources/config/routing/class.yml"
+        prefix:   /resourceAdmin/class  
+        
+#resource admin - Timeslot   
+abc_admin_resource_admin_timeslot:
+        resource: "@ABCAdminResourceAdminBundle/Resources/config/routing/timeslot.yml"
+        prefix:   /resourceAdmin/timeslot 
+        
+#resource admin - Session   
+abc_admin_resource_admin_session:
+        resource: "@ABCAdminResourceAdminBundle/Resources/config/routing/session.yml"
+        prefix:   /resourceAdmin/session         
+
+abc_contact_us:
+    resource: "@ABCContactUsBundle/Resources/config/routing.yml"
+    prefix:   /contact
 
