@@ -1,14 +1,34 @@
 {% extends "ABCStyleBundle:Templates:TwitterFormTemplate.html.twig"%}
 
 {% block container%}
-          
-        {{ form(form)}}
+
+        {{ form_start(form)}}
+        {{ form_row(form.deptName)}}
+
+        <div class="record_actions">
+            <a href="{{ path('courseadmin_home') }}">
+                Add New Department
+            </a>       
         
-        <ul class="record_actions">
-         <li>
-         <a href="{{ path('courseadmin_home') }}">
-            Back to the list
-        </a>       
-             </li>  
-         </ul>
+        <br>
+         </div>
+<div>
+        <p> Please enter the course id excluding the course code</p>
+</div>
+        {{ form_row(form.courseId)}}
+        {{ form_row(form.title)}}
+        {{ form_row(form.duration)}}
+        {{ form_row(form.fee)}}
+
+        {{ form_row(form.description)}}
+        {{ form_rest(form)}}
+{{ form_end(form) }}
+
+<div class="record_actions">
+
+    <a href="{{ path('courseadmin_home') }}">
+        Back to the list
+    </a>       
+
+</div>
 {% endblock %}        

@@ -32,6 +32,11 @@ class Resourceperson
     /**
      * @var string
      */
+    private $phone;
+
+    /**
+     * @var string
+     */
     private $gender;
 
     /**
@@ -47,17 +52,17 @@ class Resourceperson
     /**
      * @var string
      */
-    private $deptName;
-
-    /**
-     * @var string
-     */
     private $qualification;
 
     /**
      * @var integer
      */
     private $rpId;
+
+    /**
+     * @var \ABC\CourseBundle\Entity\Department
+     */
+    private $deptName;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -165,6 +170,29 @@ class Resourceperson
     }
 
     /**
+     * Set phone
+     *
+     * @param string $phone
+     * @return Resourceperson
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return string 
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
      * Set gender
      *
      * @param string $gender
@@ -234,29 +262,6 @@ class Resourceperson
     }
 
     /**
-     * Set deptName
-     *
-     * @param string $deptName
-     * @return Resourceperson
-     */
-    public function setDeptName($deptName)
-    {
-        $this->deptName = $deptName;
-
-        return $this;
-    }
-
-    /**
-     * Get deptName
-     *
-     * @return string 
-     */
-    public function getDeptName()
-    {
-        return $this->deptName;
-    }
-
-    /**
      * Set qualification
      *
      * @param string $qualification
@@ -287,6 +292,29 @@ class Resourceperson
     public function getRpId()
     {
         return $this->rpId;
+    }
+
+    /**
+     * Set deptName
+     *
+     * @param \ABC\CourseBundle\Entity\Department $deptName
+     * @return Resourceperson
+     */
+    public function setDeptName(\ABC\CourseBundle\Entity\Department $deptName = null)
+    {
+        $this->deptName = $deptName;
+
+        return $this;
+    }
+
+    /**
+     * Get deptName
+     *
+     * @return \ABC\CourseBundle\Entity\Department 
+     */
+    public function getDeptName()
+    {
+        return $this->deptName;
     }
 
     /**

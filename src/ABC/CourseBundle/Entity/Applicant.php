@@ -52,6 +52,11 @@ class Applicant
     /**
      * @var string
      */
+    private $qualification;
+
+    /**
+     * @var string
+     */
     private $certificates;
 
     /**
@@ -267,6 +272,29 @@ class Applicant
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set qualification
+     *
+     * @param string $qualification
+     * @return Applicant
+     */
+    public function setQualification($qualification)
+    {
+        $this->qualification = $qualification;
+
+        return $this;
+    }
+
+    /**
+     * Get qualification
+     *
+     * @return string 
+     */
+    public function getQualification()
+    {
+        return $this->qualification;
     }
 
     /**

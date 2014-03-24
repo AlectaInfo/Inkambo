@@ -3,10 +3,12 @@
 namespace ABC\CourseBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
-/**
- * Course
- */
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+  /**
+* @ORM\Entity
+* @UniqueEntity(fields="courseId", message="The given course id already exists")
+*/
 class Course
 {
     /**
@@ -27,11 +29,6 @@ class Course
     /**
      * @var string
      */
-    private $deptName;
-
-    /**
-     * @var string
-     */
     private $description;
 
     /**
@@ -39,12 +36,16 @@ class Course
      */
     private $leaflet;
 
-    /**
-     * @var string
-     */
     private $courseId;
 
-
+    /**
+     * @var \ABC\CourseBundle\Entity\Department
+     */
+    private $deptName;
+ /**
+     * @var string
+     */
+    private $identifier;
     /**
      * Set title
      *
@@ -115,29 +116,6 @@ class Course
     }
 
     /**
-     * Set deptName
-     *
-     * @param string $deptName
-     * @return Course
-     */
-    public function setDeptName($deptName)
-    {
-        $this->deptName = $deptName;
-
-        return $this;
-    }
-
-    /**
-     * Get deptName
-     *
-     * @return string 
-     */
-    public function getDeptName()
-    {
-        return $this->deptName;
-    }
-
-    /**
      * Set description
      *
      * @param string $description
@@ -188,16 +166,42 @@ class Course
      *
      * @return string 
      */
-    
-    public function setCourseId($courseId)
-    {
-        $this->courseId = $courseId;
-
-        return $this;
-    }
-    
     public function getCourseId()
     {
         return $this->courseId;
     }
+
+    /**
+     * Set deptName
+     *
+     * @param \ABC\CourseBundle\Entity\Department $deptName
+     * @return Course
+     */
+    public function setDeptName(\ABC\CourseBundle\Entity\Department $deptName)
+    {
+        $this->deptName = $deptName;
+        $this->identifier = $deptName->getCode();
+
+
+        return $this;
+    }
+
+    /**
+     * Get deptName
+     *
+     * @return \ABC\CourseBundle\Entity\Department 
+     */
+    public function getDeptName()
+    {
+        return $this->deptName;
+    }
+
+    public function setCourseId($courseId)
+    {
+        $this->courseId = $this->identifier.$courseId;
+
+        return $this;
+    }
+    
+ 
 }

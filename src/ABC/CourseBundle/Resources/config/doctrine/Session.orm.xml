@@ -10,21 +10,24 @@
     <id name="year" type="decimal" column="year"/>
     <id name="startMonth" type="string" column="start_month" length="3"/>
     <id name="course" association-key="true"/>
+    <id name="timeslot" association-key="true"/>
+    <id name="class" association-key="true"/>
+    <field name="maxStudents" type="integer" column="max_students" nullable="true"/>
+    <one-to-one field="class" target-entity="Classroom">
+      <join-columns>
+        <join-column name="class_id" referenced-column-name="class_id"/>
+      </join-columns>
+    </one-to-one>
+    <one-to-one field="timeslot" target-entity="Timeslot">
+      <join-columns>
+        <join-column name="timeslot_id" referenced-column-name="timeslot_id"/>
+      </join-columns>
+    </one-to-one>
     <one-to-one field="course" target-entity="Course">
       <join-columns>
         <join-column name="course_id" referenced-column-name="course_id"/>
       </join-columns>
     </one-to-one>
-    <many-to-one field="class" target-entity="Classroom">
-      <join-columns>
-        <join-column name="class_id" referenced-column-name="class_id"/>
-      </join-columns>
-    </many-to-one>
-    <many-to-one field="timeslot" target-entity="Timeslot">
-      <join-columns>
-        <join-column name="timeslot_id" referenced-column-name="timeslot_id"/>
-      </join-columns>
-    </many-to-one>
     <many-to-many field="rp" target-entity="Resourceperson" mapped-by="session"/>
   </entity>
 </doctrine-mapping>

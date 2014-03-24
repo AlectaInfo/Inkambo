@@ -2,10 +2,14 @@ courseadmin_home:
     pattern:  /
     defaults: { _controller: ABCCourseBundle:Default:index }
 
-course_homepage:
-    pattern:  /course_homepage
+course_home:
+    pattern:  /course_home
     defaults: { _controller: ABCCourseBundle:CourseHome:ShowCourses }
- 
+    
+course_search:
+    pattern:  /course_search
+    defaults: { _controller: ABCCourseBundle:CourseHome:ShowCourses }
+   
 updatecourse_new:
     pattern: /new
     defaults: { _controller: ABCCourseBundle:CourseUpdate:new}

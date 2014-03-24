@@ -5,12 +5,12 @@
 
     {{ form(edit_form) }}
 
-        <ul class="record_actions">
-    <li>
+        <div class="record_actions">
+   
         <a href="{{ path('courseadmin_home') }}">
             Back to the list
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+   
+    <a>{{ form(delete_form) }}</a>
+</div>
 {% endblock %}

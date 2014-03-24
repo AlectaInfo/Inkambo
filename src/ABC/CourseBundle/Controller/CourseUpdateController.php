@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use ABC\CourseBundle\Entity\Course;
 use ABC\CourseBundle\Form\CourseType;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
+use Symfony\Component\HttpFoundation\Session;
 
 class CourseUpdateController extends Controller {
 
@@ -22,19 +22,28 @@ class CourseUpdateController extends Controller {
 
     // action to create a new course entity based on the form data
     public function createAction(Request $request) {
+       /* $key = '_security.' . $providerKey . '.target_path';
+        $session = $this->getRequest()->getSession();
+*/
+        // get the URL to the last page, or fallback to the homepage
 
         $entity = new Course();
         $form = $this->createAddForm($entity);
         $form->handleRequest($request);
-
+        
+//        if ($session->has($key)) {
+//            $url = $session->get($key);
+//            $session->remove($key);
+//        } else {
+//            $url = $this->generateUrl('homepage');
+//        }
+//        return $this->redirect($url);
         if ($form->isValid()) {
 
             $em = $this->getDoctrine()->getEntityManager();
             $em->persist($entity);
             $em->flush();
-            $request->getSession()
-                    ->getFlashBag()
-                    ->add('failure', 'failure');
+
             return $this->redirect($this->generateUrl('updatecourse_show', array('id' => $entity->getCourseId())));
         }
 
@@ -132,6 +141,7 @@ class CourseUpdateController extends Controller {
         ));
 
         $form->add('Add', 'submit');
+        //    $form->add('Add ', 'submit', array('attr'=> array('action' => $this->generateUrl("course_homepage"),'label' => 'add new department')));
 
         return $form;
     }

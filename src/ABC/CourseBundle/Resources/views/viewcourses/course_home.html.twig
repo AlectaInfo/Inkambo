@@ -1,0 +1,91 @@
+
+<div id="course_home">
+
+    <ul class="navbar">
+              {%for department in departments%}
+        <li><a href ="">{{department.getName}}</a></li>
+    {#    {%for course in courses%}
+        <ul>
+            <li><a href ="">{{course.getTitle}}</a></li>
+        </ul>
+            {%endfor%}#}
+                    {%endfor%}
+
+    </ul>
+    
+    {%for course in top_courses%}
+            <li><a href ="">{{course.course_id}}</a></li>
+
+                        {%endfor%}
+
+    <!--hansika
+    <select>
+             {#     {%for department in departments%}
+    <option value = "">{{department.getName}}</option>
+
+                        {%endfor%}
+    
+        <option value = "">All Courses</option>
+</select>
+<form action="{{ path("course_search") }}" method="get">
+  <input type="search" name="search courses"><br>
+  <input type="submit" value="search">
+</form>
+</div>
+
+<li><a href="/index.php">Home</a></li>
+
+<li><a href="/boattypes/featureboats.php">Boat Types</a>
+
+    <ul>
+
+        <li><a href="/boattypes/sprint/sprint.php">Sprint</a></li>
+
+        <li><a href="/boattypes/fitnesstouring/fitnesstouring.php">Fitness-touring</a></li>
+
+        <li><a href="/boattypes/marathon/marathon.php">High Performance</a></li>
+        <li><a href="/boattypes/surfski/surfskis.php">Surf Skis</a></li>
+
+    </ul>         
+
+</li>
+
+<li><a href="/rent/services.php">Inventory</a>
+
+    <ul>
+
+        <li><a href="/rent/memb.php">Membership</a></li>
+
+        <li><a href="/rent/rboat.php" >Rentals</a></li>
+
+        <li><a href="/rent/rb.php">Banquet</a></li>
+
+        <li><a href="/rent/faq.php">FAQ</a></li>
+
+
+
+    </ul>         
+
+</li>
+
+<li><a href="/ages/ages.php">Ages</a>
+
+    <ul>
+
+        <li><a href="/ages/adult.php">Adults</a></li>
+
+        <li><a href="/ages/children.php">Children</a></li>
+
+
+
+    </ul>         
+
+</li>
+
+<li><a href="about.php">About Us</a>
+
+<li><a href="contact_us.php">Contact Us</a>
+
+</ul>#}
+
+</div>-->

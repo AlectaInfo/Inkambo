@@ -10,6 +10,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Session
 {
     /**
+     * @var integer
+     */
+    private $maxStudents;
+
+    /**
      * @var string
      */
     private $sessionId;
@@ -25,11 +30,6 @@ class Session
     private $startMonth;
 
     /**
-     * @var \ABC\CourseBundle\Entity\Course
-     */
-    private $course;
-
-    /**
      * @var \ABC\CourseBundle\Entity\Classroom
      */
     private $class;
@@ -38,6 +38,11 @@ class Session
      * @var \ABC\CourseBundle\Entity\Timeslot
      */
     private $timeslot;
+
+    /**
+     * @var \ABC\CourseBundle\Entity\Course
+     */
+    private $course;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -50,6 +55,29 @@ class Session
     public function __construct()
     {
         $this->rp = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set maxStudents
+     *
+     * @param integer $maxStudents
+     * @return Session
+     */
+    public function setMaxStudents($maxStudents)
+    {
+        $this->maxStudents = $maxStudents;
+
+        return $this;
+    }
+
+    /**
+     * Get maxStudents
+     *
+     * @return integer 
+     */
+    public function getMaxStudents()
+    {
+        return $this->maxStudents;
     }
 
     /**
@@ -122,35 +150,12 @@ class Session
     }
 
     /**
-     * Set course
-     *
-     * @param \ABC\CourseBundle\Entity\Course $course
-     * @return Session
-     */
-    public function setCourse(\ABC\CourseBundle\Entity\Course $course)
-    {
-        $this->course = $course;
-
-        return $this;
-    }
-
-    /**
-     * Get course
-     *
-     * @return \ABC\CourseBundle\Entity\Course 
-     */
-    public function getCourse()
-    {
-        return $this->course;
-    }
-
-    /**
      * Set class
      *
      * @param \ABC\CourseBundle\Entity\Classroom $class
      * @return Session
      */
-    public function setClass(\ABC\CourseBundle\Entity\Classroom $class = null)
+    public function setClass(\ABC\CourseBundle\Entity\Classroom $class)
     {
         $this->class = $class;
 
@@ -173,7 +178,7 @@ class Session
      * @param \ABC\CourseBundle\Entity\Timeslot $timeslot
      * @return Session
      */
-    public function setTimeslot(\ABC\CourseBundle\Entity\Timeslot $timeslot = null)
+    public function setTimeslot(\ABC\CourseBundle\Entity\Timeslot $timeslot)
     {
         $this->timeslot = $timeslot;
 
@@ -188,6 +193,29 @@ class Session
     public function getTimeslot()
     {
         return $this->timeslot;
+    }
+
+    /**
+     * Set course
+     *
+     * @param \ABC\CourseBundle\Entity\Course $course
+     * @return Session
+     */
+    public function setCourse(\ABC\CourseBundle\Entity\Course $course)
+    {
+        $this->course = $course;
+
+        return $this;
+    }
+
+    /**
+     * Get course
+     *
+     * @return \ABC\CourseBundle\Entity\Course 
+     */
+    public function getCourse()
+    {
+        return $this->course;
     }
 
     /**
