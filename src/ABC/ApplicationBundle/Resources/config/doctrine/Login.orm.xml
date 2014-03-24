@@ -5,6 +5,7 @@
       <generator strategy="IDENTITY"/>
     </id>
     <field name="password" type="string" column="password" length="60" nullable="false"/>
+    <field name="salt" type="string" column="salt" length="60" nullable="false"/>
     <field name="type" type="string" column="type" length="20" nullable="true"/>
   </entity>
 </doctrine-mapping>

@@ -27,11 +27,6 @@ class Course
     /**
      * @var string
      */
-    private $deptName;
-
-    /**
-     * @var string
-     */
     private $description;
 
     /**
@@ -43,6 +38,11 @@ class Course
      * @var string
      */
     private $courseId;
+
+    /**
+     * @var \ABC\ApplicationBundle\Entity\Department
+     */
+    private $deptName;
 
 
     /**
@@ -115,29 +115,6 @@ class Course
     }
 
     /**
-     * Set deptName
-     *
-     * @param string $deptName
-     * @return Course
-     */
-    public function setDeptName($deptName)
-    {
-        $this->deptName = $deptName;
-
-        return $this;
-    }
-
-    /**
-     * Get deptName
-     *
-     * @return string 
-     */
-    public function getDeptName()
-    {
-        return $this->deptName;
-    }
-
-    /**
      * Set description
      *
      * @param string $description
@@ -192,8 +169,27 @@ class Course
     {
         return $this->courseId;
     }
-    
-    public function __toString() {
-        return $this->getCourseId();
+
+    /**
+     * Set deptName
+     *
+     * @param \ABC\ApplicationBundle\Entity\Department $deptName
+     * @return Course
+     */
+    public function setDeptName(\ABC\ApplicationBundle\Entity\Department $deptName = null)
+    {
+        $this->deptName = $deptName;
+
+        return $this;
+    }
+
+    /**
+     * Get deptName
+     *
+     * @return \ABC\ApplicationBundle\Entity\Department 
+     */
+    public function getDeptName()
+    {
+        return $this->deptName;
     }
 }

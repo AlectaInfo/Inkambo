@@ -47,6 +47,11 @@ class Student
     /**
      * @var string
      */
+    private $currentoccuption;
+
+    /**
+     * @var string
+     */
     private $studentId;
 
 
@@ -209,6 +214,29 @@ class Student
     public function getAddress()
     {
         return $this->address;
+    }
+
+    /**
+     * Set currentoccuption
+     *
+     * @param string $currentoccuption
+     * @return Student
+     */
+    public function setCurrentoccuption($currentoccuption)
+    {
+        $this->currentoccuption = $currentoccuption;
+
+        return $this;
+    }
+
+    /**
+     * Get currentoccuption
+     *
+     * @return string 
+     */
+    public function getCurrentoccuption()
+    {
+        return $this->currentoccuption;
     }
 
     /**

@@ -1,0 +1,23 @@
+<h1>Selection of Students into Sessions</h1>
+{#
+<h3>Session id</h3>
+{% for s in sessions %}
+    {{s.sessionId}}<br>
+    
+    <br><br>
+{% endfor %}  
+#}
+<table style="width:300px">
+    
+{% for key, c in courses %} 
+    <form action="{{path('abc_select')}}" method="POST">
+    Course Title:   {{ c.title }}<br>
+    Enrolled:       {{ all[key]|length }}<br>
+    Reviewed:       {{ reviewed[key]|length }}<br>
+    {% if all[key]|length == reviewed[key]|length %}
+        <input type="hidden" name="courseId" value="{{c.title}}">
+        <input type="submit" value="Select Students">
+    {% endif %}
+    </form>
+    <br>
+{% endfor %}       

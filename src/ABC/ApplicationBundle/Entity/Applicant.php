@@ -30,6 +30,11 @@ class Applicant
     private $lastname;
 
     /**
+     * @var \DateTime
+     */
+    private $dob;
+
+    /**
      * @var string
      */
     private $phone;
@@ -48,6 +53,16 @@ class Applicant
      * @var string
      */
     private $email;
+
+    /**
+     * @var string
+     */
+    private $currentoccuption;
+
+    /**
+     * @var string
+     */
+    private $qualification;
 
     /**
      * @var string
@@ -178,6 +193,29 @@ class Applicant
     }
 
     /**
+     * Set dob
+     *
+     * @param \DateTime $dob
+     * @return Applicant
+     */
+    public function setDob($dob)
+    {
+        $this->dob = $dob;
+
+        return $this;
+    }
+
+    /**
+     * Get dob
+     *
+     * @return \DateTime 
+     */
+    public function getDob()
+    {
+        return $this->dob;
+    }
+
+    /**
      * Set phone
      *
      * @param string $phone
@@ -267,6 +305,52 @@ class Applicant
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set currentoccuption
+     *
+     * @param string $currentoccuption
+     * @return Applicant
+     */
+    public function setCurrentoccuption($currentoccuption)
+    {
+        $this->currentoccuption = $currentoccuption;
+
+        return $this;
+    }
+
+    /**
+     * Get currentoccuption
+     *
+     * @return string 
+     */
+    public function getCurrentoccuption()
+    {
+        return $this->currentoccuption;
+    }
+
+    /**
+     * Set qualification
+     *
+     * @param string $qualification
+     * @return Applicant
+     */
+    public function setQualification($qualification)
+    {
+        $this->qualification = $qualification;
+
+        return $this;
+    }
+
+    /**
+     * Get qualification
+     *
+     * @return string 
+     */
+    public function getQualification()
+    {
+        return $this->qualification;
     }
 
     /**
