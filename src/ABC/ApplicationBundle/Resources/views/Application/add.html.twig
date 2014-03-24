@@ -4,9 +4,8 @@
         
         {{ form_start(form) }}
         {{ form_errors(form) }}
-        {{ form_row(form.course, {
-           'label': 'Course Title'
-            }) }}
+        {{ form_row(form.course,
+             {'label': 'Course Title'}) }}
         {{ form_row(form.nic) }}
         {{ form_row(form.firstname) }}
         {{ form_row(form.lastname) }}

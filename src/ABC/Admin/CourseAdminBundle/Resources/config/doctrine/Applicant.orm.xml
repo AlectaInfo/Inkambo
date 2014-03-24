@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ABC\Admin\CourseAdminBundle\Entity\Applicant" table="applicant">
+    <indexes>
+      <index name="course_id" columns="course_id"/>
+      <index name="timeslot1" columns="timeslot1"/>
+      <index name="timeslot2" columns="timeslot2"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="nic" columns="nic,course_id"/>
+    </unique-constraints>
+    <id name="appId" type="integer" column="app_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="submitdate" type="datetime" column="submitDate" nullable="false"/>
+    <field name="nic" type="string" column="nic" length="10" nullable="false"/>
+    <field name="firstname" type="string" column="firstname" length="30" nullable="true"/>
+    <field name="lastname" type="string" column="lastname" length="30" nullable="true"/>
+    <field name="dob" type="date" column="dob" nullable="true"/>
+    <field name="phone" type="string" column="phone" length="10" nullable="true"/>
+    <field name="address" type="string" column="address" length="100" nullable="true"/>
+    <field name="gender" type="string" column="gender" length="8" nullable="true"/>
+    <field name="email" type="string" column="email" length="50" nullable="true"/>
+    <field name="currentoccuption" type="string" column="currentOccuption" length="100" nullable="true"/>
+    <field name="qualification" type="string" column="qualification" length="300" nullable="true"/>
+    <field name="certificates" type="blob" column="certificates" nullable="true"/>
+    <field name="rating" type="integer" column="rating" nullable="true"/>
+    <field name="status" type="string" column="status" length="15" nullable="false"/>
+    <many-to-one field="timeslot2" target-entity="Timeslot">
+      <join-columns>
+        <join-column name="timeslot2" referenced-column-name="timeslot_id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="timeslot1" target-entity="Timeslot">
+      <join-columns>
+        <join-column name="timeslot1" referenced-column-name="timeslot_id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="course" target-entity="Course">
+      <join-columns>
+        <join-column name="course_id" referenced-column-name="course_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
