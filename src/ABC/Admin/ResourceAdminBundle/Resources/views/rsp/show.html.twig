@@ -1,0 +1,36 @@
+{# empty Twig template #}
+
+
+<h3>{{ entity.firstname}}</h3>
+<h3>Resource ID : {{entity.rpId}}</h3>
+<h3>Post : {{entity.post}}</h3>
+<h3>Address : {{entity.address}}</h3>
+<h3>Department : {{entity.deptName}}</h3>
+{%if courses is defined%}
+<h3>Courses :</h3> 
+    {%for course in courses%}
+        {{course.title}}<br>
+    {%endfor%}    
+{%endif%}
+  
+<img src="data:image/jpeg;base64,base64_encode({{file}})" alt="photo" height="200px" ><br>        
+
+<br>
+  <ul class="record_actions">
+    <li>
+        <a href="{{ path('rsp_showAll') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('rsp_edit', { 'id': entity.rpid }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('rsp_showCourseOptions', { 'id': entity.rpid }) }}">
+            Assign Course
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>

@@ -1,0 +1,51 @@
+#app/config/routing.yml
+
+rsp:
+    pattern:  /
+    defaults: { _controller: ABCAdminResourceAdminBundle:Rsp:index }
+    
+rsp_new:
+    pattern: /new
+    defaults: { _controller: ABCAdminResourceAdminBundle:Rsp:new}
+
+rsp_create:
+    pattern: /new/create
+    defaults: { _controller: ABCAdminResourceAdminBundle:Rsp:create}
+    requirements: { _method: POST }
+    
+rsp_show:
+    pattern: /adminShow/{id}
+    defaults: { _controller: ABCAdminResourceAdminBundle:Rsp:show}
+    
+rsp_showAll:
+    pattern: /adminShowAll
+    defaults: { _controller: ABCAdminResourceAdminBundle:Rsp:showAll}
+    
+
+rsp_edit:
+    pattern: /edit/{id}
+    defaults: { _controller: ABCAdminResourceAdminBundle:Rsp:edit}
+    
+rsp_update:
+    pattern: /update/{id}
+    defaults: { _controller: ABCAdminResourceAdminBundle:Rsp:update}
+    requirements: { _method: post|put }
+    
+rsp_delete:
+    pattern: /delete/{id}
+    defaults: { _controller: ABCAdminResourceAdminBundle:Rsp:delete}
+    requirements: { _method: post|delete }
+
+#routing for course assignment
+
+rsp_showCourseOptions:
+    pattern: /courseOptions/{id}
+    defaults: { _controller: ABCAdminResourceAdminBundle:RspCourseAssign:showCourses}
+    
+rsp_assignCourse:
+    pattern: /assignCourses/{id}
+    defaults: { _controller: ABCAdminResourceAdminBundle:RspCourseAssign:assignToCourses}
+    requirements: { _method: GET }
+    
+
+

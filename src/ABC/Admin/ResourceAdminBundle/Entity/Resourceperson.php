@@ -3,10 +3,13 @@
 namespace ABC\Admin\ResourceAdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * Resourceperson
- */
+* @ORM\Entity
+* @UniqueEntity(fields="email", message="Resource Person With the email ID exists")
+ * 
+*/
 class Resourceperson
 {
     /**

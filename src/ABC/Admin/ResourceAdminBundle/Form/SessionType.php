@@ -18,8 +18,9 @@ class SessionType extends AbstractType{
                 'label'=>'Session ID',
                 'pattern'=> '[A-Z0-9]+'
             ))
-            ->add('year','text',array(
+            ->add('year','integer',array(
                 'max_length'=>4,
+                 'attr'=>array('min'=>2014,'max'=>'2020'),
                 'pattern'=>'[0-9]+{4}'
             ))
             ->add('startMonth','choice',array(

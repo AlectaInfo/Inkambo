@@ -1,40 +1,40 @@
 #app/config/routing.yml
 
-rsp:
-    pattern:  /
-    defaults: { _controller: ABCRspBundle:Default:index }
-    
-rsp_new:
-    pattern: /new
-    defaults: { _controller: ABCRspBundle:Rsp:new}
-
-rsp_create:
-    pattern: /new/create
-    defaults: { _controller: ABCRspBundle:Rsp:create}
-    requirements: { _method: POST }
-    
-rsp_show:
-    pattern: /adminShow/{id}
-    defaults: { _controller: ABCRspBundle:Rsp:show}
-    
-rsp_showAll:
-    pattern: /adminShowAll
-    defaults: { _controller: ABCRspBundle:Rsp:showAll}
-    
-
-rsp_edit:
-    pattern: /edit/{id}
-    defaults: { _controller: ABCRspBundle:Rsp:edit}
-    
-rsp_update:
-    pattern: /update/{id}
-    defaults: { _controller: ABCRspBundle:Rsp:update}
-    requirements: { _method: post|put }
-    
-rsp_delete:
-    pattern: /delete/{id}
-    defaults: { _controller: ABCRspBundle:Rsp:delete}
-    requirements: { _method: post|delete }
+#rsp:
+#    pattern:  /
+#    defaults: { _controller: ABCRspBundle:Default:index }
+#    
+#rsp_new:
+#    pattern: /new
+#    defaults: { _controller: ABCRspBundle:Rsp:new}
+#
+#rsp_create:
+#    pattern: /new/create
+#    defaults: { _controller: ABCRspBundle:Rsp:create}
+#    requirements: { _method: POST }
+#    
+#rsp_show:
+#    pattern: /adminShow/{id}
+#    defaults: { _controller: ABCRspBundle:Rsp:show}
+#    
+#rsp_showAll:
+#    pattern: /adminShowAll
+#    defaults: { _controller: ABCRspBundle:Rsp:showAll}
+#    
+#
+#rsp_edit:
+#    pattern: /edit/{id}
+#    defaults: { _controller: ABCRspBundle:Rsp:edit}
+#    
+#rsp_update:
+#    pattern: /update/{id}
+#    defaults: { _controller: ABCRspBundle:Rsp:update}
+#    requirements: { _method: post|put }
+#    
+#rsp_delete:
+#    pattern: /delete/{id}
+#    defaults: { _controller: ABCRspBundle:Rsp:delete}
+#    requirements: { _method: post|delete }
     
 #routing for normal user
 rsp_showUser:
@@ -42,20 +42,20 @@ rsp_showUser:
     defaults: { _controller: ABCRspBundle:Default:show}
     
 rsp_showAllUser:
-    pattern: /showAll
+    pattern: /
     defaults: { _controller: ABCRspBundle:Default:showAll}
     
 
 #routing for course assignment
 
-rsp_showCourseOptions:
-    pattern: /courseOptions/{id}
-    defaults: { _controller: ABCRspBundle:RspCourseManager:showCourses}
-    
-rsp_assignCourse:
-    pattern: /assignCourses/{id}
-    defaults: { _controller: ABCRspBundle:RspCourseManager:assignCourses}
-    requirements: { _method: GET }
+#rsp_showCourseOptions:
+#    pattern: /courseOptions/{id}
+#    defaults: { _controller: ABCRspBundle:RspCourseManager:showCourses}
+#    
+#rsp_assignCourse:
+#    pattern: /assignCourses/{id}
+#    defaults: { _controller: ABCRspBundle:RspCourseManager:assignCourses}
+#    requirements: { _method: GET }
     
 
 
