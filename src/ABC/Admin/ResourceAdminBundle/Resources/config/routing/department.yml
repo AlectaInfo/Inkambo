@@ -11,14 +11,14 @@ department_create:
     defaults: { _controller: "ABCAdminResourceAdminBundle:Department:create" }
     requirements: { _method: post }
 
-department_edit:
-    pattern:  /{id}/edit
-    defaults: { _controller: "ABCAdminResourceAdminBundle:Department:edit" }
-
-department_update:
-    pattern:  /{id}/update
-    defaults: { _controller: "ABCAdminResourceAdminBundle:Department:update" }
-    requirements: { _method: post|put }
+#department_edit:
+#    pattern:  /{id}/edit
+#    defaults: { _controller: "ABCAdminResourceAdminBundle:Department:edit" }
+#
+#department_update:
+#    pattern:  /{id}/update
+#    defaults: { _controller: "ABCAdminResourceAdminBundle:Department:update" }
+#    requirements: { _method: post|put }
 
 department_delete:
     pattern:  /{id}/delete
