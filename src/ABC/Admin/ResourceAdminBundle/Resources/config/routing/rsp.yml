@@ -43,7 +43,7 @@ rsp_showCourseOptions:
     defaults: { _controller: ABCAdminResourceAdminBundle:RspCourseAssign:showCourses}
     
 rsp_assignCourse:
-    pattern: /assignCourses/{id}
+    pattern: /new/assignCourses/{id}
     defaults: { _controller: ABCAdminResourceAdminBundle:RspCourseAssign:assignToCourses}
     requirements: { _method: GET }
     

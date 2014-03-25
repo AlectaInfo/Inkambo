@@ -29,15 +29,15 @@ class SessionType extends AbstractType{
                 
             ->add('class','entity',array(
                 'class'=>'ABCAdminResourceAdminBundle:Classroom',
-                'property'=>'classId'
+                'property'=>'detail'
             ))
             ->add('timeslot','entity', array(
                  'class'=>'ABCAdminResourceAdminBundle:Timeslot',
-                'property'=>'timeslotId'
+                'property'=>'detail'
             ))
              ->add('course','entity', array(
                  'class'=>'ABCAdminResourceAdminBundle:Course',
-                'property'=>'courseId'
+                'property'=>'detail'
             ))    
         ;
     }

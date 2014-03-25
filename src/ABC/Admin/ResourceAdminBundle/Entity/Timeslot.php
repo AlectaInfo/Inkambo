@@ -133,4 +133,8 @@ class Timeslot
          $d2 = $this->getFinish()->format('H:i');
          return $d1."-".$d2;
     }
+    
+    public function getDetail(){
+        return $this->getTimeslotId()."(".$this->getDay()." ".$this->getClassTime().")";
+    }
 }

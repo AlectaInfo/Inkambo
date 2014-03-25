@@ -41,26 +41,26 @@ class RspCourseAssignController extends Controller
             if($request->get("$i")!=null){
                 $title = $request->get("$i");
                 
-                $sql = "SELECT `course_id` FROM `course` WHERE `title`='$title'";
+               $sql = "SELECT `course_id`,`title` FROM `course` WHERE `title`='$title'";
                 $result = $conn->executeQuery($sql)->fetchAll();
-               $course_id = $result[0]['course_id'];
-                $courses[$i]=$course_id;
+               $course_id = $result[0];
+               $courses[$i]=$course_id;
                 
-              $sql = "INSERT INTO `teaches`(`rp_id`, `course_id`) VALUES ('$id','$course_id')";
-              $conn->executeUpdate($sql);  
+//              $sql = "INSERT INTO `teaches`(`rp_id`, `course_id`, `session_id`) VALUES ('$id','$course_id','A12')";
+//              $conn->executeUpdate($sql);  
             }            
             
         }
         
-        // entity manager
-       
-       
+        // entity manager    
+      // return $this->render('ABCAdminResourceAdminBundle:rsp:result.html.twig',array('id'=>$id,'choices'=>$size,'courses'=>$courses));
+         return $this->render('ABCAdminResourceAdminBundle:rsp:assignSessions.html.twig',array('courses'=>$courses));   
         
-        
-       
-        
-       return $this->render('ABCAdminResourceAdminBundle:rsp:result.html.twig',array('id'=>$id,'choices'=>$size,'courses'=>  var_dump($result)));
-    }    
+            }
+    
+    public function assignSessions(Request $request){
+         
+    }
     
     
 }

@@ -25,7 +25,7 @@ class ApplicationController extends Controller
     public function newGivenCourseAction($courseId){
         $applicant = new Applicant();
         $form = $this->createAddForm($applicant);
-               
+        
         $em1 = $this->getDoctrine()->getEntityManager();
         $course = $em1->getRepository('ABCApplicationBundle:Course')->find($courseId);
         

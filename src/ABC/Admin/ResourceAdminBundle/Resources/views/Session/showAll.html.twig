@@ -59,8 +59,10 @@
            <div class="list">
              <p style="font-size:12px"> 
                  <strong>{{entity.sessionId}} </strong>  <span class="linespace">|</span> 
-             <strong> Year: {{entity.year}} </strong>  <span class="linespace">|</span>
-             <strong> </strong>
+             <strong> Year: {{entity.year}} </strong>  <br>
+             <strong> Timeslot: {{entity.timeslot.detail}}</strong><br>
+             <strong> Course: {{entity.course}}({{entity.course.title}})</strong><br>
+              <strong>Classroom: {{entity.class.detail}}</strong>
             
              <br>
               </p>

@@ -41,7 +41,22 @@
       }
 
     </style>
-{% endblock%}    
+{% endblock%}
+{%block  script%}
+<script language='javascript'>
+var t;
+function doLoad() {
+t = setTimeout("window.close()",1000);
+}
+
+</script>
+<script type="text/javascript">
+function refreshAndClose() {
+    window.opener.location.reload(true);
+    window.close();
+}
+</script>
+{%endblock%}    
 </head>
 
 <body>

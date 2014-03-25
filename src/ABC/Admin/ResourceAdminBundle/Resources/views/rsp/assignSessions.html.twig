@@ -1,0 +1,15 @@
+{# empty Twig template #}
+<script>
+    function popitup(url) {
+	newwindow=window.open(url,'name','height=600,width=400,screenX=500,screenY=50');
+	if (window.focus) {newwindow.focus()}
+	return false;
+    }
+</script>    
+Assign Sessions : <br>
+
+{%for course in courses%}
+
+    {{course.course_id}} - {{course.title}}  <input type="button" value="Create Session" onclick="popitup('{{path('session_new')}}')">  <br>
+
+{%endfor%}

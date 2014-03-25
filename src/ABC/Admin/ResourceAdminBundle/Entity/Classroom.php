@@ -69,4 +69,8 @@ class Classroom
     public function __toString(){
         return $this->getClassId();
     }
+    
+    public function getDetail(){
+        return $this->getClassId()."( max - ".$this->getCapacity().")";
+    }
 }
