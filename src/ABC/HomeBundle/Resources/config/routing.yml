@@ -17,3 +17,7 @@ abc_home_instructorspage:
 abc_home_contactuspage:
     pattern:  /contactus
     defaults: { _controller: ABCHomeBundle:Default:contactus }
+    
+abc_home_loginpage:
+    pattern:  /login
+    defaults: { _controller: ABCHomeBundle:Default:login }
