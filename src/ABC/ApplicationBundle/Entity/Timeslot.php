@@ -109,11 +109,10 @@ class Timeslot
         return $this->timeslotId;
     }
     
-    public function getDetail()
-    {
+    public function getDetail() {
         $d1 = $this->getStart()->format('H:i');
         $d2 = $this->getFinish()->format('H:i');
-        $detail = $this->getDay()." - ".$d1." - ".$d2;
+        $detail = $this->getDay()."- ".$d1." - ".$d2;
         return $detail;
     }
     

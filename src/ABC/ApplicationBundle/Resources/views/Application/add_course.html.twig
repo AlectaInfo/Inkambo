@@ -4,26 +4,25 @@
         
 <h2>Step 1: Application Form</h2>
 <br>
-        Course: {{ applicant.course }}
+        Course: {{ course.title }}
         
-        {{ form_start(form) }}
-        {{ form_errors(form) }}
+        {{ form_start(form, {'action': path('application_newC',{'courseId':course.courseId})})}}) }}
         <br>
         {{ form_row(form.nic) }}
         {{ form_row(form.firstname) }}
         {{ form_row(form.lastname) }}
+        {{ form_row(form.dob) }}
         {{ form_row(form.gender) }}
         {{ form_row(form.email) }}
         {{ form_row(form.address) }}
         {{ form_row(form.phone) }}
+        {#    {{ form_row(form.currentoccupation) }} #}
+        {{ form_row(form.qualification) }}
+        <br>
+        Please attach your certificates in PDF format.
+        <br>
+        {{ form_row(form.certificates) }}
         
         {{ form_widget(form.apply) }}
 
-        <ul class="record_actions">
-         <li>
-         <a href="{{ path('application') }}">
-            Back to the list
-        </a>       
-             </li>  
-         </ul>
 {% endblock %}  

@@ -12,7 +12,7 @@
     <id name="course" association-key="true"/>
     <id name="timeslot" association-key="true"/>
     <id name="class" association-key="true"/>
-    <field name="maxStudents" type="integer" column="max_students" nullable="true"/>
+    <field name="available" type="integer" column="available" nullable="false"/>
     <one-to-one field="class" target-entity="Classroom">
       <join-columns>
         <join-column name="class_id" referenced-column-name="class_id"/>

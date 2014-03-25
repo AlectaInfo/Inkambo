@@ -1,7 +1,9 @@
 <h1>You have successfully registerered.</h1>
 
-<p>Registered course: {{ applicant.course.title }}</p>
-<p>We have sent a confirmation mail to you at {{ applicant.email }}. Please check mail.</p>
+<p>Registered Course: {{ applicant.course.title }}</p>
+<p>Course Fee: {{ applicant.course.fee }}</p>
+<br>
+<p>We have sent a confirmation mail to you at <strong>{{ applicant.email }}</strong>. Please check mail.</p>
 
 <br>
   <ul class="record_actions">

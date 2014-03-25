@@ -11,9 +11,14 @@ application_new:
     defaults: { _controller: ABCApplicationBundle:Application:new }
 
 application_newC:
-    pattern:  /step1/{courseId}
+    pattern:  /step1/{$id}
     defaults: { _controller: ABCApplicationBundle:Application:newGivenCourse }
     
+application_create_given:
+    pattern: /step1/createGiven
+    defaults: { _controller: ABCApplicationBundle:Application:createGiven }
+    requirements: { _method: POST }
+
 application_create:
     pattern: /new/create
     defaults: { _controller: ABCApplicationBundle:Application:create }
