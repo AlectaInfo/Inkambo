@@ -15,35 +15,65 @@ class ApplicantType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nic')
-            ->add('firstname')
-            ->add('lastname')
-            ->add('phone')
-            ->add('address')
+//            ->add('submitdate')
+            ->add('nic', 'text',
+                    array(
+                        'label' => 'NIC',
+                        'pattern' => '[0-9vV]+',
+                        'max_length' => 10
+                    ))
+            ->add('firstname', 'text',
+                    array(
+                        'label' => 'First Name'
+                    ))
+            ->add('lastname', 'text',
+                    array(
+                        'label' => 'Last Name'
+                    ))
+            ->add('dob', 'birthday',
+                    array(
+                        'years'=>range(1970,2006)
+                    ))
+            ->add('phone', 'text',
+                    array(
+                        'pattern' => '[0-9]+',
+                        'max_length' => 10
+                    ))
+            ->add('address', 'textarea',
+                    array(
+                        'label' => 'Address'
+                    ))
             ->add('gender', 'choice',
                     array(
-                        'choices'=> array('Male'=>'Male','Female'=>'Female'),
-                        'empty_value'=> '[Select]'
+                        'choices' => array('Male'=>'Male', 'Female'=>'Female')
                     ))
-            ->add('email', 'email')
-//            ->add('certificates', 'file')
+            ->add('email', 'email',
+                    array(
+                        'label'=>'E-mail'
+                ))
+//            ->add('currentoccuption', 'text',
+//                    array(
+//                        'label' => 'Current Occupation'
+//                    ))
+            ->add('qualification', 'textarea',
+                    array(
+                        'label' => 'Qualifications'
+                    ))
+            ->add('certificates', 'file',
+                    array(
+                        'label' => 'Certificates'
+                    ))
+//            ->add('rating')
+//            ->add('status')
+//            ->add('timeslot2')
+//            ->add('timeslot1')
             ->add('course', 'entity',
                     array(
-                        'class'=>'ABC\ApplicationBundle\Entity\Course',
-                        'property'=>'title'
-                    ))    
-//            ->add('timeslot1', 'entity',
-//                    array(
-//                        'class'=>'ABC\ApplicationBundle\Entity\Timeslot',
-//                        'property'=>'detail'
-//                    ))
-//            ->add('timeslot2', 'entity',
-//                    array(
-//                        'class'=>'ABC\ApplicationBundle\Entity\Timeslot',
-//                        'property'=>'detail'
-//                    ))
+                        'class'=>'ABCApplicationBundle:Course',
+                        'property'=>'title',
+                        'label'=>'Course'
+                    ))
         ;
-                    
     }
     
     /**
@@ -64,3 +94,4 @@ class ApplicantType extends AbstractType
         return 'abc_applicationbundle_applicant';
     }
 }
+

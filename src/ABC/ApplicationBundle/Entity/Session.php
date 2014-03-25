@@ -10,6 +10,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Session
 {
     /**
+     * @var integer
+     */
+    private $available;
+
+    /**
      * @var string
      */
     private $sessionId;
@@ -39,6 +44,29 @@ class Session
      */
     private $course;
 
+
+    /**
+     * Set available
+     *
+     * @param integer $available
+     * @return Session
+     */
+    public function setAvailable($available)
+    {
+        $this->available = $available;
+
+        return $this;
+    }
+
+    /**
+     * Get available
+     *
+     * @return integer 
+     */
+    public function getAvailable()
+    {
+        return $this->available;
+    }
 
     /**
      * Set sessionId
