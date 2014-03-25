@@ -2,3 +2,18 @@ abc_home_homepage:
     pattern:  /
     defaults: { _controller: ABCHomeBundle:Default:index }
     
+abc_home_aboutpage:
+    pattern:  /about
+    defaults: { _controller: ABCHomeBundle:Default:about }
+    
+abc_home_coursespage:
+    pattern:  /courses
+    defaults: { _controller: ABCHomeBundle:Default:courses }
+    
+abc_home_instructorspage:
+    pattern:  /instructors
+    defaults: { _controller: ABCHomeBundle:Default:instructors }
+    
+abc_home_contactuspage:
+    pattern:  /contactus
+    defaults: { _controller: ABCHomeBundle:Default:contactus }
