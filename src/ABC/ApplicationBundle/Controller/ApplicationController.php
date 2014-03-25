@@ -2,9 +2,9 @@
 
 namespace ABC\ApplicationBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use ABC\ApplicationBundle\Entity\Applicant;
 use ABC\ApplicationBundle\Form\ApplicantType;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 class ApplicationController extends Controller
@@ -22,26 +22,16 @@ class ApplicationController extends Controller
         return $this->render('ABCApplicationBundle:Application:add.html.twig',array('applicant'=>$applicant,'form'=> $form->createView()));
     }
     
-    public function newGivenCourseAction($courseId){
+    public function newGivenCourseAction($id){
         $applicant = new Applicant();
-        $form = $this->createAddForm($applicant);
-               
+        $form = $this->createAddGivenForm($applicant);
+        
         $em1 = $this->getDoctrine()->getEntityManager();
-        $course = $em1->getRepository('ABCApplicationBundle:Course')->find($courseId);
-        
-        $applicant->setCourse($course);
-        
-        if($form->isValid()){
+        $course = $em1->getRepository('ABCApplicationBundle:Course')->find($id);
             
-            $em = $this->getDoctrine()->getEntityManager();
-            $em->persist($applicant);
-            $em->flush();
-            
-            return $this->redirect($this->generateUrl('application_pref',array('id'=>$applicant->getAppId())));
-        }
-        
         return $this->render('ABCApplicationBundle:Application:add_course.html.twig',array(
             'applicant' => $applicant,
+            'course' => $course,
             'form'   => $form->createView(),
         ));
     }
@@ -51,21 +41,30 @@ class ApplicationController extends Controller
         $applicant = new Applicant();
         $form = $this->createAddForm($applicant);
         $form->handleRequest($request);
-        
-//        if($form->isValid()){
-            
             $applicant->setStatus("Pending");
             $em = $this->getDoctrine()->getEntityManager();
             $em->persist($applicant);
             $em->flush();
             
-            return $this->redirect($this->generateUrl('application_pref',array('id'=>$applicant->getAppId())));
-//        }
-//        
-//        return $this->render('ABCApplicationBundle:Application:add.html.twig',array(
-//            'applicant' => $applicant,
-//            'form'   => $form->createView()
-//        ));
+        return $this->redirect($this->generateUrl('application_pref',array('id'=>$applicant->getAppId())));
+    }
+    
+    public function createGivenAction(Request $request, $courseId){
+           
+        $applicant = new Applicant();
+        $form = $this->createAddForm($applicant);
+        $form->handleRequest($request);
+        
+        if($request->isMethod('POST')){
+            $em1 = $this->getDoctrine()->getEntityManager();
+            $course = $em1->getRepository('ABCApplicationBundle:Course')->find($courseId);
+            $applicant->setCourse($course);
+            $applicant->setStatus("Pending");
+            $em = $this->getDoctrine()->getEntityManager();
+            $em->persist($applicant);
+            $em->flush();
+        }
+        return $this->redirect($this->generateUrl('application_pref',array('id'=>$applicant->getAppId())));
     }
     
     public function prefAction($id)
@@ -85,7 +84,7 @@ class ApplicationController extends Controller
             $timeslots[] = $i->getTimeslot();
         }
         
-        if(!$timeslots) {
+        if(!$sessions) {
             throw $this->createNotFoundException('Sorry no sessions scheduled for this course yet.');
         }   
         
@@ -122,8 +121,20 @@ class ApplicationController extends Controller
     
     public function createAddForm(Applicant $applicant){
         
-        $form = $this->createForm(new ApplicantType(),$applicant,array(
+        $form = $this->createForm(new ApplicantType(), $applicant, array(
            'action' => $this->generateUrl('application_create'),
+           'method'=> 'POST'
+        ));
+        
+        $form->add('apply','submit', array('label'=>'Apply Now'));
+        
+        return $form;
+    }
+    
+    public function createAddGivenForm(Applicant $applicant){
+        
+        $form = $this->createForm(new ApplicantType(), $applicant, array(
+           'action' => $this->generateUrl('application_create_given, {'..'}'),
            'method'=> 'POST'
         ));
         
