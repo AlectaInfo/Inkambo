@@ -1,3 +1,8 @@
 abc_admin_course_admin_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: ABCAdminCourseAdminBundle:Default:index }
+    pattern:  /
+    defaults: { _controller: ABCAdminCourseAdminBundle:Selection:index }
+    
+abc_select:
+    pattern:  /select
+    defaults: { _controller: ABCAdminCourseAdminBundle:Selection:select }
+    requirements: { _method: post|put }
