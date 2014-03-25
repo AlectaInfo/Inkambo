@@ -27,5 +27,10 @@ session_delete:
     requirements: { _method: post|delete }
     
 session_newGiven:
-    pattern:  /new/{courseID}
-    defaults: { _controller: "ABCAdminResourceAdminBundle:Session:newGiven" }    
+    pattern:  /new/{courseId}/{id}
+    defaults: { _controller: "ABCAdminResourceAdminBundle:RspCourseAssign:new" }    
+    
+session_createGiven:
+    pattern:  /create/{courseId}/{id}
+    defaults: { _controller: "ABCAdminResourceAdminBundle:RspCourseAssign:create" }   
+    requirements: { _method: post }

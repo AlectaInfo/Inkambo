@@ -1,18 +1,157 @@
-Resource Admin Here :D
-
-
-<br>
-
-> COURSE ADMINISTRATION
-<br>
-> DEPARTMENTS
-<br>
-> RESOURCE PERSONS
-<br>
-> CLASSROOMS
-<br>
-> TIMESLOTS
-<br>
-> SESSIONS
-<br>
-all are managed from here
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>AdminPanel</title>
+	<link media="all" rel="stylesheet" type="text/css" href="{{asset('bundles/abcadminresourceadmin/css/all.css')}}" />
+	<script type="text/javascript" src="{{asset('bundles/abcadminresourceadmin/js/jquery-1.7.2.min.js')}}"></script>
+	<script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="js/jquery-1.7.2.min.js"><\/script>');</script>
+	<script type="text/javascript" src="{{asset('bundles/abcadminresourceadmin/js/jquery.main.js')}}"></script>
+	<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" /><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="content">
+			<div class="c1">
+				<div class="controls">
+					<nav class="links">
+						<ul>
+							<li><a href="#" class="ico1">Messages <span class="num">26</span></a></li>
+							<li><a href="#" class="ico2">Alerts <span class="num">5</span></a></li>
+							<li><a href="#" class="ico3">Documents <span class="num">3</span></a></li>
+						</ul>
+					</nav>
+					<div class="profile-box">
+						<span class="profile">
+							<a href="#" class="section">
+								<img class="image" src="{{asset('bundles/abcadminresourceadmin/images/img1.jpg')}}" alt="image description" width="26" height="26" />
+								<span class="text-box">
+									Welcome
+									<strong class="name">Resource Admin</strong>
+								</span>
+							</a>
+							<a href="#" class="opener">opener</a>
+						</span>
+						<a href="{{path('abc_home_homepage')}}" class="btn-on">On</a>
+					</div>
+				</div>
+				<div class="tabs">
+					<div id="tab-1" class="tab">
+                                        {%block tab1%}    
+						<article>
+							
+						</article>
+                                            {%endblock%}    
+					</div>
+                               
+				<!--	<div id="tab-2" class="tab">
+                                         {%block tab2%}     
+						<article>
+							Resource Person Panel
+						</article>
+                                          {%endblock%}      
+					</div> -->
+					<div id="tab-3" class="tab">
+                                         {%block tab3%}     
+						<article>
+                                                        <h1>Courses Panel</h1>
+							Session Panel
+						</article>
+                                             {%endblock%}   
+					</div>
+					<div id="tab-4" class="tab">
+                                         {%block tab4%}     
+						<article>
+							<h1>Timeslot Panel</h1>
+						</article>
+                                              {%endblock%}  
+					</div>
+					<div id="tab-5" class="tab">
+                                         {%block tab5%}     
+						<article>
+							Class Room Panel
+						</article>
+                                             {%endblock%}   
+					</div>
+					<div id="tab-6" class="tab">
+                                         {%block tab6%}     
+						<article>
+							Department Panel
+						</article>
+                                           {%endblock%}     
+					</div>
+				<div id="tab-7" class="tab">
+                                         {%block tab7%}     
+						<article>
+							<div class="text-section">
+								<h1>Dashboard</h1>
+								<p>This is a quick overview of some features</p>
+							</div>
+							<ul class="states">
+								<li class="error">Error : This is an error placed text message.</li>
+								<li class="warning">Warning: This is a warning placed text message.</li>
+								<li class="succes">Succes : This is a succes placed text message.</li>
+							</ul>
+						</article>
+                                            {%endblock%}    
+					</div>
+					<div id="tab-8" class="tab">
+                                         {%block tab8%}     
+						<article>
+							<div class="text-section">
+								<h1>Dashboard</h1>
+								<p>This is a quick overview of some features</p>
+							</div>
+							<ul class="states">
+								<li class="error">Error : This is an error placed text message.</li>
+								<li class="warning">Warning: This is a warning placed text message.</li>
+								<li class="succes">Succes : This is a succes placed text message.</li>
+							</ul>
+						</article>
+                                           {%endblock%}     
+					</div>  
+				</div>
+			</div>
+		</div>
+		<aside id="sidebar">
+			<strong class="logo"><a href="#">lg</a></strong>
+			<ul class="tabset buttons">
+				<li class="active">
+					<a href="#tab-1" class="ico1"><span>Dashboard</span><em></em></a>
+					<span class="tooltip"><span>Dashboard</span></span>
+				</li>
+			<!--	<li>
+					<a href="#tab-2" class="ico2"><span>Gallery</span><em></em></a>
+					<span class="tooltip"><span>Gallery</span></span>
+				</li> -->
+				<li>
+					<a href="#tab-3" class="ico3"><span>Courses</span><em></em></a>
+					<span class="tooltip"><span>Courses</span></span>
+				</li>
+				<li>
+					<a href="#tab-4" class="ico4"><span>Resource Person</span><em></em></a>
+					<span class="tooltip"><span>Resource Person</span></span>
+				</li>
+				<li>
+					<a href="#tab-5" class="ico5"><span>Sessions</span><em></em></a>
+					<span class="tooltip"><span>Sessions</span></span>
+				</li>
+				<li>
+					<a href="#tab-6" class="ico6">
+						<span>Timeslot</span><em></em>
+					</a>
+                                        <span class="tooltip"><span>Timeslot</span></span>
+				</li>
+				<li>
+					<a href="#tab-7" class="ico7"><span>Class Room<</span><em></em></a>
+					<span class="tooltip"><span>Class Room</span></span>
+				</li>
+				<li>
+					<a href="#tab-8" class="ico8"><span>Department/span><em></em></a>
+					<span class="tooltip"><span>Department</span></span>
+				</li>
+			</ul>
+			<span class="shadow"></span>
+		</aside>
+	</div>
+</body>
+</html>

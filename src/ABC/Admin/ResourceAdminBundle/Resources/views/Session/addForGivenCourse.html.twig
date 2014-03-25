@@ -2,8 +2,8 @@
 
 {% block container%}
          
-        {{form_start(form)}} 
-         <h3 style="color: #0088cc; text-align: center">Add Session for {{courseName}}</h3><br>
+        {{ form_start(form, {'action': path('session_createGiven',{'courseId':id,'id':id2})})}}
+         <h3 style="color: #0088cc; text-align: center">Add Session for {{id}}</h3><br>
         {{form_errors(form)}}
         {{ form_row(form.sessionId) }}
         {{ form_row(form.year) }}

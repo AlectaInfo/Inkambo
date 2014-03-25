@@ -10,6 +10,7 @@ Assign Sessions : <br>
 
 {%for course in courses%}
 
-    {{course.course_id}} - {{course.title}}  <input type="button" value="Create Session" onclick="popitup('{{path('session_new')}}')">  <br>
+    {{course.course_id}} - {{course.title}}<br>
+    <a href="{{path('session_newGiven',{'courseId': course.course_id,'id': id})}}"> Assign A session</a>
 
 {%endfor%}

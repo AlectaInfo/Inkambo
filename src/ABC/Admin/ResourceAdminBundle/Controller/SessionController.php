@@ -8,7 +8,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 
-
 class SessionController extends Controller
 {
      /**
@@ -51,30 +50,7 @@ class SessionController extends Controller
         ));
     }
     
-    public function newGivenAction($courseID){
-        $session = new Session();
-        $form = $this->createCreateForm($session);
-               
-        $em1 = $this->getDoctrine()->getEntityManager();
-        $course = $em1->getRepository('ABCAdminResourceAdminBundle:Course')->find($courseID);
-      //  $session->setCourse($course);
-        
-        
-        if($form->isValid()){
-            
-            $em = $this->getDoctrine()->getEntityManager();
-            $em->persist($session);
-            $em->flush();
-            
-            return $this->redirect($this->generateUrl('session_showAll'));
-        }
-        
-        return $this->render('ABCAdminResourceAdminBundle:Session:addForGivenCourse.html.twig',array(
-            'course' => $course,
-            'courseName' => $course->getTitle(),
-            'form'   => $form->createView(),
-        ));
-    }
+ 
 
     /**
     * Creates a form to create a Session entity.
@@ -94,7 +70,7 @@ class SessionController extends Controller
 
         return $form;
     }
-
+        
     /**
      * Displays a form to create a new Session entity.
      *

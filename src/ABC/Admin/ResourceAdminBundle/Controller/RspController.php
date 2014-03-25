@@ -190,6 +190,19 @@ class RspController extends Controller
     public function showAllAction(){
          $em = $this->getDoctrine()->getManager();
          $entites = $em->getRepository('ABCAdminResourceAdminBundle:Resourceperson')->findAll();
+         $temp= array();
+         
+//         foreach($entites as $i){
+//               $id = $entites->getrpId(); 
+//              $sql= "select distinct `title` from teaches natural join course where rp_id = '$id'";
+//               $em = $this->getDoctrine()->getManager();
+//                $conn = $em->getConnection();
+//              $courses=  $conn->executeQuery($sql)->f; 
+//              if($courses == null)      
+//                    $temp = array();
+//              $temp=array();
+//         }
+//         
          
          if(!$entites){
                throw $this->createNotFoundException("NO entities to be shown");

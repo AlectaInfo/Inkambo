@@ -12,10 +12,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 */
 class Session
 {
-    /**
-     * @var integer
-     */
-    private $maxStudents;
 
     /**
      * @var string
@@ -47,29 +43,6 @@ class Session
      */
     private $course;
 
-
-    /**
-     * Set maxStudents
-     *
-     * @param integer $maxStudents
-     * @return Session
-     */
-    public function setMaxStudents($maxStudents)
-    {
-        $this->maxStudents = $maxStudents;
-    
-        return $this;
-    }
-
-    /**
-     * Get maxStudents
-     *
-     * @return integer 
-     */
-    public function getMaxStudents()
-    {
-        return $this->maxStudents;
-    }
 
     /**
      * Set sessionId
@@ -210,4 +183,34 @@ class Session
     }
     
    
+    /**
+     * @var integer
+     */
+    private $available;
+
+
+    /**
+     * Set available
+     *
+     * @param integer $available
+     * @return Session
+     */
+    public function setAvailable($available)
+    {
+        $this->available = $available;
+    
+        return $this;
+    }
+
+    /**
+     * Get available
+     *
+     * @return integer 
+     */
+    public function getAvailable()
+    {
+        return $this->available;
+    }
+    
+    
 }
