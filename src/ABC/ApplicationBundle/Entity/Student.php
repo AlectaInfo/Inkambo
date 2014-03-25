@@ -238,4 +238,14 @@ class Student
     {
         return $this->currentoccuption;
     }
+
+    /**
+     * Get studentId
+     *
+     * @return string 
+     */
+    public function getStudentId()
+    {
+        return $this->studentId;
+    }
 }
