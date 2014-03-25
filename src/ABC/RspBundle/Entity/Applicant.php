@@ -444,4 +444,60 @@ class Applicant
     {
         return $this->qualification;
     }
+    /**
+     * @var \DateTime
+     */
+    private $dob;
+
+    /**
+     * @var string
+     */
+    private $currentoccuption;
+
+
+    /**
+     * Set dob
+     *
+     * @param \DateTime $dob
+     * @return Applicant
+     */
+    public function setDob($dob)
+    {
+        $this->dob = $dob;
+    
+        return $this;
+    }
+
+    /**
+     * Get dob
+     *
+     * @return \DateTime 
+     */
+    public function getDob()
+    {
+        return $this->dob;
+    }
+
+    /**
+     * Set currentoccuption
+     *
+     * @param string $currentoccuption
+     * @return Applicant
+     */
+    public function setCurrentoccuption($currentoccuption)
+    {
+        $this->currentoccuption = $currentoccuption;
+    
+        return $this;
+    }
+
+    /**
+     * Get currentoccuption
+     *
+     * @return string 
+     */
+    public function getCurrentoccuption()
+    {
+        return $this->currentoccuption;
+    }
 }

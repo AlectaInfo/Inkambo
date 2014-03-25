@@ -4,6 +4,9 @@
     <indexes>
       <index name="dept_name" columns="dept_name"/>
     </indexes>
+    <unique-constraints>
+      <unique-constraint name="title" columns="title"/>
+    </unique-constraints>
     <id name="courseId" type="string" column="course_id" length="6">
       <generator strategy="IDENTITY"/>
     </id>

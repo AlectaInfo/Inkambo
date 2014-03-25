@@ -192,4 +192,8 @@ class Course
     {
         return $this->courseId;
     }
+    
+    public function __toString() {
+        return $this->getCourseId();
+    }
 }

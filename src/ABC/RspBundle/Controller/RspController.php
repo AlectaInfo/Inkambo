@@ -44,15 +44,19 @@ class RspController extends Controller
         if($form->isValid()){
             
             $em = $this->getDoctrine()->getEntityManager();
+            $dept = $entity->getDeptName();
+            $courses = $em->getRepository('ABCRspBundle:Course')->findBy(array('deptName'=>$dept));
+            
             $em->persist($entity);
             $em->flush();
             
             $request->getSession()
                      ->getFlashBag()
-                    ->add('success', 'Registration went super smooth!')
-                            ;
+                    ->add('success', 'Registration went super smooth!');
+                            
             // modify here to display the list of courses in the given department to be assigned into takes
-            return $this->redirect($this->generateUrl('rsp_show',array('id'=>$entity->getRpId())));
+            
+            return $this->redirect($this->generateUrl('rsp_show',array('id'=>$entity->getRpId(),'courses'=> null)));
             
         }
         
@@ -156,6 +160,7 @@ class RspController extends Controller
         
         $em = $this->getDoctrine()->getEntityManager();
         $entity = $em->getRepository('ABCRspBundle:Resourceperson')->find($id);
+        // place the code to find courses here 
         
         if(!$entity){
             throw $this->createNotFoundException('Unable to find the Resource Person');
@@ -163,7 +168,8 @@ class RspController extends Controller
         $deleteForm = $this->createDeleteForm($id);
         return $this->render('ABCRspBundle:rsp:show.html.twig',array(
             'entity'=>$entity,
-            'delete_form' => $deleteForm->createView()    
+            'delete_form' => $deleteForm->createView(),
+            
                 ));
     }
     

@@ -1,0 +1,23 @@
+{%extends "ABCStyleBundle:Templates:TwitterFormTemplate.html.twig"%}
+
+
+{%block container%}
+{%set count=0%}
+{%set total=0%}
+
+{%for course in courses%}
+    {{course.title}}<br>
+{%endfor%}
+<form action="{{ path('rsp_assignCourse',{'id': id})}}" method="GET">
+
+{%for course in courses%}  
+    
+    <input type="checkbox" name="{{count}}" value="{{course.title}}">{{course.title}}<br>
+    {% set count = count+1  %}
+{%endfor%}
+    <input type="hidden" name="total" value="{{count}}">
+    <input type="submit" name="submit" value="Assign Courses">
+
+</form>
+
+{%endblock%}

@@ -46,7 +46,15 @@ rsp_showAllUser:
     defaults: { _controller: ABCRspBundle:Default:showAll}
     
 
-abc_admin_resource_admin:
-    resource: "@ABCAdminResourceAdminBundle/Resources/config/routing.yml"
-    prefix:   /resourceAdmin   
+#routing for course assignment
+
+rsp_showCourseOptions:
+    pattern: /courseOptions/{id}
+    defaults: { _controller: ABCRspBundle:RspCourseManager:showCourses}
+    
+rsp_assignCourse:
+    pattern: /assignCourses/{id}
+    defaults: { _controller: ABCRspBundle:RspCourseManager:assignCourses}
+    requirements: { _method: GET }
+    
 

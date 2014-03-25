@@ -24,9 +24,10 @@
          
         {%for entity in entities%}
            <div class="list" id="">
-             <h1> RPID : {{entity.rpid}}</h1>
-             <h2> Name :{{entity.firstname}} {{entity.lastname}}</h2>
-             <h2> Email :{{entity.email}}</h2>
+             RPID : {{entity.rpid}}<br>
+             Name : {{entity.firstname}} {{entity.lastname}}<br>
+             Email : {{entity.email}}</h2>
+              
 
              <form action="{{path('rsp_showUser',{ 'id':entity.rpid })}}" method="GET" style="padding-bottom:15px">
                       <input name="id" type="hidden" value="{{ entity.rpid}}">

@@ -30,7 +30,8 @@
       }
       .form-signin input[type="text"],
       .form-signin input[type="password"],
-      .form-signin input[type="email"]
+      .form-signin input[type="email"],
+      .form-signin input[type="time"]
       {
         font-size: 12px;
         height: 20px;
@@ -73,7 +74,7 @@ return false;
         {% block container %}    
         {{ form(form)}}
         
-         <a href="{{ path('rsp') }}" style="float: right;text-decoration: none">
+         <a href="{{ path('application') }}" style="float: right;text-decoration: none">
             Back to the list
         </a> 
         {% endblock %}        

@@ -43,7 +43,7 @@ class ResourcepersonType extends AbstractType
                 )
             ))    
             ->add('email','email',array(
-                'pattern' => '[A-Za-z]+',
+               // 'pattern' => '[A-Z@.a-z]+',
                 'attr'=>array(
                     'placeholder'=>'Enter email here'  
                 )

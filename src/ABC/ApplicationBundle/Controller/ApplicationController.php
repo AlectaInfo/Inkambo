@@ -18,19 +18,16 @@ class ApplicationController extends Controller
             
         $applicant = new Applicant();
         $form = $this->createAddForm($applicant);
-
-        
+    
         return $this->render('ABCApplicationBundle:Application:add.html.twig',array('applicant'=>$applicant,'form'=> $form->createView()));
     }
     
-    public function newGivenCourseAction(Request $request){
+    public function newGivenCourseAction($courseId){
         $applicant = new Applicant();
         $form = $this->createAddForm($applicant);
-        $form->handleRequest($request);
-//        $course_id = $request->get('id');
-        
+               
         $em1 = $this->getDoctrine()->getEntityManager();
-        $course = $em1->getRepository('ABCApplicationBundle:Course')->find('CS0001');
+        $course = $em1->getRepository('ABCApplicationBundle:Course')->find($courseId);
         
         $applicant->setCourse($course);
         
@@ -57,6 +54,7 @@ class ApplicationController extends Controller
         
         if($form->isValid()){
             
+            $applicant->setStatus("Pending");
             $em = $this->getDoctrine()->getEntityManager();
             $em->persist($applicant);
             $em->flush();
@@ -117,6 +115,7 @@ class ApplicationController extends Controller
     }
     
     public function deleteAction(Request $request,$id){
+        
         $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
         
@@ -173,7 +172,7 @@ class ApplicationController extends Controller
             return $this->redirect($this->generateUrl('application_show', array('id' => $id)));
         }
 
-        return $this->render('ABCApplicationBundle:Course:edit.html.twig', array(
+        return $this->render('ABCApplicationBundle:Application:edit.html.twig', array(
             'applicant'      => $applicant,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

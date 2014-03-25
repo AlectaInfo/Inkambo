@@ -2,7 +2,6 @@ abc_home:
     resource: "@ABCHomeBundle/Resources/config/routing.yml"
     prefix:   /
 
-
 abc_course:
     resource: "@ABCCourseBundle/Resources/config/routing.yml"
     prefix:   /course
@@ -26,8 +25,30 @@ abc_admin_resource_admin:
 abc_admin_course_admin:
     resource: "@ABCAdminCourseAdminBundle/Resources/config/routing.yml"
     prefix:   /courseAdmin
-    
-abc_admin_resource_admin_department:
+#resource admin - Department    
+abc_admin_resource_admin_department: 
         resource: "@ABCAdminResourceAdminBundle/Resources/config/routing/department.yml"
         prefix:   /resourceAdmin/department
 
+abc_rating:
+    resource: "@ABCRatingBundle/Resources/config/routing.yml"
+    prefix:   /rating
+    
+#resource admin - Class    
+abc_admin_resource_admin_class:
+        resource: "@ABCAdminResourceAdminBundle/Resources/config/routing/class.yml"
+        prefix:   /resourceAdmin/class  
+        
+#resource admin - Timeslot   
+abc_admin_resource_admin_timeslot:
+        resource: "@ABCAdminResourceAdminBundle/Resources/config/routing/timeslot.yml"
+        prefix:   /resourceAdmin/timeslot 
+        
+#resource admin - Session   
+abc_admin_resource_admin_session:
+        resource: "@ABCAdminResourceAdminBundle/Resources/config/routing/session.yml"
+        prefix:   /resourceAdmin/session         
+
+abc_contact_us:
+    resource: "@ABCContactUsBundle/Resources/config/routing.yml"
+    prefix:   /contact

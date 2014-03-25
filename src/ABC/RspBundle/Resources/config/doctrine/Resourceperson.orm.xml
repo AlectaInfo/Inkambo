@@ -24,15 +24,5 @@
         <join-column name="dept_name" referenced-column-name="name"/>
       </join-columns>
     </many-to-one>
-    <many-to-many field="session" target-entity="Session" inversed-by="rp">
-      <join-table name="teaches">
-        <join-columns>
-          <join-column name="rp_id" referenced-column-name="rp_id"/>
-        </join-columns>
-        <inverse-join-columns>
-          <join-column name="session_id" referenced-column-name="session_id"/>
-        </inverse-join-columns>
-      </join-table>
-    </many-to-many>
   </entity>
 </doctrine-mapping>
