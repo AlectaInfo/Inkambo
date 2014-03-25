@@ -6,7 +6,7 @@
         <li><a href ="">{{key}}</a></li>
         {%for course in courses%}
         <ul>
-            <li><a href ="">{{course.getTitle}}</a></li>
+            <li><A HREF ="{{path('course_description')}}#{{course.getCourseId()}}">{{course.getTitle}}</A></li>
         </ul>
             {%endfor%}
                     {%endfor%}

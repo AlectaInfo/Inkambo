@@ -17,6 +17,11 @@ class Login
     /**
      * @var string
      */
+    private $salt;
+
+    /**
+     * @var string
+     */
     private $type;
 
     /**
@@ -46,6 +51,29 @@ class Login
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * Set salt
+     *
+     * @param string $salt
+     * @return Login
+     */
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+
+        return $this;
+    }
+
+    /**
+     * Get salt
+     *
+     * @return string 
+     */
+    public function getSalt()
+    {
+        return $this->salt;
     }
 
     /**

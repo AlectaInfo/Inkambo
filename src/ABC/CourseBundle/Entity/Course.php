@@ -3,12 +3,10 @@
 namespace ABC\CourseBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-  /**
-* @ORM\Entity
-* @UniqueEntity(fields="courseId", message="The given course id already exists")
-*/
+
+/**
+ * Course
+ */
 class Course
 {
     /**
@@ -36,16 +34,17 @@ class Course
      */
     private $leaflet;
 
+    /**
+     * @var string
+     */
     private $courseId;
 
     /**
      * @var \ABC\CourseBundle\Entity\Department
      */
     private $deptName;
- /**
-     * @var string
-     */
-    private $identifier;
+
+
     /**
      * Set title
      *
@@ -162,6 +161,19 @@ class Course
     }
 
     /**
+     * Set courseId
+     *
+     * @param string $courseId
+     * @return Course
+     */
+    public function setCourseId($courseId)
+    {
+        $this->courseId = $courseId;
+
+        return $this;
+    }
+
+    /**
      * Get courseId
      *
      * @return string 
@@ -177,11 +189,9 @@ class Course
      * @param \ABC\CourseBundle\Entity\Department $deptName
      * @return Course
      */
-    public function setDeptName(\ABC\CourseBundle\Entity\Department $deptName)
+    public function setDeptName(\ABC\CourseBundle\Entity\Department $deptName = null)
     {
         $this->deptName = $deptName;
-        $this->identifier = $deptName->getCode();
-
 
         return $this;
     }
@@ -195,13 +205,4 @@ class Course
     {
         return $this->deptName;
     }
-
-    public function setCourseId($courseId)
-    {
-        $this->courseId = $this->identifier.$courseId;
-
-        return $this;
-    }
-    
- 
 }

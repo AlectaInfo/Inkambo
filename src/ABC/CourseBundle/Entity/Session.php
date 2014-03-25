@@ -10,11 +10,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Session
 {
     /**
-     * @var integer
-     */
-    private $maxStudents;
-
-    /**
      * @var string
      */
     private $sessionId;
@@ -44,41 +39,6 @@ class Session
      */
     private $course;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $rp;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->rp = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Set maxStudents
-     *
-     * @param integer $maxStudents
-     * @return Session
-     */
-    public function setMaxStudents($maxStudents)
-    {
-        $this->maxStudents = $maxStudents;
-
-        return $this;
-    }
-
-    /**
-     * Get maxStudents
-     *
-     * @return integer 
-     */
-    public function getMaxStudents()
-    {
-        return $this->maxStudents;
-    }
 
     /**
      * Set sessionId
@@ -216,38 +176,5 @@ class Session
     public function getCourse()
     {
         return $this->course;
-    }
-
-    /**
-     * Add rp
-     *
-     * @param \ABC\CourseBundle\Entity\Resourceperson $rp
-     * @return Session
-     */
-    public function addRp(\ABC\CourseBundle\Entity\Resourceperson $rp)
-    {
-        $this->rp[] = $rp;
-
-        return $this;
-    }
-
-    /**
-     * Remove rp
-     *
-     * @param \ABC\CourseBundle\Entity\Resourceperson $rp
-     */
-    public function removeRp(\ABC\CourseBundle\Entity\Resourceperson $rp)
-    {
-        $this->rp->removeElement($rp);
-    }
-
-    /**
-     * Get rp
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getRp()
-    {
-        return $this->rp;
     }
 }

@@ -64,18 +64,6 @@ class Resourceperson
      */
     private $deptName;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $session;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->session = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Set firstname
@@ -315,38 +303,5 @@ class Resourceperson
     public function getDeptName()
     {
         return $this->deptName;
-    }
-
-    /**
-     * Add session
-     *
-     * @param \ABC\CourseBundle\Entity\Session $session
-     * @return Resourceperson
-     */
-    public function addSession(\ABC\CourseBundle\Entity\Session $session)
-    {
-        $this->session[] = $session;
-
-        return $this;
-    }
-
-    /**
-     * Remove session
-     *
-     * @param \ABC\CourseBundle\Entity\Session $session
-     */
-    public function removeSession(\ABC\CourseBundle\Entity\Session $session)
-    {
-        $this->session->removeElement($session);
-    }
-
-    /**
-     * Get session
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getSession()
-    {
-        return $this->session;
     }
 }

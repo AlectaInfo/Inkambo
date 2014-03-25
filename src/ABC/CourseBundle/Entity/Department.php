@@ -29,7 +29,7 @@ class Department
     public function setCode($code)
     {
         $this->code = $code;
-    
+
         return $this;
     }
 
@@ -51,22 +51,5 @@ class Department
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return Department
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    
-        return $this;
-    }
-    
-    public function __toString(){
-        return $this->getName();
     }
 }

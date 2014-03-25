@@ -1,1 +1,32 @@
 
+<ul class="">
+              {%for courses, details in all_courses%}
+    <A NAME = "{{courses}}"></A>
+    <h1>{{courses}}: {{details[0].title}}   Department of {{details[0].dept_name}}</h1>
+        {%for sessions in details%}
+    <h2>Session {{loop.index}}</h2>
+    <h3>Start Month: {{sessions.start_month}}</h3>
+    <h3>Day: {{sessions.day}}</h3>
+    <h3>Start: {{sessions.start}}</h3>
+    <h3>Finish: {{sessions.finish}}</h3>
+    <h3>Fee: {{sessions.fee}}</h3>
+    <h3>Duration: {{sessions.duration}}</h3>
+    <h3><a href = "">View resource person here</a></h3>
+
+    <br>
+    <h3>D: {{sessions.description}}</h3>
+    <h3>{{sessions.leaflet}}</h3>
+
+
+
+
+
+
+                    {%endfor%}
+    <form action="">
+        <input type="submit" value="Apply for course">
+    </form> 
+                            {%endfor%}
+
+</ul>
+
