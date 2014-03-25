@@ -1,6 +1,6 @@
 <?php
 
-namespace ABC\Admin\ResourceAdminBundle\Entity;
+namespace ABC\HomeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -40,7 +40,7 @@ class Course
     private $courseId;
 
     /**
-     * @var \ABC\Admin\ResourceAdminBundle\Entity\Department
+     * @var \ABC\HomeBundle\Entity\Department
      */
     private $deptName;
 
@@ -54,7 +54,7 @@ class Course
     public function setTitle($title)
     {
         $this->title = $title;
-    
+
         return $this;
     }
 
@@ -77,7 +77,7 @@ class Course
     public function setFee($fee)
     {
         $this->fee = $fee;
-    
+
         return $this;
     }
 
@@ -100,7 +100,7 @@ class Course
     public function setDuration($duration)
     {
         $this->duration = $duration;
-    
+
         return $this;
     }
 
@@ -123,7 +123,7 @@ class Course
     public function setDescription($description)
     {
         $this->description = $description;
-    
+
         return $this;
     }
 
@@ -146,7 +146,7 @@ class Course
     public function setLeaflet($leaflet)
     {
         $this->leaflet = $leaflet;
-    
+
         return $this;
     }
 
@@ -173,44 +173,23 @@ class Course
     /**
      * Set deptName
      *
-     * @param \ABC\Admin\ResourceAdminBundle\Entity\Department $deptName
+     * @param \ABC\HomeBundle\Entity\Department $deptName
      * @return Course
      */
-    public function setDeptName(\ABC\Admin\ResourceAdminBundle\Entity\Department $deptName = null)
+    public function setDeptName(\ABC\HomeBundle\Entity\Department $deptName = null)
     {
         $this->deptName = $deptName;
-    
+
         return $this;
     }
 
     /**
      * Get deptName
      *
-     * @return \ABC\Admin\ResourceAdminBundle\Entity\Department 
+     * @return \ABC\HomeBundle\Entity\Department 
      */
     public function getDeptName()
     {
         return $this->deptName;
-    }
-
-    /**
-     * Set courseId
-     *
-     * @param string $courseId
-     * @return Course
-     */
-    public function setCourseId($courseId)
-    {
-        $this->courseId = $courseId;
-    
-        return $this;
-    }
-    
-    public function __toString(){
-        return $this->getCourseId();
-    }
-    
-    public function getDetail(){
-        return $this->getTitle()."(".$this->getCourseId().")";
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace ABC\Admin\ResourceAdminBundle\Entity;
+namespace ABC\HomeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -29,7 +29,7 @@ class Classroom
     public function setCapacity($capacity)
     {
         $this->capacity = $capacity;
-    
+
         return $this;
     }
 
@@ -44,19 +44,6 @@ class Classroom
     }
 
     /**
-     * Set classId
-     *
-     * @param string $classId
-     * @return Classroom
-     */
-    public function setClassId($classId)
-    {
-        $this->classId = $classId;
-    
-        return $this;
-    }
-
-    /**
      * Get classId
      *
      * @return string 
@@ -64,13 +51,5 @@ class Classroom
     public function getClassId()
     {
         return $this->classId;
-    }
-    
-    public function __toString(){
-        return $this->getClassId();
-    }
-    
-    public function getDetail(){
-        return $this->getClassId()."( max - ".$this->getCapacity().")";
     }
 }

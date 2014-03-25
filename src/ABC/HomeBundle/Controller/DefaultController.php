@@ -10,4 +10,8 @@ class DefaultController extends Controller
     {
         return $this->render('ABCHomeBundle:Default:home.html.twig');
     }
+    
+    public function startAction() {
+        return $this->render('ABCHomeBundle:Default:start.html.twig', array('name' =>'Wajji'));
+    }
 }
