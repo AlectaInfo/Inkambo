@@ -10,6 +10,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Session
 {
     /**
+     * @var integer
+     */
+    private $maxStudents;
+
+    /**
      * @var string
      */
     private $sessionId;
@@ -39,8 +44,30 @@ class Session
      */
     private $course;
 
-    private $available;
+
+    /**
+     * Set maxStudents
+     *
+     * @param integer $maxStudents
+     * @return Session
+     */
+    public function setMaxStudents($maxStudents)
+    {
+        $this->maxStudents = $maxStudents;
     
+        return $this;
+    }
+
+    /**
+     * Get maxStudents
+     *
+     * @return integer 
+     */
+    public function getMaxStudents()
+    {
+        return $this->maxStudents;
+    }
+
     /**
      * Set sessionId
      *
@@ -50,7 +77,7 @@ class Session
     public function setSessionId($sessionId)
     {
         $this->sessionId = $sessionId;
-
+    
         return $this;
     }
 
@@ -73,7 +100,7 @@ class Session
     public function setYear($year)
     {
         $this->year = $year;
-
+    
         return $this;
     }
 
@@ -96,7 +123,7 @@ class Session
     public function setStartMonth($startMonth)
     {
         $this->startMonth = $startMonth;
-
+    
         return $this;
     }
 
@@ -119,7 +146,7 @@ class Session
     public function setClass(\ABC\Admin\CourseAdminBundle\Entity\Classroom $class)
     {
         $this->class = $class;
-
+    
         return $this;
     }
 
@@ -142,7 +169,7 @@ class Session
     public function setTimeslot(\ABC\Admin\CourseAdminBundle\Entity\Timeslot $timeslot)
     {
         $this->timeslot = $timeslot;
-
+    
         return $this;
     }
 
@@ -165,7 +192,7 @@ class Session
     public function setCourse(\ABC\Admin\CourseAdminBundle\Entity\Course $course)
     {
         $this->course = $course;
-
+    
         return $this;
     }
 
@@ -178,13 +205,4 @@ class Session
     {
         return $this->course;
     }
-    public function getAvailable() {
-        return $this->available;
-    }
-
-    public function setAvailable($available) {
-        $this->available = $available;
-    }
-
-
 }

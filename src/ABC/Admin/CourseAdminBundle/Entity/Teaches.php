@@ -34,7 +34,7 @@ class Teaches
     public function setRp(\ABC\Admin\CourseAdminBundle\Entity\Resourceperson $rp)
     {
         $this->rp = $rp;
-
+    
         return $this;
     }
 
@@ -57,7 +57,7 @@ class Teaches
     public function setSession(\ABC\Admin\CourseAdminBundle\Entity\Session $session)
     {
         $this->session = $session;
-
+    
         return $this;
     }
 
@@ -80,7 +80,7 @@ class Teaches
     public function setCourse(\ABC\Admin\CourseAdminBundle\Entity\Course $course = null)
     {
         $this->course = $course;
-
+    
         return $this;
     }
 

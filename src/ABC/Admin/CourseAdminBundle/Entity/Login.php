@@ -39,7 +39,7 @@ class Login
     public function setPassword($password)
     {
         $this->password = $password;
-
+    
         return $this;
     }
 
@@ -62,7 +62,7 @@ class Login
     public function setSalt($salt)
     {
         $this->salt = $salt;
-
+    
         return $this;
     }
 
@@ -85,7 +85,7 @@ class Login
     public function setType($type)
     {
         $this->type = $type;
-
+    
         return $this;
     }
 

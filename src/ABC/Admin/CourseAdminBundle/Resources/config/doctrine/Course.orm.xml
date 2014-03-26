@@ -8,7 +8,6 @@
       <unique-constraint name="title" columns="title"/>
     </unique-constraints>
     <id name="courseId" type="string" column="course_id" length="6">
-      <generator strategy="IDENTITY"/>
     </id>
     <field name="title" type="string" column="title" length="40" nullable="false"/>
     <field name="fee" type="decimal" column="fee" precision="12" scale="2" nullable="true"/>

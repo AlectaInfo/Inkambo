@@ -31,7 +31,8 @@
       .form-signin input[type="text"],
       .form-signin input[type="password"],
       .form-signin input[type="email"],
-      .form-signin input[type="time"]
+      .form-signin input[type="time"],
+      .form-signin input[type='number']
       {
         font-size: 12px;
         height: 20px;
@@ -40,7 +41,22 @@
       }
 
     </style>
-{% endblock%}    
+{% endblock%}
+{%block  script%}
+<script language='javascript'>
+var t;
+function doLoad() {
+t = setTimeout("window.close()",1000);
+}
+
+</script>
+<script type="text/javascript">
+function refreshAndClose() {
+    window.opener.location.reload(true);
+    window.close();
+}
+</script>
+{%endblock%}    
 </head>
 
 <body>

@@ -2,3 +2,34 @@ abc_home_homepage:
     pattern:  /
     defaults: { _controller: ABCHomeBundle:Default:index }
     
+abc_home_aboutpage:
+    pattern:  /about
+    defaults: { _controller: ABCHomeBundle:Default:about }
+    
+abc_home_coursespage:
+    pattern:  /courses
+    defaults: { _controller: ABCHomeBundle:Default:courses }
+    
+abc_home_instructorspage:
+    pattern:  /instructors
+    defaults: { _controller: ABCHomeBundle:Default:instructors }
+    
+abc_home_contactuspage:
+    pattern:  /contactus
+    defaults: { _controller: ABCHomeBundle:Default:contactus }
+    
+abc_home_login:
+    pattern:  /admin/login
+    defaults: { _controller: ABCHomeBundle:Default:login }
+    requirements: { _method: post }
+    
+abc_home_loginpage:
+    pattern:  /admin
+    defaults: { _controller: ABCHomeBundle:Default:display }
+  
+abc_home_logout:
+    pattern:  /admin/logout
+    defaults: { _controller: ABCHomeBundle:Default:logout }   
+    requirements: { _method: post }
+    
+    

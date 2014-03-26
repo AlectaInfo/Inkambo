@@ -160,16 +160,25 @@ class RspController extends Controller
         
         $em = $this->getDoctrine()->getEntityManager();
         $entity = $em->getRepository('ABCRspBundle:Resourceperson')->find($id);
+        
         // place the code to find courses here 
         
         if(!$entity){
             throw $this->createNotFoundException('Unable to find the Resource Person');
         }
         $deleteForm = $this->createDeleteForm($id);
+        
+        $file = $entity->getPhoto();
+        if($file != NULL){
+            $file= stream_get_contents($entity->getPhoto());
+        }
+        else
+        $file='NOT FOUND';
+        
         return $this->render('ABCRspBundle:rsp:show.html.twig',array(
             'entity'=>$entity,
             'delete_form' => $deleteForm->createView(),
-            
+            'file'=>$file
                 ));
     }
     

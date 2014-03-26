@@ -74,7 +74,7 @@ class Resourceperson
     public function setFirstname($firstname)
     {
         $this->firstname = $firstname;
-
+    
         return $this;
     }
 
@@ -97,7 +97,7 @@ class Resourceperson
     public function setLastname($lastname)
     {
         $this->lastname = $lastname;
-
+    
         return $this;
     }
 
@@ -120,7 +120,7 @@ class Resourceperson
     public function setAddress($address)
     {
         $this->address = $address;
-
+    
         return $this;
     }
 
@@ -143,7 +143,7 @@ class Resourceperson
     public function setEmail($email)
     {
         $this->email = $email;
-
+    
         return $this;
     }
 
@@ -166,7 +166,7 @@ class Resourceperson
     public function setPhone($phone)
     {
         $this->phone = $phone;
-
+    
         return $this;
     }
 
@@ -189,7 +189,7 @@ class Resourceperson
     public function setGender($gender)
     {
         $this->gender = $gender;
-
+    
         return $this;
     }
 
@@ -212,7 +212,7 @@ class Resourceperson
     public function setPhoto($photo)
     {
         $this->photo = $photo;
-
+    
         return $this;
     }
 
@@ -235,7 +235,7 @@ class Resourceperson
     public function setPost($post)
     {
         $this->post = $post;
-
+    
         return $this;
     }
 
@@ -258,7 +258,7 @@ class Resourceperson
     public function setQualification($qualification)
     {
         $this->qualification = $qualification;
-
+    
         return $this;
     }
 
@@ -291,7 +291,7 @@ class Resourceperson
     public function setDeptName(\ABC\Admin\CourseAdminBundle\Entity\Department $deptName = null)
     {
         $this->deptName = $deptName;
-
+    
         return $this;
     }
 

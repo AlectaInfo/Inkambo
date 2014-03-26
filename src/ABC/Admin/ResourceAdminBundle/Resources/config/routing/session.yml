@@ -10,6 +10,7 @@ session_create:
     pattern:  /create
     defaults: { _controller: "ABCAdminResourceAdminBundle:Session:create" }
     requirements: { _method: post }
+    
 
 #session_edit:
 #    pattern:  /{id}/edit
@@ -24,3 +25,12 @@ session_delete:
     pattern:  /{id}/delete
     defaults: { _controller: "ABCAdminResourceAdminBundle:Session:delete" }
     requirements: { _method: post|delete }
+    
+session_newGiven:
+    pattern:  /new/{courseId}/{id}
+    defaults: { _controller: "ABCAdminResourceAdminBundle:RspCourseAssign:new" }    
+    
+session_createGiven:
+    pattern:  /create/{courseId}/{id}
+    defaults: { _controller: "ABCAdminResourceAdminBundle:RspCourseAssign:create" }   
+    requirements: { _method: post }

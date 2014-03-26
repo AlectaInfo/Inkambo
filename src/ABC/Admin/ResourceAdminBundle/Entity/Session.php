@@ -3,16 +3,15 @@
 namespace ABC\Admin\ResourceAdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * Session
- */
+* @ORM\Entity
+* @UniqueEntity(fields="sessionId", message="The given Session id already exists")
+ * 
+*/
 class Session
 {
-    /**
-     * @var integer
-     */
-    private $maxStudents;
 
     /**
      * @var string
@@ -44,29 +43,6 @@ class Session
      */
     private $course;
 
-
-    /**
-     * Set maxStudents
-     *
-     * @param integer $maxStudents
-     * @return Session
-     */
-    public function setMaxStudents($maxStudents)
-    {
-        $this->maxStudents = $maxStudents;
-    
-        return $this;
-    }
-
-    /**
-     * Get maxStudents
-     *
-     * @return integer 
-     */
-    public function getMaxStudents()
-    {
-        return $this->maxStudents;
-    }
 
     /**
      * Set sessionId
@@ -205,4 +181,36 @@ class Session
     {
         return $this->course;
     }
+    
+   
+    /**
+     * @var integer
+     */
+    private $available;
+
+
+    /**
+     * Set available
+     *
+     * @param integer $available
+     * @return Session
+     */
+    public function setAvailable($available)
+    {
+        $this->available = $available;
+    
+        return $this;
+    }
+
+    /**
+     * Get available
+     *
+     * @return integer 
+     */
+    public function getAvailable()
+    {
+        return $this->available;
+    }
+    
+    
 }

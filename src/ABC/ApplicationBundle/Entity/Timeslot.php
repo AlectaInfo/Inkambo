@@ -115,4 +115,6 @@ class Timeslot
         $detail = $this->getDay()."- ".$d1." - ".$d2;
         return $detail;
     }
+    
+
 }

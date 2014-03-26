@@ -56,3 +56,8 @@ abc_home_contact:
 abc_admin_course_admin_selection:
         resource: "@ABCAdminCourseAdminBundle/Resources/config/routing.yml"
         prefix:   /courseAdmin/selection
+        
+#resource admin - Session   
+abc_admin_resource_admin_rsp:
+        resource: "@ABCAdminResourceAdminBundle/Resources/config/routing/rsp.yml"
+        prefix:   /resourceAdmin/rsp       

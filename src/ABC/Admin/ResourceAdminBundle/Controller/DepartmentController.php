@@ -49,7 +49,7 @@ class DepartmentController extends Controller
             return $this->redirect($this->generateUrl('department_showAll'));
         }
 
-        return $this->render('ABCAdminResourceAdminBundle:Department:new.html.twig', array(
+        return $this->render('ABCAdminResourceAdminBundle:Department:add.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));

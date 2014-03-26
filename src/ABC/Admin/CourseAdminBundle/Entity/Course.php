@@ -54,7 +54,7 @@ class Course
     public function setTitle($title)
     {
         $this->title = $title;
-
+    
         return $this;
     }
 
@@ -77,7 +77,7 @@ class Course
     public function setFee($fee)
     {
         $this->fee = $fee;
-
+    
         return $this;
     }
 
@@ -100,7 +100,7 @@ class Course
     public function setDuration($duration)
     {
         $this->duration = $duration;
-
+    
         return $this;
     }
 
@@ -123,7 +123,7 @@ class Course
     public function setDescription($description)
     {
         $this->description = $description;
-
+    
         return $this;
     }
 
@@ -146,7 +146,7 @@ class Course
     public function setLeaflet($leaflet)
     {
         $this->leaflet = $leaflet;
-
+    
         return $this;
     }
 
@@ -158,6 +158,19 @@ class Course
     public function getLeaflet()
     {
         return $this->leaflet;
+    }
+
+    /**
+     * Set courseId
+     *
+     * @param string $courseId
+     * @return Course
+     */
+    public function setCourseId($courseId)
+    {
+        $this->courseId = $courseId;
+    
+        return $this;
     }
 
     /**
@@ -179,7 +192,7 @@ class Course
     public function setDeptName(\ABC\Admin\CourseAdminBundle\Entity\Department $deptName = null)
     {
         $this->deptName = $deptName;
-
+    
         return $this;
     }
 

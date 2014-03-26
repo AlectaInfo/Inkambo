@@ -64,7 +64,7 @@ class Student
     public function setNic($nic)
     {
         $this->nic = $nic;
-
+    
         return $this;
     }
 
@@ -87,7 +87,7 @@ class Student
     public function setFirstname($firstname)
     {
         $this->firstname = $firstname;
-
+    
         return $this;
     }
 
@@ -110,7 +110,7 @@ class Student
     public function setLastname($lastname)
     {
         $this->lastname = $lastname;
-
+    
         return $this;
     }
 
@@ -133,7 +133,7 @@ class Student
     public function setGender($gender)
     {
         $this->gender = $gender;
-
+    
         return $this;
     }
 
@@ -156,7 +156,7 @@ class Student
     public function setEmail($email)
     {
         $this->email = $email;
-
+    
         return $this;
     }
 
@@ -179,7 +179,7 @@ class Student
     public function setPhone($phone)
     {
         $this->phone = $phone;
-
+    
         return $this;
     }
 
@@ -202,7 +202,7 @@ class Student
     public function setAddress($address)
     {
         $this->address = $address;
-
+    
         return $this;
     }
 
@@ -225,7 +225,7 @@ class Student
     public function setCurrentoccuption($currentoccuption)
     {
         $this->currentoccuption = $currentoccuption;
-
+    
         return $this;
     }
 
@@ -237,6 +237,19 @@ class Student
     public function getCurrentoccuption()
     {
         return $this->currentoccuption;
+    }
+
+    /**
+     * Set studentId
+     *
+     * @param string $studentId
+     * @return Student
+     */
+    public function setStudentId($studentId)
+    {
+        $this->studentId = $studentId;
+    
+        return $this;
     }
 
     /**

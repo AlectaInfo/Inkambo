@@ -193,7 +193,7 @@ class Course
         return $this->deptName;
     }
     
-    public function __toString() {
+    public function __toString(){
         return $this->getTitle();
     }
 }

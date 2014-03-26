@@ -109,7 +109,7 @@ class Applicant
     public function setSubmitdate($submitdate)
     {
         $this->submitdate = $submitdate;
-
+    
         return $this;
     }
 
@@ -132,7 +132,7 @@ class Applicant
     public function setNic($nic)
     {
         $this->nic = $nic;
-
+    
         return $this;
     }
 
@@ -155,7 +155,7 @@ class Applicant
     public function setFirstname($firstname)
     {
         $this->firstname = $firstname;
-
+    
         return $this;
     }
 
@@ -178,7 +178,7 @@ class Applicant
     public function setLastname($lastname)
     {
         $this->lastname = $lastname;
-
+    
         return $this;
     }
 
@@ -201,7 +201,7 @@ class Applicant
     public function setDob($dob)
     {
         $this->dob = $dob;
-
+    
         return $this;
     }
 
@@ -224,7 +224,7 @@ class Applicant
     public function setPhone($phone)
     {
         $this->phone = $phone;
-
+    
         return $this;
     }
 
@@ -247,7 +247,7 @@ class Applicant
     public function setAddress($address)
     {
         $this->address = $address;
-
+    
         return $this;
     }
 
@@ -270,7 +270,7 @@ class Applicant
     public function setGender($gender)
     {
         $this->gender = $gender;
-
+    
         return $this;
     }
 
@@ -293,7 +293,7 @@ class Applicant
     public function setEmail($email)
     {
         $this->email = $email;
-
+    
         return $this;
     }
 
@@ -316,7 +316,7 @@ class Applicant
     public function setCurrentoccuption($currentoccuption)
     {
         $this->currentoccuption = $currentoccuption;
-
+    
         return $this;
     }
 
@@ -339,7 +339,7 @@ class Applicant
     public function setQualification($qualification)
     {
         $this->qualification = $qualification;
-
+    
         return $this;
     }
 
@@ -362,7 +362,7 @@ class Applicant
     public function setCertificates($certificates)
     {
         $this->certificates = $certificates;
-
+    
         return $this;
     }
 
@@ -385,7 +385,7 @@ class Applicant
     public function setRating($rating)
     {
         $this->rating = $rating;
-
+    
         return $this;
     }
 
@@ -408,7 +408,7 @@ class Applicant
     public function setStatus($status)
     {
         $this->status = $status;
-
+    
         return $this;
     }
 
@@ -441,7 +441,7 @@ class Applicant
     public function setTimeslot2(\ABC\Admin\CourseAdminBundle\Entity\Timeslot $timeslot2 = null)
     {
         $this->timeslot2 = $timeslot2;
-
+    
         return $this;
     }
 
@@ -464,7 +464,7 @@ class Applicant
     public function setTimeslot1(\ABC\Admin\CourseAdminBundle\Entity\Timeslot $timeslot1 = null)
     {
         $this->timeslot1 = $timeslot1;
-
+    
         return $this;
     }
 
@@ -487,7 +487,7 @@ class Applicant
     public function setCourse(\ABC\Admin\CourseAdminBundle\Entity\Course $course = null)
     {
         $this->course = $course;
-
+    
         return $this;
     }
 

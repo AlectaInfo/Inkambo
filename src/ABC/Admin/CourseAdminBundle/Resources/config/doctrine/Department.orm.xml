@@ -5,7 +5,6 @@
       <unique-constraint name="code" columns="code"/>
     </unique-constraints>
     <id name="name" type="string" column="name" length="30">
-      <generator strategy="IDENTITY"/>
     </id>
     <field name="code" type="string" column="code" length="3" nullable="false"/>
   </entity>

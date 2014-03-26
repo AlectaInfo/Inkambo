@@ -1,0 +1,96 @@
+{# empty Twig template #}
+<style>
+         body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
+
+      .form-signin {
+        max-width: 350px;
+        padding: 19px 25px 0px 20px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"],
+      .form-signin input[type="email"],
+      .form-signin input[type="time"],
+      .form-signin input[type='number']
+      {
+        font-size: 12px;
+        height: 20px;
+        margin-bottom: 10px;
+        padding: 2px 2px;
+      }
+      
+        div.custom{
+padding: 19px 25px 25px 20px;
+        font-size: 16px;
+        margin: 150px auto 10px;
+        display: block;
+        background-color: #ccccff;
+      
+        max-width: 400px;
+        border-radius: 5%;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+    a{
+        text-decoration: none;
+        color: #0088cc;
+    }
+    .linespace{
+          margin-left: 10px;
+          margin-right: 10px;
+          color: #000000;
+          font-weight: 900;
+      }
+</style>
+<div class="form-signin">
+<h3>{{ entity.firstname}} {{entity.lastname}}</h3>
+Resource ID : {{entity.rpId}}<br>
+Post : {{entity.post}}<br>
+Address : {{entity.address}}<br>
+Email : {{entity.email}}<br>
+Department : {{entity.deptName}}<br>
+
+<strong>Courses</strong> :
+    {%if courses is not empty%}
+    {%for course in courses%}
+<strong>{{course.title}}  </strong>
+    {%endfor%}    
+    {%endif%} 
+
+ <ul class="record_actions">
+   
+        <a href="{{ path('rsp_showAll') }}">
+            Back to the list<span class="linespace"> |</span>
+        </a>
+  
+   
+        <a href="{{ path('rsp_edit', { 'id': entity.rpid }) }}">
+            Edit<span class="linespace"> |</span> 
+        </a> 
+    
+        <a href="{{ path('rsp_showCourseOptions', { 'id': entity.rpid }) }}">
+            Assign Course 
+        </a>{{ form(delete_form) }}
+</ul>
+
+    
+</div>
+  <br>        
+
+<br>
+ 

@@ -39,7 +39,7 @@ class Timeslot
     public function setDay($day)
     {
         $this->day = $day;
-
+    
         return $this;
     }
 
@@ -62,7 +62,7 @@ class Timeslot
     public function setStart($start)
     {
         $this->start = $start;
-
+    
         return $this;
     }
 
@@ -85,7 +85,7 @@ class Timeslot
     public function setFinish($finish)
     {
         $this->finish = $finish;
-
+    
         return $this;
     }
 
@@ -97,6 +97,19 @@ class Timeslot
     public function getFinish()
     {
         return $this->finish;
+    }
+
+    /**
+     * Set timeslotId
+     *
+     * @param string $timeslotId
+     * @return Timeslot
+     */
+    public function setTimeslotId($timeslotId)
+    {
+        $this->timeslotId = $timeslotId;
+    
+        return $this;
     }
 
     /**

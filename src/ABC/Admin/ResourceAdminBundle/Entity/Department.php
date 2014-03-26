@@ -3,10 +3,13 @@
 namespace ABC\Admin\ResourceAdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * Department
- */
+* @ORM\Entity
+* @UniqueEntity(fields="name", message="The given department already exists")
+ *@UniqueEntity(fields="code", message="The given department already exists")
+*/
 class Department
 {
     /**

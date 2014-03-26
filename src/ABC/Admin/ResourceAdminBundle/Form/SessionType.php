@@ -18,25 +18,31 @@ class SessionType extends AbstractType{
                 'label'=>'Session ID',
                 'pattern'=> '[A-Z0-9]+'
             ))
-            ->add('year','text',array(
+            ->add('year','integer',array(
                 'max_length'=>4,
+                 'attr'=>array('min'=>2014,'max'=>'2020'),
                 'pattern'=>'[0-9]+{4}'
             ))
             ->add('startMonth','choice',array(
-                'choices'=>array('Jan'=>'January','Feb'=>'February')
+                'choices'=>array('Jan'=>'January','Feb'=>'February',
+                    'Mar'=>'March','Apr'=>'April','May'=>'May',
+                    'Jun'=>'June','Jul'=>'July',
+                    'Aug'=>'August','Sep'=>'September',
+                    'Oct'=>'October','Nov'=>'November',
+                    'Dec'=>'December')
             ))
                 
             ->add('class','entity',array(
                 'class'=>'ABCAdminResourceAdminBundle:Classroom',
-                'property'=>'classId'
+                'property'=>'detail'
             ))
             ->add('timeslot','entity', array(
                  'class'=>'ABCAdminResourceAdminBundle:Timeslot',
-                'property'=>'timeslotId'
+                'property'=>'detail'
             ))
              ->add('course','entity', array(
                  'class'=>'ABCAdminResourceAdminBundle:Course',
-                'property'=>'courseId'
+                'property'=>'detail'
             ))    
         ;
     }

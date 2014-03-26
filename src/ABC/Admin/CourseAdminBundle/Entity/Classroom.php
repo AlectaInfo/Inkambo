@@ -29,7 +29,7 @@ class Classroom
     public function setCapacity($capacity)
     {
         $this->capacity = $capacity;
-
+    
         return $this;
     }
 
@@ -41,6 +41,19 @@ class Classroom
     public function getCapacity()
     {
         return $this->capacity;
+    }
+
+    /**
+     * Set classId
+     *
+     * @param string $classId
+     * @return Classroom
+     */
+    public function setClassId($classId)
+    {
+        $this->classId = $classId;
+    
+        return $this;
     }
 
     /**
