@@ -6,33 +6,28 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Main\loginBundle\Modals\Login;
 
-class DefaultController extends Controller
-{
-    public function indexAction()
-    {
+class DefaultController extends Controller {
+
+    public function indexAction() {
         return $this->render('ABCHomeBundle:Site:index.html.twig');
     }
-    
-    public function aboutAction()
-    {
+
+    public function aboutAction() {
         return $this->render('ABCHomeBundle:Site:about.html.twig');
     }
-    
-    public function coursesAction()
-    {
+
+    public function coursesAction() {
         return $this->render('ABCHomeBundle:Site:courses.html.twig');
     }
-    
-    public function instructorsAction()
-    {
+
+    public function instructorsAction() {
         return $this->render('ABCHomeBundle:Site:instructors.html.twig');
     }
-    
-    public function contactusAction()
-    {
+
+    public function contactusAction() {
         return $this->render('ABCHomeBundle:Site:contact_us.html.twig');
     }
-    
+
     public function loginAction(Request $request) {
         $session = $this->getRequest()->getSession();
         $em = $this->getDoctrine()->getEntityManager();
@@ -50,7 +45,12 @@ class DefaultController extends Controller
                     $login->getPassword($passWord);
                     $session->set('login', $login);
                 }
-                return $this->render('ABCHomeBundle:Site:index.html.twig', array('name' => $user->getUsername()));
+                if ($user->getType() == "resource-admin") {
+                    return $this->render('ABCAdminResourceAdminBundle:Default:index.html.twig', array('name' => $user->getUsername()));
+                }
+                if ($user->getType() == "course-admin") {
+                    return $this->render('ABCAdminCourseAdminBundle:Selection:index.html.twig', array('name' => $user->getUsername()));
+                }
             } else {
                 return $this->render('ABCHomeBundle:Site:login.html.twig', array('name' => 'Error in login data!'));
             }
@@ -61,14 +61,20 @@ class DefaultController extends Controller
                 $passWord = $login->getPassword();
                 $user = $repository->findOneBy(array('username' => $userName, 'password' => $passWord));
                 if ($user) {
-                    return $this->render('ABCHomeBundle:Site:index.html.twig', array('name' => $user->getUsername()));
+                    if ($user->getType() == "resource-admin") {
+                        return $this->render('ABCAdminResourceAdminBundle:Default:index.html.twig', array('name' => $user->getUsername()));
+                    }
+                    if ($user->getType() == "course-admin") {
+                        return $this->render('ABCAdminCourseAdminBundle:Selection:index.html.twig', array('name' => $user->getUsername()));
+                    }
                 }
             }
             return $this->render('ABCHomeBundle:Site:login.html.twig');
         }
     }
-    
+
     public function startAction() {
-        return $this->render('ABCHomeBundle:Default:start.html.twig', array('name' =>'Wajji'));
+        return $this->render('ABCHomeBundle:Default:start.html.twig', array('name' => 'Wajji'));
     }
+
 }

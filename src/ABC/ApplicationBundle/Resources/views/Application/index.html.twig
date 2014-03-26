@@ -1,10 +1,18 @@
 <h1>Hello, Welcome to InKambo Course Registration System!</h1>
 <br>
-
+<br>
 <ul class="record_actions">
     <li>
+        <h2>Course Registration for HOME PAGE</h2>
         <a href="{{ path('application_new') }}">
             Apply for a course
+        </a>
+    </li>
+    
+    <li>
+        <h2>Course Registration for a given course in the url parameters</h2>
+        <a href="{{ path('application_newC', {'id': 'CS0000'}) }}">
+            Apply for course CS0000 
         </a>
     </li>
     <li>
