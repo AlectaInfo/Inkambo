@@ -1,0 +1,12 @@
+{# empty Twig template #}
+<h1>Selected Students List for Course {{course.title}}</h1>
+        {%for students in selected_students%}
+<h2>Name: {{students.firstname}} {{students.lastname}}</h2>
+    <h3>Day: {{students.gender}}</h3>
+    <h3>NIC: {{students.nic}}</h3>
+    <h3>Date of Birth: {{students.dob}}</h3>
+    <h3>Time Slot 1: {{students.timeslot1}}</h3>
+    <h3>Time Slot 2: {{students.timeslot2}}</h3>
+    
+
+{%endfor%}

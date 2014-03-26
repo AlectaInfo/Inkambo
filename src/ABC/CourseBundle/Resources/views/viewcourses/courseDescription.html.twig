@@ -2,7 +2,12 @@
 <ul class="">
               {%for courses, details in all_courses%}
     <A NAME = "{{courses}}"></A>
-    <h1>{{courses}}: {{details[0].title}}   Department of {{details[0].dept_name}}</h1>
+    <h1>{{courses}}:</h1>
+    {%if details is empty%}
+    <h2>Coming Soon</h2>
+    {%else%}
+
+    <h1>{{details[0].title}} offered by Department of {{details[0].dept_name}}</h1>
         {%for sessions in details%}
     <h2>Session {{loop.index}}</h2>
     <h3>Start Month: {{sessions.start_month}}</h3>
@@ -14,7 +19,7 @@
     <h3><a href = "">View resource person here</a></h3>
 
     <br>
-    <h3>D: {{sessions.description}}</h3>
+    <h3>{{sessions.description}}</h3>
     <h3>{{sessions.leaflet}}</h3>
 
 
@@ -26,6 +31,7 @@
     <form action="">
         <input type="submit" value="Apply for course">
     </form> 
+    {%endif%}
                             {%endfor%}
 
 </ul>

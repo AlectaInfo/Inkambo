@@ -1,17 +1,27 @@
 {% extends "ABCStyleBundle:Templates:TwitterFormTemplate.html.twig"%}
 
 {% block container%}
+<script>
+    function popitup(url) {
+	newwindow=window.open(url,'name','height=600,width=400');
+	if (window.focus) {newwindow.focus()}
+	return false;
+    }
+</script>    
+
 
         {{ form_start(form)}}
         {{ form_row(form.deptName)}}
 
-        <div class="record_actions">
+<input type="button" value="Create New Department" onclick="popitup('{{path('updatecourse_new')}}')">  <br>
+
+   <!-- {#    <div class="record_actions">
             <a href="{{ path('courseadmin_home') }}">
                 Add New Department
             </a>       
         
         <br>
-         </div>
+         </div>#}-->
 <div>
         <p> Please enter the course id excluding the course code</p>
 </div>
@@ -32,3 +42,10 @@
 
 </div>
 {% endblock %}        
+
+
+{#{%for course in courses%}
+
+    {{course.course_id}} - {{course.title}}  <input type="button" value="Create Session" onclick="popitup('{{path('session_new')}}')">  <br>
+
+{%endfor%}#}

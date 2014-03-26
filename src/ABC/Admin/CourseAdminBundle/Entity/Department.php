@@ -1,6 +1,6 @@
 <?php
 
-namespace ABC\CourseBundle\Entity;
+namespace ABC\Admin\CourseAdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -50,10 +50,6 @@ class Department
      */
     public function getName()
     {
-        return $this->name;
-    }
-    
-    public function __toString() {
         return $this->name;
     }
 }

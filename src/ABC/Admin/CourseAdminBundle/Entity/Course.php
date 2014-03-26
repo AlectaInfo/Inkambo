@@ -1,17 +1,12 @@
 <?php
 
-namespace ABC\CourseBundle\Entity;
+namespace ABC\Admin\CourseAdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Course
  */
-/**
-* @ORM\Entity
-* @UniqueEntity(fields="courseId", message="The given course id already exists")
-*/
 class Course
 {
     /**
@@ -45,10 +40,10 @@ class Course
     private $courseId;
 
     /**
-     * @var Department
+     * @var \ABC\Admin\CourseAdminBundle\Entity\Department
      */
     private $deptName;
-    private $identifier;
+
 
     /**
      * Set title
@@ -166,19 +161,6 @@ class Course
     }
 
     /**
-     * Set courseId
-     *
-     * @param string $courseId
-     * @return Course
-     */
-    public function setCourseId($courseId)
-    {
-        $this->courseId = $this->identifier.$courseId;
-
-        return $this;
-    }
-
-    /**
      * Get courseId
      *
      * @return string 
@@ -191,20 +173,20 @@ class Course
     /**
      * Set deptName
      *
-     * @param Department $deptName
+     * @param \ABC\Admin\CourseAdminBundle\Entity\Department $deptName
      * @return Course
      */
-    public function setDeptName(Department $deptName )
+    public function setDeptName(\ABC\Admin\CourseAdminBundle\Entity\Department $deptName = null)
     {
         $this->deptName = $deptName;
-        $this->identifier = $deptName->getCode();
+
         return $this;
     }
 
     /**
      * Get deptName
      *
-     * @return Department 
+     * @return \ABC\Admin\CourseAdminBundle\Entity\Department 
      */
     public function getDeptName()
     {

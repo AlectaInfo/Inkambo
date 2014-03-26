@@ -1,3 +1,7 @@
 abc_admin_course_admin_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: ABCAdminCourseAdminBundle:Default:index }
+
+course_admin_view_selected:
+    pattern:  /view_selected/{course}
+    defaults: { _controller: ABCAdminCourseAdminBundle:ViewSelected:SelectedStudents }

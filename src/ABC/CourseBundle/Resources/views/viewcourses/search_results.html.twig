@@ -1,0 +1,10 @@
+<h1>Search Results</h1>
+{%if results is empty%}
+<h2>No results found</h2>
+{%else%}
+{%for course in results%}
+    <li><A HREF ="{{path('course_description')}}#{{course.course_id}}">{{course.course_id}}:{{course.title}}</A></li>
+    <br>
+
+{%endfor%}
+    {%endif%}

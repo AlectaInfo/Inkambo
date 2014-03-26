@@ -12,10 +12,25 @@
                     {%endfor%}
 
     </ul>
+</div>
     <h3> Top Rated Courses </h3>   
     {%for course in top_courses%}
-            <li><a href ="">{{course.course_id}}</a></li>
+            <li><A HREF ="{{path('course_description')}}#{{course.course_id}}">{{course.course_id}}</A></li>
 
                         {%endfor%}
-
-
+            
+            <br>
+            <br>
+            <div>
+                <form id="search_courses" method="get" action="{{path('course_search')}}">
+                <h2>Search Courses</h2>
+            <select name="department">
+                {%for department in departments%}
+                <option> {{department.name}}</option>
+            {%endfor%}
+                <option> All Courses</option>
+            </select>
+                
+		        <input type="text" class="textinput" name="course" size="17" maxlength="100"><input type="submit" value="search" class="button">
+		</form>
+            </div>
