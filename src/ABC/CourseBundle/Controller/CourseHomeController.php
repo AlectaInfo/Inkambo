@@ -13,7 +13,7 @@ class CourseHomeController extends Controller {
         $repository1 = $em->getRepository('ABCCourseBundle:Department');
         $repository2 = $em->getRepository('ABCCourseBundle:Course');
         $departments = $repository1->findAll();
-
+//entity manager
         $stmt = $this->getDoctrine()->getEntityManager()
                 ->getConnection()
                 ->prepare('SELECT course_id FROM applicant GROUP BY course_id ORDER BY COUNT( app_id ) DESC LIMIT 5');
