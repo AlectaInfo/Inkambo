@@ -1,6 +1,15 @@
 {%extends "ABCStyleBundle:Templates:TwitterFormTemplate.html.twig"%}
 
+{%block  script%}
 
+<script>
+    function popitup(url) {
+	newwindow=window.open(url,'name','height=600,width=400,screenX=500,screenY=50');
+	if (window.focus) {newwindow.focus()}
+	return false;
+    }
+</script> 
+{%endblock%} 
 {%block container%}
 {%set count=0%}
 {%set total=0%}
@@ -28,7 +37,7 @@
     <br>
     <a href="{{path('rsp_showAll')}}"> Back to Main Menu</a>
     <br>
-    <a href="{{path('updatecourse_new')}}"> Add a new course</a>
+    <input type="button" onclick="popitup({{path('updatecourse_new')}})"> Add a new course</a>
     
     {%endif%}
     <br>

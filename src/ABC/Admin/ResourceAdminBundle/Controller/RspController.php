@@ -180,17 +180,21 @@ class RspController extends Controller
         else
         $file='NOT FOUND';
         
+        $sql = "SELECT distinct title from teaches natural join course where rp_id='$id'";
+        $titles = $em->getConnection()->executeQuery($sql);
+        
         return $this->render('ABCAdminResourceAdminBundle:rsp:show.html.twig',array(
             'entity'=>$entity,
             'delete_form' => $deleteForm->createView(),
-            'file'=>$file
+            'file'=>$file,
+            'courses'=>$titles
                 ));
     }
     
     public function showAllAction(){
          $em = $this->getDoctrine()->getManager();
          $entites = $em->getRepository('ABCAdminResourceAdminBundle:Resourceperson')->findAll();
-         $temp= array();
+         $total = count($entites);
          
 //         foreach($entites as $i){
 //               $id = $entites->getrpId(); 
@@ -208,7 +212,7 @@ class RspController extends Controller
                throw $this->createNotFoundException("NO entities to be shown");
          }
          
-         return $this->render('ABCAdminResourceAdminBundle:rsp:showAll.html.twig',array("entities"=>$entites));
+         return $this->render('ABCAdminResourceAdminBundle:rsp:showAll.html.twig',array("entities"=>$entites,'total'=>$total));
                  
         
     }

@@ -3,10 +3,12 @@
 namespace ABC\Admin\ResourceAdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * Classroom
- */
+* @ORM\Entity
+* @UniqueEntity(fields="classId", message="The given classId already exists")
+*/
 class Classroom
 {
     /**

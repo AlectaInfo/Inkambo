@@ -24,7 +24,12 @@ class SessionType extends AbstractType{
                 'pattern'=>'[0-9]+{4}'
             ))
             ->add('startMonth','choice',array(
-                'choices'=>array('Jan'=>'January','Feb'=>'February')
+                'choices'=>array('Jan'=>'January','Feb'=>'February',
+                    'Mar'=>'March','Apr'=>'April','May'=>'May',
+                    'Jun'=>'June','Jul'=>'July',
+                    'Aug'=>'August','Sep'=>'September',
+                    'Oct'=>'October','Nov'=>'November',
+                    'Dec'=>'December')
             ))
                 
             ->add('class','entity',array(

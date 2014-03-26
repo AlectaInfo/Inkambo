@@ -45,7 +45,7 @@ class ClassroomController extends Controller
             return $this->redirect($this->generateUrl('class_showAll'));
         }
 
-        return $this->render('ABCAdminResourceAdminBundle:Class:new.html.twig', array(
+        return $this->render('ABCAdminResourceAdminBundle:Class:add.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
